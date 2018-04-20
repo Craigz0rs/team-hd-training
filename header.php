@@ -7,6 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Team_HD_Training
+ * @author Craig D'Arcy - Max Rep Media
  */
 
 ?>
@@ -40,7 +41,11 @@
 			$team_hd_training_description = get_bloginfo( 'description', 'display' );
 			if ( $team_hd_training_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $team_hd_training_description; /* WPCS: xss ok. */ ?></p>
+
+				<p class="site-description">
+   <!--                 <?php echo $team_hd_training_description; /* WPCS: xss ok. */ ?> -->
+                </p>
+         
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
