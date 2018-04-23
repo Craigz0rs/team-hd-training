@@ -97,8 +97,8 @@ if (function_exists('get_field')) {
                 </div>
             </section>
             <!-- #about_section -->
-            
-            
+
+
             <section id="team_section">
                 <div id="team_section_text">
                     <h1 class="home_section_title">
@@ -137,12 +137,12 @@ if (function_exists('get_field')) {
                             </p>
                         </div>
                     </a>
-                    <?php endwhile; } endwhile; } } ?>                
+                    <?php endwhile; } endwhile; } } ?>
                 </div>
                 <!-- #home_team_profiles -->
             </section>
             <!-- #home_team_section -->
-            
+
             <section id="home_client_spotlight">
                 <?php
                       $args = array(
@@ -186,44 +186,73 @@ if (function_exists('get_field')) {
                                 $after_pic_alt = $after_pic['alt'];
                             }     
                         }
-                ?>            
-  
-                
-                <?php
+                ?>
+
+
+                    <?php
                     
             if(get_field('is_featured')) { ?>
-                <div class="featured_client_info">
-                    <?php if ($client_name) { ?> <h2 class="client_name"><?php echo $client_name; ?></h2> <?php }
-                    if ($client_age) { ?> <p class="client_age"><strong>Age:</strong><?php echo $client_age; ?></p> <?php }
-                    if ($client_height) { ?> <p class="client_height"><strong>Height:</strong><?php echo $client_height; ?></p> <?php }
-                    if ($client_program) { ?> <p class="client_program"><strong>Program:</strong><?php echo $client_program; ?></p> <?php }
-                    if ($before_weight) { ?> <p class="before_weight"><?php echo $before_weight; ?></p> <?php }
-                    if ($after_weight) { ?> <p class="after_weight"><?php echo $after_weight; ?></p> <?php }
-                    if ($client_bio) { ?> <p class="client_bio"><?php echo $client_bio; ?></p> <?php }
-                    if ($client_instagram) { ?> <a href="<?php echo $client_instagram; ?>" class="client_instagram">Insta Link</a> <?php } ?>  
-                </div>
-                <div class="featured_client_link link_button">
-                    <a href="<?php echo get_home_url(); ?>/client-spotlight">SEE MORE CLIENTS</a>
-                </div>
-                <div class="featured_client_images">
-                    <div class="featured_client_before">
-                        <?php if($before_pic) { ?>
-                            <img src="<?php echo $before_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
-                        <?php } ?>
-                    </div>
-                    <div class="featured_client_after">
-                        <?php if($after_pic) { ?>
-                        <img src="<?php echo $after_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
-                        <?php } ?>
-                    </div>
-                </div>        
-                        
-                <?php         
+                        <div class="featured_client_info">
+                            <?php if ($client_name) { ?>
+                            <h2 class="client_name">
+                                <?php echo $client_name; ?>
+                            </h2>
+                            <?php }
+                    if ($client_age) { ?>
+                            <p class="client_age"><strong>Age:</strong>
+                                <?php echo $client_age; ?>
+                            </p>
+                            <?php }
+                    if ($client_height) { ?>
+                            <p class="client_height"><strong>Height:</strong>
+                                <?php echo $client_height; ?>
+                            </p>
+                            <?php }
+                    if ($client_program) { ?>
+                            <p class="client_program"><strong>Program:</strong>
+                                <?php echo $client_program; ?>
+                            </p>
+                            <?php }
+                    if ($before_weight) { ?>
+                            <p class="before_weight">
+                                <?php echo $before_weight; ?>
+                            </p>
+                            <?php }
+                    if ($after_weight) { ?>
+                            <p class="after_weight">
+                                <?php echo $after_weight; ?>
+                            </p>
+                            <?php }
+                    if ($client_bio) { ?>
+                            <p class="client_bio">
+                                <?php echo $client_bio; ?>
+                            </p>
+                            <?php }
+                    if ($client_instagram) { ?> <a href="<?php echo $client_instagram; ?>" class="client_instagram">Insta Link</a>
+                            <?php } ?>
+                        </div>
+                        <div class="featured_client_link link_button">
+                            <a href="<?php echo get_home_url(); ?>/client-spotlight">SEE MORE CLIENTS</a>
+                        </div>
+                        <div class="featured_client_images">
+                            <div class="featured_client_before">
+                                <?php if($before_pic) { ?>
+                                <img src="<?php echo $before_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
+                                <?php } ?>
+                            </div>
+                            <div class="featured_client_after">
+                                <?php if($after_pic) { ?>
+                                <img src="<?php echo $after_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
+                                <?php } ?>
+                            </div>
+                        </div>
+
+                        <?php         
                     break; }
                     endwhile;
                     wp_reset_postdata();
                 ?>
-            
+
             </section>
             <!-- #home_client_spotlight -->
             <section id="home_signup" class="page_signup">
@@ -236,7 +265,7 @@ if (function_exists('get_field')) {
                     </p>
                 </div>
                 <div class="page_signup_form signup_form_1">
-                
+
                 </div>
             </section>
             <!-- #home_signup -->
@@ -267,7 +296,7 @@ if (function_exists('get_field')) {
                     </div>
                 </a>
             </section>
-            <!-- #news_section -->                
+            <!-- #news_section -->
         </main>
         <!-- #main -->
     </div>
