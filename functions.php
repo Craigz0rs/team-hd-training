@@ -116,6 +116,112 @@ function team_hd_training_widgets_init() {
 }
 add_action( 'widgets_init', 'team_hd_training_widgets_init' );
 
+
+
+/*Plugin Name: HD Training Theme Custom Post Types
+Description: Add Client Profile CPT and taxonomy
+Author: Craig D'Arcy - Max Rep Media
+Licence: GPL2
+*/
+
+function hdtraining_register_custom_post_types() {
+
+	// CPT Client Profiles
+	$labels = array(
+            'name'               => _x( 'Client Profiles', 'post type general name' ),
+            'singular_name'      => _x( 'Client Profile', 'post type singular name'),
+            'menu_name'          => _x( 'Client Profiles', 'admin menu' ),
+            'name_admin_bar'     => _x( 'Client Profile', 'add new on admin bar' ),
+            'add_new'            => _x( 'Add New', 'Client Profile' ),
+            'add_new_item'       => __( 'Add New Client Profile' ),
+            'new_item'           => __( 'New Client Profile' ),
+            'edit_item'          => __( 'Edit Client Profile' ),
+            'view_item'          => __( 'View Client Profile' ),
+            'all_items'          => __( 'All Client Profiles' ),
+            'search_items'       => __( 'Search Client Profiles' ),
+            'parent_item_colon'  => __( 'Parent Client Profiles:' ),
+            'not_found'          => __( 'No Client Profiles found.' ),
+            'not_found_in_trash' => __( 'No Client Profiles found in Trash.' ),
+            'archives'           => __( 'Client Profile Archives'),
+            'insert_into_item'   => __( 'Uploaded to this Client Profile'),
+            'uploaded_to_this_item' => __( 'Client Profile Archives'),
+            'filter_item_list'   => __( 'Filter Client Profiles list'),
+            'items_list_navigation' => __( 'Client Profiles list navigation'),
+            'items_list'         => __( 'Client Profiles list'),
+            'featured_image'     => __( 'Client Profile feature image'),
+            'set_featured_image' => __( 'Set Client Profile feature image'),
+            'remove_featured_image' => __( 'Remove Client Profile feature image'),
+            'use_featured_image' => __( 'Use as feature image'),
+	);
+
+	$args = array(
+            'labels'             => $labels,
+            'public'             => true,
+            'publicly_queryable' => false,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'show_in_nav_menus'  => false,
+            'show_in_admin_bar'  => true,
+            'query_var'          => true,
+            'rewrite'            => array( 'slug' => 'client_profiles' ),
+            'capability_type'    => 'post',
+            'has_archive'        => false,
+            'hierarchical'       => false,
+            'menu_position'      => 5,
+            'supports'           => array( 'title', 'thumbnail', 'editor' ),
+            'menu_icon'          => 'dashicons-thumbs-up',
+	);
+
+	register_post_type( 'client_profile', $args );
+
+}
+add_action( 'init', 'hdtraining_register_custom_post_types' );
+
+function hdtraining_rewrite_flush() {
+      hdtraining_register_custom_post_types();
+      flush_rewrite_rules();
+  }
+ register_activation_hook( __FILE__, 'hdtraining_rewrite_flush' );
+
+
+
+
+ function hdtraining_register_taxonomies() {
+
+     // Add Client categories
+     $labels = array(
+         'name'              => _x( 'Client Categories', 'taxonomy general name' ),
+         'singular_name'     => _x( 'Client Category', 'taxonomy singular name' ),
+         'search_items'      => __( 'Search Client Categories' ),
+         'all_items'         => __( 'All Client Categories' ),
+         'parent_item'       => __( 'Parent Client Category' ),
+         'parent_item_colon' => __( 'Parent Client Category:' ),
+         'edit_item'         => __( 'Edit Client Category' ),
+         'view_item'         => __( 'View Client Category' ),
+         'update_item'       => __( 'Update Client Category' ),
+         'add_new_item'      => __( 'Add New Client Category' ),
+         'new_item_name'     => __( 'New Client Category Name' ),
+         'menu_name'         => __( 'Client Categories' ),
+     );
+     $args = array(
+         'hierarchical'      => true,
+         'labels'            => $labels,
+         'show_ui'           => true,
+         'show_in_menu'      => true,
+         'show_in_nav_menu'  => false,
+         'show_admin_column' => true,
+         'query_var'         => true,
+         'rewrite'           => array( 'slug' => 'client-categories' ),
+     );
+     register_taxonomy( 'client-category', array( 'client_profile' ), $args );
+
+ }
+ add_action( 'init', 'hdtraining_register_taxonomies', 0 );
+
+
+
+
+
 /**
  * Enqueue scripts and styles.
  */
@@ -158,4 +264,6 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
 
