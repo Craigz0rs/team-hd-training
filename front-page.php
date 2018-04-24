@@ -64,7 +64,7 @@ if (function_exists('get_field')) {
                         <?php echo $about_section_content; ?>
                     </p>
                 </div>
-                <div id="about_features">
+                <div id="about_features" class="selling_features">
                     <?php if (function_exists('get_field')) {                   
                               if( have_rows('selling_points')) {
                                 while (have_rows('selling_points')): the_row(); 
@@ -80,7 +80,7 @@ if (function_exists('get_field')) {
                                         }          
                                     if(get_sub_field('selling_point_name')) { $selling_point_name = get_sub_field('selling_point_name'); }
                                     if(get_sub_field('selling_point_content')) { $selling_point_content = get_sub_field('selling_point_content'); } ?>
-                    <div class="about_feature">
+                    <div class="about_feature selling_feature">
                         <img src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />
                         <h2>
                             <?php echo $selling_point_name; ?>
