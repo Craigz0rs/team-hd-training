@@ -19,13 +19,13 @@ if (function_exists('get_field')) {
             }     
         }
     }
-    if (have_rows('page_header')) {
-        while (have_rows('page_header')) {
+    if (have_rows('page_signup', 12)) {
+        while (have_rows('page_signup', 12)) {
             the_row();
-            if(get_sub_field('title')) { $hero_title = get_sub_field('title'); }            
+            $page_signup_title = get_sub_field('page_signup_title');
+            $page_signup_pitch = get_sub_field('page_signup_pitch');
         }
     }
-    
 }
 
 ?>
@@ -100,7 +100,7 @@ if (function_exists('get_field')) {
                                         <?php echo $offseason_package_and_price; ?>
                                     </p>
                                 </li>
-                                <?php   } ?>                          
+                                <?php   } ?>
                         </ul>
                         <?php
                                     }
@@ -141,7 +141,7 @@ if (function_exists('get_field')) {
                                     </p>
                                     <?php } ?>
                                 </li>
-                                <?php  } ?>                        
+                                <?php  } ?>
                         </ul>
                         <?php
                                     }
@@ -159,13 +159,82 @@ if (function_exists('get_field')) {
                             </div>
                 </section>
                 <div id="packages_features" class="selling_features">
+                    <?php if (function_exists('get_field')) {                   
+                              if( have_rows('packages_include')) {
+                                while (have_rows('packages_include')): the_row(); 
+                                    if(get_sub_field('icon')) { 
+                                        $feature_icon = get_sub_field('icon'); 
 
+                                        $icon_url = $feature_icon['url'];
+                                        $icon_alt = $feature_icon['alt'];
+                                        }          
+                                    if(get_sub_field('title')) { $feature_title = get_sub_field('title'); }
+                                    if(get_sub_field('description')) { $feature_description = get_sub_field('description'); } ?>
+                    <div class="package_feature selling_feature">
+                        <img src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />
+                        <h2>
+                            <?php echo $feature_title; ?>
+                        </h2>
+                        <p>
+                            <?php echo $feature_description; ?>
+                        </p>
+                    </div>
+                    <?php endwhile; } } ?>
                 </div>
-                <section id="also_offer" class="package_wrap">
 
-                </section>
+                <?php
+                        if (function_exists('get_field')) {
+                            if(have_rows('other_services')) { ?>
+                    <section id="other_services" class="package_wrap">
+                        <h1 class="package_heading">ALSO OFFERING</h1>
+                        <?php while (have_rows('other_services')) {
+                                    the_row();
+                                    if(get_sub_field('other_includes')) { $other_includes = get_sub_field('other_includes'); }
+                                    if(have_rows('other_package')) { ?>
+                        <ul class="package_list">
+                            <?php
+                                        while(have_rows('other_package')) {
+                                            the_row();
+                                            if(get_sub_field('other_package_name')) { $other_package_name = get_sub_field('other_package_name'); }
+                                            if(get_sub_field('other_package_price')) { $other_package_price = get_sub_field('other_package_price'); } 
+                                            if(get_sub_field('other_package_description')) { $other_package_description = get_sub_field('other_package_description'); } ?>
+                                <li class="package_list_item">
+                                    <p><span class="package_name"><?php echo $other_package_name; ?></span> <span class="package_price"><?php echo $other_package_price; ?></span></p>
+                                    <?php if($other_package_description) { ?>
+                                    <p class="package_description">
+                                        <?php echo $other_package_description; ?>
+                                    </p>
+                                    <?php } ?>
+                                </li>
+                                <?php  } ?>
+                        </ul>
+                        <?php
+                                    }
+                                } ?>
+                            <div class="package_includes">
+                                <p>
+                                    <?php echo $other_includes; ?>
+                                </p>
+                            </div>
+                    </section>
+                    <?php }
+                        }
+                    ?>
             </section>
             <!-- #packages_section -->
+            <section id="packages_signup" class="page_signup">
+                <div class="page_signup_info">
+                    <h1 class="page_signup_title">
+                        <?php echo $page_signup_title; ?>
+                    </h1>
+                    <p class="page_signup_text">
+                        <?php echo $page_signup_pitch; ?>
+                    </p>
+                </div>
+                <div class="page_signup_form signup_form_1">
+
+                </div>
+            </section>
         </main>
         <!-- #main -->
     </div>
