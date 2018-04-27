@@ -148,7 +148,14 @@ if (function_exists('get_field')) {
                       $args = array(
                         'post_type'=>'client_profile', 
                         'orderby'=>'rand', 
-//                        'posts_per_page'=>'1'
+                        'posts_per_page'=>'1',
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'client-category',
+                                'field' => 'slug',
+                                'terms' => 'featured-client'
+                            )
+                        )
                       );
 
                       $client_profiles = new WP_Query($args);
@@ -189,9 +196,8 @@ if (function_exists('get_field')) {
                 ?>
 
 
-                    <?php
-                    
-            if(get_field('is_featured')) { ?>
+            
+
                         <div class="featured_client_info">
                             <?php if ($client_name) { ?>
                             <h2 class="client_name">
@@ -248,7 +254,6 @@ if (function_exists('get_field')) {
                         </div>
 
                         <?php         
-                    break; }
                     endwhile;
                     wp_reset_postdata();
                 ?>

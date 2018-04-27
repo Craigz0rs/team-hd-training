@@ -207,9 +207,9 @@ function hdtraining_rewrite_flush() {
          'hierarchical'      => true,
          'labels'            => $labels,
          'show_ui'           => true,
-         'show_in_menu'      => true,
+         'show_in_menu'      => false,
          'show_in_nav_menu'  => false,
-         'show_admin_column' => true,
+         'show_admin_column' => false,
          'query_var'         => true,
          'rewrite'           => array( 'slug' => 'client-categories' ),
      );
