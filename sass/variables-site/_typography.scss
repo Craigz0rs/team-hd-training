@@ -1,5 +1,24 @@
-$font__main: sans-serif;
+$barlow_semicondensed: 'Barlow Semi Condensed', sans-serif;
+$barlow_condensed: 'Barlow Condensed', sans-serif;
+
+$font__main: $barlow_semicondensed;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
+
+
+//Main text font
+$font_main: $barlow_semicondensed;
+$font_main_size: 25px;
+
+$font_heading: $barlow_condensed;
+$font_heading_slidersize: 45px;
+$font_heading_slider_charspace: -32px;
+
+$font_subheading: $barlow_semicondensed;
+
+$font_button: $barlow_condensed;
+$font_button_size: 21px;
+
+$font_nav: $barlow_semicondensed;

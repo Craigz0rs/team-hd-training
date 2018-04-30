@@ -235,6 +235,7 @@ if (function_exists('get_field')) {
 
                 </div>
             </section>
+            <!-- #packages_signup -->
         </main>
         <!-- #main -->
     </div>

@@ -1,0 +1,33 @@
+.slider_overlay {
+    width: 480px;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    top: 272px;
+    padding: 50px 0px;
+    
+    
+    .slider_info_wrap {
+        width: 315px;
+        margin-left: 80px;
+        padding: 31px;
+        border-left: 4px solid $color_heading;
+        
+        h2 {
+            margin: 0;
+            padding: 0;
+            color: $color_heading;
+            font-family: $font_heading;
+            font-size: $font_heading_slidersize;
+            letter-spacing: -1px;
+            line-height: 38px;
+            font-weight: 700;
+        }
+        
+        p{
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

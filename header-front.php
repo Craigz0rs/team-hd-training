@@ -18,6 +18,7 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
+        <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:600,700|Barlow+Semi+Condensed:400,700" rel="stylesheet">
         <?php wp_head(); ?>
         <?php if (is_front_page()) { ?>
         <link rel="stylesheet" href="<?php echo get_bloginfo( 'template_directory' ); ?>/flexslider/flexslider.css" type="text/css">
@@ -34,6 +35,8 @@
             </a>
 
             <header id="masthead" class="site-header">
+                <div class="navbar">
+                    <div class="navbar_wrap">
                 <div class="site-branding">
                     <?php
 			the_custom_logo();
@@ -58,9 +61,11 @@
 			if ( $team_hd_training_description || is_customize_preview() ) :
 				?>
 
+<!--
                                 <p class="site-description">
-                                    <!--                 <?php echo $team_hd_training_description; /* WPCS: xss ok. */ ?> -->
+                                                     <?php echo $team_hd_training_description; /* WPCS: xss ok. */ ?> 
                                 </p>
+-->
 
                                 <?php endif; ?>
                 </div>
@@ -76,7 +81,8 @@
 			?>
                 </nav>
                 <!-- #site-navigation -->
-                <br>
+                </div>
+                </div>
                 <?php if(function_exists('get_field')){  
                 if( have_rows('image_slider') ): ?>
                 <div class="flexslider hero_slider" id="hero_slider">
@@ -104,22 +110,26 @@
                         <li data-thumb="<?php echo $url; ?>">
                             <div class="slider_image">
                                 <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
-                                <?php 
-                                if ($slide_title) { ?>
-                                <h2>
-                                    <?php echo $slide_title; ?>
-                                </h2>
-                                <?php }
-                                if ($slide_text) { ?>
-                                <p>
-                                    <?php echo $slide_text; ?>
-                                </p>
-                                <?php }
-                                if ($slide_button_text) { ?>
-                                <a href="<?php echo $slide_button_url; ?>">
-                                    <?php echo $slide_button_text; ?>
-                                </a>
-                                <?php } ?>
+                                <div class="slider_overlay">
+                                    <div class="slider_info_wrap">
+                                    <?php 
+                                    if ($slide_title) { ?>
+                                    <h2>
+                                        <?php echo $slide_title; ?>
+                                    </h2>
+                                    <?php }
+                                    if ($slide_text) { ?>
+                                    <p>
+                                        <?php echo $slide_text; ?>
+                                    </p>
+                                    <?php }
+                                    if ($slide_button_text) { ?>
+                                    <a href="<?php echo $slide_button_url; ?>">
+                                        <?php echo $slide_button_text; ?>
+                                    </a>
+                                    <?php } ?>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <?php endwhile; ?>

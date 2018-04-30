@@ -111,7 +111,13 @@ if (function_exists('get_field')) {
                                             <?php } 
                                             if (get_sub_field('profile_tumblr')) { $profile_tumblr = get_sub_field('profile_tumblr'); ?>
                                                 <li><a href="<?php echo $profile_tumblr; ?>">Tumblr</a></li>
-                                            <?php }  
+                                            <?php }
+                                            if (get_sub_field('profile_twitch')) { $profile_twitch = get_sub_field('profile_twitch'); ?>
+                                                <li><a href="<?php echo $profile_twitch; ?>">Twitch</a></li>
+                                            <?php }
+                                            if (get_sub_field('profile_soundcloud')) { $profile_soundcloud = get_sub_field('profile_soundcloud'); ?>
+                                                <li><a href="<?php echo $profile_soundcloud; ?>">Soundcloud</a></li>
+                                            <?php }
                                                 ?>                                            
                                             </ul>
                                         </div>

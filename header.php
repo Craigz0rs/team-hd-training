@@ -18,6 +18,7 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
+        <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:600,700|Barlow+Semi+Condensed:400,700" rel="stylesheet">
         <?php wp_head(); ?>
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -32,6 +33,8 @@
             </a>
 
             <header id="masthead" class="site-header">
+                <div class="navbar">
+                    <div class="navbar_wrap">
                 <div class="site-branding">
                     <?php
 			the_custom_logo();
@@ -55,10 +58,12 @@
 			$team_hd_training_description = get_bloginfo( 'description', 'display' );
 			if ( $team_hd_training_description || is_customize_preview() ) :
 				?>
+<!--
 
                                 <p class="site-description">
-                                    <!--                 <?php echo $team_hd_training_description; /* WPCS: xss ok. */ ?> -->
+                                                     <?php echo $team_hd_training_description; /* WPCS: xss ok. */ ?> 
                                 </p>
+-->
 
                                 <?php endif; ?>
                 </div>
@@ -73,6 +78,8 @@
 			) );
 			?>
                 </nav>
+                </div>
+                </div>
                 <!-- #site-navigation -->
             </header>
             <!-- #masthead -->
