@@ -734,6 +734,43 @@ html, body {
   margin: 0; }
 
 /*--------------------------------------------------------------
+## Buttons
+--------------------------------------------------------------*/
+.button1 {
+  display: block;
+  border: 2px solid #F3DB43;
+  width: 200px;
+  min-height: 63px;
+  color: white;
+  text-decoration: none;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 63px;
+  text-align: center; }
+
+/*--------------------------------------------------------------
+## Headings
+--------------------------------------------------------------*/
+.section_title {
+  margin: 0;
+  color: #F3DB43;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 34px; }
+
+/*--------------------------------------------------------------
+## Text
+--------------------------------------------------------------*/
+p {
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: white;
+  font-size: 21px;
+  line-height: 22px; }
+
+/*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
@@ -815,29 +852,37 @@ object {
   display: block; }
 
 .slider_overlay {
-  width: 480px;
+  width: 485px;
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   left: 0;
   top: 272px;
   padding: 50px 0px; }
   .slider_overlay .slider_info_wrap {
-    width: 315px;
+    width: 335px;
     margin-left: 80px;
     padding: 31px;
     border-left: 4px solid #F3DB43; }
     .slider_overlay .slider_info_wrap h2 {
       margin: 0;
-      padding: 0;
+      padding: 0 0 19px;
       color: #F3DB43;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 45px;
+      font-size: 38px;
       letter-spacing: -1px;
       line-height: 38px;
       font-weight: 700; }
     .slider_overlay .slider_info_wrap p {
-      color: white;
-      margin: 0;
-      padding: 0; }
+      padding-bottom: 30px; }
+
+#about_section {
+  background-color: #202020; }
+  #about_section #about_section_text {
+    max-width: 1040px;
+    padding: 0 0 78px 115px; }
+    #about_section #about_section_text h1 {
+      margin-bottom: 15px; }
+    #about_section #about_section_text p {
+      margin-bottom: 35px; }
 
 /*# sourceMappingURL=style.css.map */

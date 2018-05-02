@@ -124,9 +124,11 @@
                                     </p>
                                     <?php }
                                     if ($slide_button_text) { ?>
-                                    <a href="<?php echo $slide_button_url; ?>">
+                                    <div class="link_button">
+                                    <a href="<?php echo $slide_button_url; ?>" class="button1">
                                         <?php echo $slide_button_text; ?>
                                     </a>
+                                        </div>
                                     <?php } ?>
                                     </div>
                                 </div>

@@ -57,12 +57,15 @@ if (function_exists('get_field')) {
         <main id="main" class="site-main">
             <section id="about_section">
                 <div id="about_section_text">
-                    <h1 class="home_section_title">
+                    <h1 class="home_section_title section_title">
                         <?php echo $about_section_title ; ?>
                     </h1>
                     <p>
                         <?php echo $about_section_content; ?>
                     </p>
+                    <div class="link_button">
+                        <a class="button1" href="<?php echo get_home_url(); ?>/packages#packages">SEE COACHING PACKAGES</a>
+                    </div>
                 </div>
                 <div id="about_features" class="selling_features">
                     <?php if (function_exists('get_field')) {                   
@@ -82,7 +85,7 @@ if (function_exists('get_field')) {
                                     if(get_sub_field('selling_point_content')) { $selling_point_content = get_sub_field('selling_point_content'); } ?>
                     <div class="about_feature selling_feature">
                         <img src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />
-                        <h2>
+                        <h2 class="section_title">
                             <?php echo $selling_point_name; ?>
                         </h2>
                         <p>
@@ -92,16 +95,13 @@ if (function_exists('get_field')) {
                     <?php endwhile; } } ?>
                 </div>
                 <!-- #about_features -->
-                <div class="link_button">
-                    <a href="<?php echo get_home_url(); ?>/packages#packages">SEE COACHING PACKAGES</a>
-                </div>
             </section>
             <!-- #about_section -->
 
 
             <section id="team_section">
                 <div id="team_section_text">
-                    <h1 class="home_section_title">
+                    <h1 class="home_section_title section_title">
                         <?php echo $team_section_title; ?>
                     </h1>
                     <p>
@@ -199,6 +199,7 @@ if (function_exists('get_field')) {
             
 
                         <div class="featured_client_info">
+                            <h1 class="section_title">CLIENT SPOTLIGHT</h1>
                             <?php if ($client_name) { ?>
                             <h2 class="client_name">
                                 <?php echo $client_name; ?>
@@ -238,7 +239,7 @@ if (function_exists('get_field')) {
                             <?php } ?>
                         </div>
                         <div class="featured_client_link link_button">
-                            <a href="<?php echo get_home_url(); ?>/client-spotlight">SEE MORE CLIENTS</a>
+                            <a class="button1" href="<?php echo get_home_url(); ?>/client-spotlight">SEE MORE CLIENTS</a>
                         </div>
                         <div class="featured_client_images">
                             <div class="featured_client_before">
@@ -262,7 +263,7 @@ if (function_exists('get_field')) {
             <!-- #home_client_spotlight -->
             <section id="home_signup" class="page_signup">
                 <div class="page_signup_info">
-                    <h1 class="page_signup_title">
+                    <h1 class="page_signup_title section_title">
                         <?php echo $page_signup_title; ?>
                     </h1>
                     <p class="page_signup_text">
@@ -282,7 +283,7 @@ if (function_exists('get_field')) {
                             <p><?php echo $shop_caption; ?></p>
                         </div>
                         <div class="link_button">
-                            <p>SHOP NOW</p>
+                            <p class="button1">SHOP NOW</p>
                         </div>
                     </div>
                 </a>
@@ -296,7 +297,7 @@ if (function_exists('get_field')) {
                             <p><?php echo $news_caption; ?></p>
                         </div>
                         <div class="link_button">
-                            <p>SEE LATEST</p>
+                            <p class="button1">SEE LATEST</p>
                         </div>
                     </div>
                 </a>

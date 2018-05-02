@@ -1,5 +1,5 @@
 .slider_overlay {
-    width: 480px;
+    width: 485px;
     background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
     left: 0;
@@ -8,14 +8,14 @@
     
     
     .slider_info_wrap {
-        width: 315px;
+        width: 335px;
         margin-left: 80px;
         padding: 31px;
         border-left: 4px solid $color_heading;
         
         h2 {
             margin: 0;
-            padding: 0;
+            padding: 0 0 19px;
             color: $color_heading;
             font-family: $font_heading;
             font-size: $font_heading_slidersize;
@@ -24,10 +24,26 @@
             font-weight: 700;
         }
         
-        p{
-            color: white;
-            margin: 0;
-            padding: 0;
+        p {
+            padding-bottom: 30px;
         }
     }
 }
+
+#about_section {
+    background-color: $color_darkgrey;
+    
+    #about_section_text {
+        max-width: 1040px;
+        padding: 0 0 78px 115px;
+        
+        h1 {
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 35px;
+        }
+    }
+}
+

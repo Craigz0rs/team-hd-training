@@ -14,3 +14,43 @@
 html, body {
     margin: 0;
 }
+
+/*--------------------------------------------------------------
+## Buttons
+--------------------------------------------------------------*/
+.button1 {
+    display: block;
+    border: 2px solid $color_yellow;
+    width: 200px;
+    min-height: 63px;
+    color: $color_text;
+    text-decoration: none;
+    font-family: $font_button;
+    font-weight: 700;
+    font-size: $font_button_size;
+    line-height: 63px;
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Headings
+--------------------------------------------------------------*/
+.section_title {
+    margin: 0;
+    color: $color_heading;
+    font-family: $font_heading;
+    font-weight: 700;
+    font-size: $font_heading_size;
+}
+
+/*--------------------------------------------------------------
+## Text
+--------------------------------------------------------------*/
+p {
+    margin: 0;
+    padding: 0;
+    font-family: $font_main;
+    color: $color_text;
+    font-size: $font_main_size;
+    line-height: 22px;
+}
