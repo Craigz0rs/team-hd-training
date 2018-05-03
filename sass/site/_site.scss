@@ -41,6 +41,7 @@ html, body {
     font-family: $font_heading;
     font-weight: 700;
     font-size: $font_heading_size;
+    line-height: 30px;
 }
 
 /*--------------------------------------------------------------
@@ -53,4 +54,22 @@ p {
     color: $color_text;
     font-size: $font_main_size;
     line-height: 22px;
+}
+
+.text_overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    padding: 50px 0px;
+    
+    
+    .text_overlay_wrap {
+        padding: 31px;
+        border-left: 4px solid $color_heading;
+        
+        p {
+            padding-bottom: 30px;
+        }
+    }
 }

@@ -68,6 +68,7 @@ if (function_exists('get_field')) {
                     </div>
                 </div>
                 <div id="about_features" class="selling_features">
+                    <span class="features_background"></span>
                     <?php if (function_exists('get_field')) {                   
                               if( have_rows('selling_points')) {
                                 while (have_rows('selling_points')): the_row(); 
@@ -100,14 +101,6 @@ if (function_exists('get_field')) {
 
 
             <section id="team_section">
-                <div id="team_section_text">
-                    <h1 class="home_section_title section_title">
-                        <?php echo $team_section_title; ?>
-                    </h1>
-                    <p>
-                        <?php echo $team_section_content; ?>
-                    </p>
-                </div>
                 <div id="home_team_profiles">
                     <?php if ( function_exists('get_field')) {
                             if( have_rows('team_section')) {
@@ -126,20 +119,36 @@ if (function_exists('get_field')) {
                                             }          
                                         if(get_sub_field('profile_name')) { $profile_name = get_sub_field('profile_name'); }
                                         if(get_sub_field('profile_titles')) { $profile_titles = get_sub_field('profile_titles'); } ?>
-                    <a href="<?php echo get_home_url(); ?>/team">
+                    
                         <div class="home_team_profile">
+<!--                            <a href="<?php echo get_home_url(); ?>/team">-->
                             <img src="<?php echo $profile_image_url; ?>" alt="<?php echo $profile_image_alt; ?>" />
-                            <h2>
-                                <?php echo $profile_name; ?>
-                            </h2>
-                            <p>
-                                <?php echo $profile_titles; ?>
-                            </p>
+<!--                                 </a>-->
+                            <div class="home_profile_text">
+                                <h2>
+                                    <?php echo $profile_name; ?>
+                                </h2>
+                                <p>
+                                    <?php echo $profile_titles; ?>
+                                </p>
+                            </div>
                         </div>
-                    </a>
+                   
                     <?php endwhile; } endwhile; } } ?>
                 </div>
                 <!-- #home_team_profiles -->
+                <div id="team_section_text">
+                    <div class="team_section_overlay text_overlay">
+                        <div class="team_section_text_wrap text_overlay_wrap">
+                            <h1 class="home_section_title section_title">
+                                <?php echo $team_section_title; ?>
+                            </h1>
+                            <p>
+                                <?php echo $team_section_content; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- #home_team_section -->
 
