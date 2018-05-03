@@ -933,7 +933,8 @@ object {
 
 #home_team_profiles {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  width: 57%; }
   #home_team_profiles .home_team_profile {
     width: 50%;
     height: 50%;
@@ -946,10 +947,11 @@ object {
       width: 100%; }
   #home_team_profiles .home_profile_text {
     position: absolute;
-    bottom: 0; }
+    bottom: 0;
+    width: 100%; }
 
 #team_section_text {
-  width: 82%;
+  width: 43%;
   position: relative; }
   #team_section_text .team_section_overlay {
     left: 40px; }

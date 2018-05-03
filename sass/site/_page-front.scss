@@ -90,6 +90,7 @@
 #home_team_profiles {
     display: flex;
     flex-wrap: wrap;
+    width: 57%;
     
     .home_team_profile {
         width: 50%;
@@ -108,11 +109,12 @@
     .home_profile_text {
         position: absolute;
         bottom: 0;
+        width: 100%;
     }
 }
 
 #team_section_text {
-    width: 82%;
+    width: 43%;
     position: relative;
     
     .team_section_overlay {
