@@ -584,19 +584,15 @@ textarea {
 @media screen and (min-width: 37.5em) {
   .menu-toggle {
     display: none; } }
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
   float: left;
   width: 50%; }
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%; }
@@ -769,7 +765,7 @@ p {
   font-family: "Barlow Semi Condensed", sans-serif;
   color: white;
   font-size: 21px;
-  line-height: 22px; }
+  line-height: 24px; }
 
 .text_overlay {
   background-color: rgba(0, 0, 0, 0.4);
@@ -781,7 +777,7 @@ p {
     padding: 31px;
     border-left: 4px solid #F3DB43; }
     .text_overlay .text_overlay_wrap p {
-      padding-bottom: 30px; }
+      padding: 30px 0; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -958,5 +954,34 @@ object {
     #team_section_text .team_section_overlay .team_section_text_wrap {
       margin-left: 40px;
       padding-right: 115px; }
+
+.shop_news_wrap {
+  display: flex; }
+  .shop_news_wrap .home_link_section {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; }
+    .shop_news_wrap .home_link_section .shop_news_overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; }
+    .shop_news_wrap .home_link_section .home_link_section_text {
+      text-align: center;
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+      left: 0;
+      right: 0;
+      z-index: 2; }
+      .shop_news_wrap .home_link_section .home_link_section_text .button1 {
+        margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */

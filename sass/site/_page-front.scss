@@ -127,4 +127,42 @@
     }
 }
 
+.shop_news_wrap {
+    display: flex;
+    
+    .home_link_section {
+        position: relative;
+        width: 100%;
+        height: 45vh;
+        min-height: 500px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        
+        .shop_news_overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; 
+        }
+        
+        .home_link_section_text {
+            text-align: center;
+            position: absolute;
+            bottom: 50%;
+            transform: translateY(50%);
+            left: 0;
+            right: 0;
+            z-index: 2;
+            
+            .button1 {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
 

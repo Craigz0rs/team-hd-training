@@ -146,12 +146,46 @@ if (function_exists('get_field')) {
                             <p>
                                 <?php echo $team_section_content; ?>
                             </p>
+                             <div class="link_button">
+                                <a class="button1" href="<?php echo get_home_url(); ?>/team">MEET THE TEAM</a>
+                            </div>                           
                         </div>
                     </div>
                 </div>
             </section>
             <!-- #home_team_section -->
-
+            <div class="shop_news_wrap">
+           <section id="shop_section" class="home_link_section">
+                <a href="http://heavydapparel.com">
+                    <div class="home_link_section" style="background-image: url('<?php echo $shop_image_url; ?>')">
+                        <span class="shop_news_overlay"></span>
+                        <div class="shop_text home_link_section_text">
+                            <h1><?php echo $shop_title; ?></h1>
+                            <p><?php echo $shop_caption; ?></p>
+                            <div class="link_button">
+                                <p class="button1">SHOP NOW</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </section>
+            <!-- #shop_section -->
+            <section id="news_section" class="home_link_section">
+                <a href="<?php echo get_home_url(); ?>/news">
+                    <div class="home_link_section" style="background-image: url('<?php echo $news_image_url; ?>')">
+                        <span class="shop_news_overlay"></span>
+                        <div class="news_text home_link_section_text">
+                            <h1><?php echo $news_title; ?></h1>
+                            <p><?php echo $news_caption; ?></p>
+                            <div class="link_button">
+                                <p class="button1">SEE LATEST</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </section>
+            <!-- #news_section -->
+            </div>
             <section id="home_client_spotlight">
                 <?php
                       $args = array(
@@ -284,34 +318,6 @@ if (function_exists('get_field')) {
                 </div>
             </section>
             <!-- #home_signup -->
-            <section id="shop_section">
-                <a href="http://heavydapparel.com">
-                    <div class="home_link_section" style="background-image: url('<?php echo $shop_image_url; ?>')">
-                        <div class="shop_text home_link_section_text">
-                            <h1><?php echo $shop_title; ?></h1>
-                            <p><?php echo $shop_caption; ?></p>
-                        </div>
-                        <div class="link_button">
-                            <p class="button1">SHOP NOW</p>
-                        </div>
-                    </div>
-                </a>
-            </section>
-            <!-- #shop_section -->
-            <section id="news_section">
-                <a href="<?php echo get_home_url(); ?>/news">
-                    <div class="home_link_section" style="background-image: url('<?php echo $news_image_url; ?>')">
-                        <div class="news_text home_link_section_text">
-                            <h1><?php echo $news_title; ?></h1>
-                            <p><?php echo $news_caption; ?></p>
-                        </div>
-                        <div class="link_button">
-                            <p class="button1">SEE LATEST</p>
-                        </div>
-                    </div>
-                </a>
-            </section>
-            <!-- #news_section -->
         </main>
         <!-- #main -->
     </div>

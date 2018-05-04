@@ -53,7 +53,7 @@ p {
     font-family: $font_main;
     color: $color_text;
     font-size: $font_main_size;
-    line-height: 22px;
+    line-height: 24px;
 }
 
 .text_overlay {
@@ -69,7 +69,7 @@ p {
         border-left: 4px solid $color_heading;
         
         p {
-            padding-bottom: 30px;
+            padding: 30px 0;
         }
     }
 }
