@@ -68,7 +68,7 @@ if (function_exists('get_field')) {
                         }
                         
                         if(function_exists('get_field')) {
-                            
+                            $id = get_the_ID();
                             if(get_field('client_name')){ $client_name = get_field('client_name'); }
                             if(get_field('client_age')){ $client_age = get_field('client_age'); }
                             if(get_field('client_height')){ $client_height = get_field('client_height'); }
@@ -101,7 +101,7 @@ if (function_exists('get_field')) {
                 ?>
 
                     
-                        <div class="featured_client_profile <?php echo $featured_class; ?>">
+                        <div id="<?php echo $id; ?>" class="featured_client_profile <?php echo $featured_class; ?>">
                             <div class="featured_client_text">
                             <?php if ($client_name) { ?>
                             <h2 class="client_name">

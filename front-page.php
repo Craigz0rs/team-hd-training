@@ -68,7 +68,7 @@ if (function_exists('get_field')) {
                     </div>
                 </div>
                 <div id="about_features" class="selling_features">
-                    <span class="features_background"></span>
+                    <div class="features_background"></div>
                     <?php if (function_exists('get_field')) {                   
                               if( have_rows('selling_points')) {
                                 while (have_rows('selling_points')): the_row(); 
@@ -158,10 +158,12 @@ if (function_exists('get_field')) {
            <section id="shop_section" class="home_link_section">
                 <a href="http://heavydapparel.com">
                     <div class="home_link_section" style="background-image: url('<?php echo $shop_image_url; ?>')">
-                        <span class="shop_news_overlay"></span>
+                        <div class="shop_news_overlay"></div>
                         <div class="shop_text home_link_section_text">
                             <h1><?php echo $shop_title; ?></h1>
-                            <p><?php echo $shop_caption; ?></p>
+                            <?php if ($shop_caption) { ?>
+                                <p class="home_link_caption"><?php echo $shop_caption; ?></p>
+                            <?php } ?>
                             <div class="link_button">
                                 <p class="button1">SHOP NOW</p>
                             </div>
@@ -173,10 +175,12 @@ if (function_exists('get_field')) {
             <section id="news_section" class="home_link_section">
                 <a href="<?php echo get_home_url(); ?>/news">
                     <div class="home_link_section" style="background-image: url('<?php echo $news_image_url; ?>')">
-                        <span class="shop_news_overlay"></span>
+                        <div class="shop_news_overlay"></div>
                         <div class="news_text home_link_section_text">
                             <h1><?php echo $news_title; ?></h1>
-                            <p><?php echo $news_caption; ?></p>
+                            <?php if ($news_caption) { ?>
+                                <p class="home_link_caption"><?php echo $news_caption; ?></p>
+                            <?php } ?>
                             <div class="link_button">
                                 <p class="button1">SEE LATEST</p>
                             </div>
@@ -186,7 +190,7 @@ if (function_exists('get_field')) {
             </section>
             <!-- #news_section -->
             </div>
-            <section id="home_client_spotlight">
+            <section id="home_client_spotlight" class="featured_client">
                 <?php
                       $args = array(
                         'post_type'=>'client_profile', 
@@ -206,14 +210,22 @@ if (function_exists('get_field')) {
                       while ($client_profiles->have_posts()) : $client_profiles->the_post(); 
                     
                         if(function_exists('get_field')) {
-                            
-                            if(get_field('client_name')){ $client_name = get_field('client_name'); }
+                            $id = get_the_ID();
+                            if(get_field('client_name')){ $client_name = get_field('client_name'); 
+                                                        $first_name = explode( "\n", wordwrap ($client_name, 1));
+                                                         $first_name = $first_name[0];
+                                                        }
                             if(get_field('client_age')){ $client_age = get_field('client_age'); }
                             if(get_field('client_height')){ $client_height = get_field('client_height'); }
                             if(get_field('before_weight')){ $before_weight = get_field('before_weight'); }
                             if(get_field('after_weight')){ $after_weight = get_field('after_weight'); }
                             if(get_field('client_program')){ $client_program = get_field('client_program'); }
-                            if(get_field('client_bio')){ $client_bio = get_field('client_bio'); }
+                            if(get_field('client_bio')){ $client_bio = get_field('client_bio'); 
+                                                       if(strlen($client_bio) > 200) {
+                                                           $client_bio = explode( "\n", wordwrap ($client_bio, 200));
+                                                           $client_bio = $client_bio[0] . '<a href="' . get_home_url() . '/client-spotlight#' . $id . '">...more on ' . $first_name . '</a>';
+                                                       }
+                                                       }
                             if(get_field('client_instagram')){ $client_instagram = get_field('client_instagram'); }
                             if(get_field('before_pic')) { 
                                 $before_pic = get_field('before_pic'); 
@@ -238,15 +250,16 @@ if (function_exists('get_field')) {
                         }
                 ?>
 
-
-            
-
+<div class="featured_client_text">
+            <div class="text_overlay text_overlay_left">
+                    <div class="text_overlay_wrap">
                         <div class="featured_client_info">
                             <h1 class="section_title">CLIENT SPOTLIGHT</h1>
                             <?php if ($client_name) { ?>
                             <h2 class="client_name">
                                 <?php echo $client_name; ?>
                             </h2>
+                            <div class="client_stats_wrap">
                             <?php }
                     if ($client_age) { ?>
                             <p class="client_age"><strong>Age:</strong>
@@ -257,6 +270,7 @@ if (function_exists('get_field')) {
                             <p class="client_height"><strong>Height:</strong>
                                 <?php echo $client_height; ?>
                             </p>
+<!--
                             <?php }
                     if ($client_program) { ?>
                             <p class="client_program"><strong>Program:</strong>
@@ -272,18 +286,28 @@ if (function_exists('get_field')) {
                             <p class="after_weight">
                                 <?php echo $after_weight; ?>
                             </p>
-                            <?php }
+-->
+                            <?php } ?>
+                            </div>
+                            <?php
+                            
                     if ($client_bio) { ?>
                             <p class="client_bio">
                                 <?php echo $client_bio; ?>
                             </p>
+
+<!--
                             <?php }
                     if ($client_instagram) { ?> <a href="<?php echo $client_instagram; ?>" class="client_instagram">Insta Link</a>
                             <?php } ?>
+-->
                         </div>
                         <div class="featured_client_link link_button">
                             <a class="button1" href="<?php echo get_home_url(); ?>/client-spotlight">SEE MORE CLIENTS</a>
                         </div>
+                                        </div>
+                </div>
+                </div>
                         <div class="featured_client_images">
                             <div class="featured_client_before">
                                 <?php if($before_pic) { ?>
@@ -296,7 +320,6 @@ if (function_exists('get_field')) {
                                 <?php } ?>
                             </div>
                         </div>
-
                         <?php         
                     endwhile;
                     wp_reset_postdata();
@@ -305,16 +328,19 @@ if (function_exists('get_field')) {
             </section>
             <!-- #home_client_spotlight -->
             <section id="home_signup" class="page_signup">
-                <div class="page_signup_info">
-                    <h1 class="page_signup_title section_title">
-                        <?php echo $page_signup_title; ?>
-                    </h1>
-                    <p class="page_signup_text">
-                        <?php echo $page_signup_pitch; ?>
-                    </p>
-                </div>
-                <div class="page_signup_form signup_form_1">
+                <div class="page_signup_overlay"></div>
+                <div class="page_signup_wrap">
+                    <div class="page_signup_info">
+                        <h1 class="page_signup_title section_title">
+                            <?php echo $page_signup_title; ?>
+                        </h1>
+                        <p class="page_signup_text">
+                            <?php echo $page_signup_pitch; ?>
+                        </p>
+                    </div>
+                    <div class="page_signup_form signup_form_1">
 
+                    </div>
                 </div>
             </section>
             <!-- #home_signup -->

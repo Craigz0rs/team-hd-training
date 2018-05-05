@@ -1,0 +1,27 @@
+.page_signup {
+    display: flex;
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background-image: url("images/signup_background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    .page_signup_overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(32,32,32,0.85);
+    }
+    
+    .page_signup_wrap {
+        width: 440px;
+        margin: auto;
+        padding: 31px;
+        border-left: 3px solid $color_yellow;
+        z-index: 2;
+    }
+}

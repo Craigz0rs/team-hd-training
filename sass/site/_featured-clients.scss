@@ -1,0 +1,45 @@
+.featured_client {
+    display: flex;
+    max-height: 655px;
+    min-height: 550px;
+    overflow: hidden;
+    
+    .featured_client_text {
+        position: relative;
+        width: 43%;
+        
+        .client_name {
+            font-family: $font_subheading;
+            font-weight: 700;
+            font-size: 25px;
+            color: white;
+        }
+        
+        .client_stats_wrap {
+            padding-bottom: 10px;
+        }
+    }
+
+    .featured_client_images {
+        width: 57%;
+        .featured_client_before {
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            object-fit: cover;
+            object-position: top;
+            height: 100%;
+            width: 100%;
+        }
+        
+    }
+    
+}
+
+
+.client_bio a {
+    text-decoration: none;
+    color: $color_heading;
+}

@@ -13,6 +13,7 @@
 
 html, body {
     margin: 0;
+    background-color: $color_darkgrey;
 }
 
 /*--------------------------------------------------------------
@@ -23,6 +24,7 @@ html, body {
     border: 2px solid $color_yellow;
     width: 200px;
     min-height: 63px;
+    margin-top: 25px;
     color: $color_text;
     text-decoration: none;
     font-family: $font_button;
@@ -36,7 +38,7 @@ html, body {
 ## Headings
 --------------------------------------------------------------*/
 .section_title {
-    margin: 0;
+    margin: 0 0 20px 0;
     color: $color_heading;
     font-family: $font_heading;
     font-weight: 700;
@@ -67,9 +69,11 @@ p {
     .text_overlay_wrap {
         padding: 31px;
         border-left: 4px solid $color_heading;
-        
-        p {
-            padding: 30px 0;
-        }
     }
+}
+
+.text_overlay_left {
+    right: 40px;
+    width: calc(100% - 40px);
+    padding-left: 115px;
 }
