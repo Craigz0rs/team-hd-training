@@ -106,6 +106,7 @@ if (function_exists('get_field')) {
                             if( have_rows('team_section')) {
                                 while (have_rows('team_section')): the_row(); 
                                   if( have_rows('team_profiles')) {
+                                       $counter = 0;
                                     while (have_rows('team_profiles')): the_row(); 
                                         if(get_sub_field('profile_image')) { 
                                             $profile_image = get_sub_field('profile_image'); 
@@ -124,17 +125,34 @@ if (function_exists('get_field')) {
 <!--                            <a href="<?php echo get_home_url(); ?>/team">-->
                             <img src="<?php echo $profile_image_url; ?>" alt="<?php echo $profile_image_alt; ?>" />
 <!--                                 </a>-->
-                            <div class="home_profile_text">
-                                <h2>
-                                    <?php echo $profile_name; ?>
-                                </h2>
-                                <p>
-                                    <?php echo $profile_titles; ?>
-                                </p>
+                            <?php if ($counter == 0 || $counter == 1) {
+                                            $overlay_class = "_top";
+                                        } else if ($counter == 2 || $counter == 3 ) {
+                                            $overlay_class = "_bottom";
+                                        }
+                            ?>
+                            <div class="home_profile_text home_profile_text<?php echo $overlay_class; ?>">
+                                <div class="home_profile_text_overlay home_profile_text_overlay<?php echo $overlay_class; ?>">
+                                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 125"><defs><style>.cls-5{fill-opacity:0.72;}</style></defs><polygon class="cls-5" points="480 125 0 125 0 0 480 56.4 480 125"/></svg>
+                                </div>
+                                <div class="home_profile_text_wrap">
+                                    <h2>
+                                        <?php echo $profile_name; ?>
+                                    </h2>
+                                    <p>
+                                        <?php echo $profile_titles; ?>
+                                    </p>
+                                </div>
+                                <div class="home_profile_overlay1">
+                                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140"><defs><style>.cls-6{fill:#f3db43;fill-opacity:0.58;}</style></defs><polygon class="cls-6" points="140 140 0 140 140 0 140 140"/></svg>
+                                </div>
+                                <div class="home_profile_overlay2">
+                                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 163.33 163.33"><defs><style>.cls-7{fill:#f3db43;fill-opacity:0.58;}</style></defs><polygon class="cls-7" points="13.9 163.33 0 163.33 163.33 0 163.23 14 13.9 163.33"/></svg>
+                                </div>
                             </div>
                         </div>
                    
-                    <?php endwhile; } endwhile; } } ?>
+                    <?php $counter ++;  endwhile; } endwhile; } } ?>
                 </div>
                 <!-- #home_team_profiles -->
                 <div id="team_section_text">

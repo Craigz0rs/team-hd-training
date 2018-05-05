@@ -5,6 +5,4 @@ if (iOS) {
     document.getElementById('masthead').classList.remove("header_standard_size");
     $("#masthead").css("height", vh);
     $(".slider_image img").css("height", vh);
-//    $(".header_overlay_2 svg").css("height" , 'calc(' + vh + ' * 0.6 )');
-//     $(".header_overlay_3 svg").css("height" , 'calc(' + vh + ' * 0.685 )');
 }

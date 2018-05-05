@@ -1067,6 +1067,83 @@ header {
     position: absolute;
     bottom: 0;
     width: 100%; }
+    #home_team_profiles .home_profile_text .home_profile_text_overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 101%;
+      height: 125px;
+      background-color: rgba(0, 0, 0, 0.73);
+      z-index: 2; }
+      #home_team_profiles .home_profile_text .home_profile_text_overlay svg {
+        position: absolute;
+        bottom: 0;
+        height: 100%; }
+    #home_team_profiles .home_profile_text .home_profile_text_overlay_top {
+      clip-path: polygon(100% 100%, 100% 54%, 0% 0%, 0% 100%); }
+      #home_team_profiles .home_profile_text .home_profile_text_overlay_top svg {
+        display: none; }
+    #home_team_profiles .home_profile_text .home_profile_text_overlay_bottom {
+      clip-path: polygon(100% 100%, 100% 0%, 0% 54%, 0% 100%); }
+      #home_team_profiles .home_profile_text .home_profile_text_overlay_bottom svg {
+        display: none; }
+    @supports not (clip-path: polygon(0 0)) {
+      #home_team_profiles .home_profile_text .home_profile_text_overlay_top {
+        background-color: transparent; }
+        #home_team_profiles .home_profile_text .home_profile_text_overlay_top svg {
+          display: block; }
+      #home_team_profiles .home_profile_text .home_profile_text_overlay_bottom {
+        background-color: transparent; }
+        #home_team_profiles .home_profile_text .home_profile_text_overlay_bottom svg {
+          display: block;
+          transform: rotate(360deg) scaleX(-1); } }
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+      #home_team_profiles .home_profile_text .home_profile_text_overlay_top,
+      #home_team_profiles .home_profile_text .home_profile_text_overlay_bottom {
+        height: 103px; } }
+    #home_team_profiles .home_profile_text .home_profile_text_wrap {
+      position: relative;
+      padding-bottom: 25px;
+      z-index: 4; }
+      #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
+        margin: 0;
+        padding: 0;
+        font-family: "Barlow Semi Condensed", sans-serif;
+        font-weight: 700;
+        color: #F3DB43;
+        font-size: 24px; }
+  #home_team_profiles .home_profile_overlay1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 140px;
+    width: 100%;
+    z-index: 2; }
+  #home_team_profiles .home_profile_text_bottom .home_profile_overlay1 {
+    left: 0; }
+    #home_team_profiles .home_profile_text_bottom .home_profile_overlay1 svg {
+      transform: rotate(360deg) scaleX(-1); }
+  #home_team_profiles .home_profile_overlay2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 170px;
+    z-index: 1; }
+    #home_team_profiles .home_profile_overlay2 svg {
+      width: 190px; }
+  #home_team_profiles .home_profile_text_bottom .home_profile_overlay2 {
+    left: 0; }
+    #home_team_profiles .home_profile_text_bottom .home_profile_overlay2 svg {
+      transform: rotate(360deg) scaleX(-1); }
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    #home_team_profiles .home_profile_overlay1,
+    #home_team_profiles .home_profile_overlay2 {
+      display: none; } }
+  #home_team_profiles .home_profile_text_top .home_profile_text_wrap {
+    padding-left: 25px; }
+  #home_team_profiles .home_profile_text_bottom .home_profile_text_wrap {
+    text-align: right;
+    padding-right: 25px; }
 
 #team_section_text {
   width: 43%;
