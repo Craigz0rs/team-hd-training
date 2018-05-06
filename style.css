@@ -580,15 +580,19 @@ textarea {
 @media screen and (min-width: 601px) {
   .menu-toggle {
     display: none; } }
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
-.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
   float: left;
   width: 50%; }
-.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%; }
@@ -1128,6 +1132,34 @@ header {
   .selling_feature h2 {
     padding-bottom: 5px; }
 
+@media screen and (max-width: 1220px) {
+  .selling_features {
+    padding: 50px 25px; } }
+@media screen and (max-width: 865px) {
+  .selling_features {
+    flex-wrap: wrap;
+    padding: 50px 0px; }
+
+  .selling_feature {
+    width: 100%;
+    padding-bottom: 20px; }
+    .selling_feature .feature_icon {
+      border-top: 1px solid #75736f;
+      margin: 0 auto;
+      width: 200px;
+      padding-top: 25px; }
+    .selling_feature h2 {
+      max-width: 300px;
+      margin: 0 auto;
+      margin-bottom: 20px; }
+    .selling_feature p {
+      max-width: 445px;
+      margin: 0 auto;
+      margin-bottom: 22px; }
+
+  .selling_features div:nth-of-type(2) .feature_icon {
+    border-top: none;
+    padding-top: 0; } }
 #team_section {
   display: flex;
   background-color: #202020;

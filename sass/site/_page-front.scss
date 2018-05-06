@@ -206,6 +206,50 @@ header {
     }
 }
 
+@media screen and (max-width: 1220px) {
+    .selling_features {
+        padding: 50px 25px;
+    }
+}
+
+@media screen and (max-width: 865px) {
+    .selling_features {
+        flex-wrap: wrap;
+        padding: 50px 0px;
+    }
+    
+    .selling_feature {
+        width: 100%;
+        padding-bottom: 20px;
+        
+        .feature_icon {
+            border-top: 1px solid #75736f;
+            margin: 0 auto;
+            width: 200px;
+            padding-top: 25px;
+        }
+        
+        h2 {
+            max-width: 300px;
+            margin: 0 auto;
+            margin-bottom: 20px;            
+        }
+        
+        p {
+            max-width: 445px;
+            margin: 0 auto;
+            margin-bottom: 22px;
+        } 
+    }
+    
+    .selling_features div:nth-of-type(2) {
+        .feature_icon {
+            border-top: none;
+            padding-top: 0;
+        }
+    }
+}
+
 #team_section {
     display: flex;
     background-color: $color_darkgrey;
