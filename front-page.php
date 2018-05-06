@@ -73,19 +73,21 @@ if (function_exists('get_field')) {
                               if( have_rows('selling_points')) {
                                 while (have_rows('selling_points')): the_row(); 
                                     if(get_sub_field('selling_point_icon')) { 
-                                        $selling_point_icon = get_sub_field('selling_point_icon'); 
-
-                                        $icon_title = $selling_point_icon['title'];
-                                        $icon_description = $selling_point_icon['description'];
-                                        $icon_caption = $selling_point_icon['caption'];
-
-                                        $icon_url = $selling_point_icon['url'];
-                                        $icon_alt = $selling_point_icon['alt'];
+                                        $icon_url = get_sub_field('selling_point_icon');
+//                                        $selling_point_icon = get_sub_field('selling_point_icon'); 
+//
+//                                        $icon_title = $selling_point_icon['title'];
+//                                        $icon_description = $selling_point_icon['description'];
+//                                        $icon_caption = $selling_point_icon['caption'];
+//
+//                                        $icon_url = $selling_point_icon['url'];
+//                                        $icon_alt = $selling_point_icon['alt'];
                                         }          
                                     if(get_sub_field('selling_point_name')) { $selling_point_name = get_sub_field('selling_point_name'); }
                                     if(get_sub_field('selling_point_content')) { $selling_point_content = get_sub_field('selling_point_content'); } ?>
                     <div class="about_feature selling_feature">
-                        <img src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />
+                        <div class="feature_icon"><?php echo $icon_url; ?></div>
+<!--                        <img src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />-->
                         <h2 class="section_title">
                             <?php echo $selling_point_name; ?>
                         </h2>

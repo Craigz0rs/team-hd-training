@@ -1119,8 +1119,12 @@ header {
 .selling_feature {
   margin: 0 25px;
   text-align: center;
-  width: 250px;
+  width: 300px;
   z-index: 99; }
+  .selling_feature .feature_icon {
+    color: white;
+    font-size: 60px;
+    padding-bottom: 17px; }
   .selling_feature h2 {
     padding-bottom: 5px; }
 
