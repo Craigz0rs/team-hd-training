@@ -23,16 +23,25 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <?php wp_footer(); ?>
 
     <?php if(is_front_page()) { ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/flexslider/jquery.flexslider-min.js"></script>
         <script type="text/javascript" charset="utf-8">
-          $(window).load(function() {
-            $('.flexslider').flexslider();
-          });
+//          $(window).load(function() {
+//            $('.flexslider').flexslider();
+//          });
+            $(window).on("load", function() {
+            $('.flexslider').flexslider({
+                animation: "fade",
+                controlNav: true,
+                directionNav: true,
+                pauseOnHover: true,
+                pauseOnAction: true
+            });
+        });
         </script>
     <?php } ?>
 </body>
