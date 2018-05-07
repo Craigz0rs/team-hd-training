@@ -4,7 +4,12 @@ header {
 }
 
 .header_standard_size {
-    height: 100vh;
+    height: 100%;
+}
+
+#scroll_L_Arrow,
+#scroll_R_Arrow {
+    display: none;
 }
 
 .slider_overlay {
@@ -678,6 +683,36 @@ header {
     }
 }
 
+@media screen and (max-width: 865px) {
+    .shop_news_wrap .home_link_section {
+        height: calc(100vw * 0.5);
+        
+        h1 {
+            padding: 0 10px;
+            font-size: 30px;
+        }
+    }
+}
 
+@media screen and (max-width: 800px) {
+    .shop_news_wrap {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .shop_news_wrap .home_link_section {
+        height: calc(100vw * 0.8);
+    }
+}
+
+@media screen and (max-width: 400px) {
+     .shop_news_wrap .home_link_section {
+        h1 {
+            padding: 0 20px;
+            line-height: 28px;
+        }
+    }   
+}
 
 
