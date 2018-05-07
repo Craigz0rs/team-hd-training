@@ -171,6 +171,12 @@ if (function_exists('get_field')) {
                             </div>                           
                         </div>
                     </div>
+                    <div class="team_section_overlay1">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 140"><defs><style>.cls-10{fill:#E7CD35;fill-opacity:1;}</style></defs><polygon class="cls-10" points="250 140 0 140 250 0 250 140"/></svg>
+                    </div>
+                    <div class="team_section_overlay2">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291 163.33"><defs><style>.cls-11{fill:#E7CD35;fill-opacity:1;}</style></defs><polygon class="cls-11" points="24.77 163.33 0 163.33 291 0 290.82 14 24.77 163.33"/></svg>
+                    </div>
                 </div>
             </section>
             <!-- #home_team_section -->
