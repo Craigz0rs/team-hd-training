@@ -991,13 +991,12 @@ object {
 @media screen and (max-width: 1020px) {
   .featured_client {
     background-color: #161616; }
-
-  .text_overlay {
-    position: relative;
-    bottom: 0;
-    transform: translateY(0);
-    height: 100%;
-    background-color: transparent; } }
+    .featured_client .text_overlay {
+      position: relative;
+      bottom: 0;
+      transform: translateY(0);
+      height: 100%;
+      background-color: transparent; } }
 @media screen and (max-width: 960px) {
   .featured_client .featured_client_images {
     position: relative; }
