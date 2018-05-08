@@ -848,6 +848,29 @@ p {
   padding-left: 115px; }
 
 /*--------------------------------------------------------------
+## Hero Sections
+--------------------------------------------------------------*/
+.page_hero_container {
+  position: relative;
+  height: 80vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  .page_hero_container .hero_text_overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(32, 32, 32, 0.5); }
+    .page_hero_container .hero_text_overlay .hero_text_wrap {
+      position: absolute;
+      bottom: 65%;
+      transform: translateY(50%);
+      left: 14%;
+      padding-left: 45px;
+      border-left: 3px solid #F3DB43; }
+
+/*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
@@ -1026,7 +1049,7 @@ object {
         padding-right: 0; } }
 @media screen and (max-width: 460px) {
   .featured_client .featured_client_images {
-    padding: 0 25px 25px; } }
+    padding: 0 10px 10px; } }
 header {
   position: relative;
   overflow: hidden; }
@@ -1080,7 +1103,7 @@ header {
 
 .header_overlay_1 {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   background: -moz-linear-gradient(top, rgba(32, 32, 32, 0.9) 0%, rgba(32, 32, 32, 0.9) 75%, #202020 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(32, 32, 32, 0.9)), color-stop(75%, rgba(32, 32, 32, 0.9)), color-stop(100%, #202020));
   background: -webkit-linear-gradient(top, rgba(32, 32, 32, 0.9) 0%, rgba(32, 32, 32, 0.9) 75%, #202020 100%);
@@ -1379,12 +1402,13 @@ header {
       font-size: 20px; }
     #home_team_profiles .home_profile_text .home_profile_text_wrap p {
       font-size: 18px; } }
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 780px) {
   #team_section {
     flex-wrap: wrap;
     height: auto; }
     #team_section #home_team_profiles {
-      width: 100vw; }
+      width: 100vw;
+      max-height: 100vw; }
       #team_section #home_team_profiles .home_team_profile {
         height: 50%;
         width: 50%; }
@@ -1395,6 +1419,9 @@ header {
         position: relative;
         bottom: auto;
         transform: translateY(0); } }
+@media screen and (max-width: 560px) {
+  #team_section #home_team_profiles {
+    max-height: none; } }
 @media screen and (max-width: 450px) {
   #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
     font-size: 18px; }

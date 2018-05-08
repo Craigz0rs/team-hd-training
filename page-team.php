@@ -33,12 +33,26 @@ if (function_exists('get_field')) {
         <main id="main" class="site-main">
             <section id="team_hero">
                 <div class="page_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
-                    <h1 class="hero_title">
-                        <?php echo $hero_title; ?>
-                    </h1>
-                    <p class="hero_caption">
-                        <?php echo $hero_caption ?>
-                    </p>
+                    <div class="hero_text_overlay">
+                        <div class="hero_text_wrap">
+                            <h1 class="hero_title">
+                                <?php echo $hero_title; ?>
+                            </h1>
+                            <p class="hero_caption">
+                                <?php echo $hero_caption ?>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="header_overlay_1"></div>
+                    <div class="header_overlay_1_svg">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1690 173.74"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="845" y1="174.05" x2="845" y2="0.31" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#202020"/><stop offset="0.32" stop-color="#202020" stop-opacity="0.9"/><stop offset="1" stop-color="#202020" stop-opacity="0.9"/></linearGradient></defs><title>Untitled-2</title><polygon class="cls-1" points="1690 173.74 0 173.74 0 0 1690 173.74"/></svg>
+                    </div>
+                    <div class="header_overlay_2 iosheight">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.26 526.88"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><title>Untitled-1</title><polygon class="cls-2" points="315.09 46.6 26.66 526.88 0 524.67 315.26 0 315.09 46.6"/></svg>
+                    </div>
+                    <div class="header_overlay_3 iosheight">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.1 477.9"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><title>Untitled-1</title><polygon class="cls-2" points="287.1 477.9 0 477.9 287.1 0 287.1 477.9"/></svg>
+                    </div>
                 </div>
             </section>
             <!-- #team_hero -->
@@ -133,16 +147,19 @@ if (function_exists('get_field')) {
             </section>
             <!-- #team_profiles -->
             <section id="team_signup" class="page_signup">
-                <div class="page_signup_info">
-                    <h1 class="page_signup_title">
-                        <?php echo $page_signup_title; ?>
-                    </h1>
-                    <p class="page_signup_text">
-                        <?php echo $page_signup_pitch; ?>
-                    </p>
-                </div>
-                <div class="page_signup_form signup_form_1">
+                <div class="page_signup_overlay"></div>
+                <div class="page_signup_wrap">
+                    <div class="page_signup_info">
+                        <h1 class="page_signup_title section_title">
+                            <?php echo $page_signup_title; ?>
+                        </h1>
+                        <p class="page_signup_text">
+                            <?php echo $page_signup_pitch; ?>
+                        </p>
+                    </div>
+                    <div class="page_signup_form signup_form_1">
 
+                    </div>
                 </div>
             </section>
         </main>

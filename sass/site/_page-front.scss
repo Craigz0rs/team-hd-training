@@ -71,7 +71,7 @@ header {
 
 .header_overlay_1 {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     @include gradient_header_overlay_1();
     height: 150px;
     width: 100%;
@@ -530,13 +530,14 @@ header {
     }
 }
 
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 780px) {
     #team_section {
         flex-wrap: wrap;
         height: auto;
         
         #home_team_profiles {
             width: 100vw;
+            max-height: 100vw;
             
             .home_team_profile {
                 height: 50%;
@@ -554,6 +555,12 @@ header {
                 transform: translateY(0);
             }
         }
+    }
+}
+
+@media screen and (max-width: 560px) {
+    #team_section #home_team_profiles {
+        max-height: none;
     }
 }
 
