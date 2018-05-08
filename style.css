@@ -1057,6 +1057,9 @@ header {
 .header_standard_size {
   height: 100%; }
 
+.front-header {
+  height: 100vh; }
+
 #scroll_L_Arrow,
 #scroll_R_Arrow {
   display: none; }

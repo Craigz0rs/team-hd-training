@@ -7,9 +7,10 @@ function screenSize() {
         var vh = $(window).height();
         var vhoverlay2 = vh * 0.685;
         var vhoverlay3 = vh * 0.6;
-    //    var vh = document.getElementById('masthead').offsetHeight;
+
         document.getElementById('masthead').classList.remove("header_standard_size");
         $("#masthead").css("height", vh);
+        $(".front_header").css("height", vh);
         $(".slider_image img").css("height", vh);
         $(".header_overlay_2").css("height", vhoverlay2);
         $(".header_overlay_3").css("height", vhoverlay3);
