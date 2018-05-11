@@ -113,11 +113,32 @@ p {
         
         .hero_text_wrap {
             position: absolute;
-            bottom: 65%;
-            transform: translateY(50%);
-            left: 14%;
-            padding-left: 45px;
+            top: 25%;
+//            bottom: 65%;
+//            transform: translateY(50%);
+            left: 25px;
+            max-width: 335px;
+            padding: 10px 25px;
             border-left: 3px solid $color_yellow;
+            z-index: 99;
+            
+            h1 {
+                margin: 0;
+                padding: 0 0 19px;
+                color: $color_heading;
+                font-family: $font_heading;
+                font-size: $font_heading_slidersize;
+                letter-spacing: -1px;
+                line-height: 38px;
+                font-weight: 700;
+            }
         }
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .page_hero_container .hero_text_overlay .hero_text_wrap {
+        left: 45px;
+        padding: 20px 25px;
     }
 }

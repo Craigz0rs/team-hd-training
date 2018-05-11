@@ -91,7 +91,7 @@ if (function_exists('get_field')) {
                                 </p>
                             </div>
                             <div class="link_button">
-                                <a href="<?php echo get_home_url(); ?>/contact#signup">START YOUR PREP</a>
+                                <a class="button1" href="<?php echo get_home_url(); ?>/contact#signup">START YOUR PREP</a>
                             </div>
                 </section>
                 <section id="off_season" class="package_wrap">
@@ -128,7 +128,7 @@ if (function_exists('get_field')) {
                                 </p>
                             </div>
                             <div class="link_button">
-                                <a href="<?php echo get_home_url(); ?>/contact#signup">START YOUR OFF-SEASON</a>
+                                <a class="button1" href="<?php echo get_home_url(); ?>/contact#signup">START YOUR OFF-SEASON</a>
                             </div>
                 </section>
                 <section id="lifestyle" class="package_wrap">
@@ -169,24 +169,27 @@ if (function_exists('get_field')) {
                                 </p>
                             </div>
                             <div class="link_button">
-                                <a href="<?php echo get_home_url(); ?>/contact#signup">GET STARTED NOW</a>
+                                <a class="button1" href="<?php echo get_home_url(); ?>/contact#signup">GET STARTED NOW</a>
                             </div>
                 </section>
                 <div id="packages_features" class="selling_features">
+                    <div class="features_background"></div>
                     <?php if (function_exists('get_field')) {                   
                               if( have_rows('packages_include')) {
                                 while (have_rows('packages_include')): the_row(); 
                                     if(get_sub_field('icon')) { 
-                                        $feature_icon = get_sub_field('icon'); 
-
-                                        $icon_url = $feature_icon['url'];
-                                        $icon_alt = $feature_icon['alt'];
+                                        $icon_url = get_sub_field('icon');
+//                                        $feature_icon = get_sub_field('icon'); 
+//
+//                                        $icon_url = $feature_icon['url'];
+//                                        $icon_alt = $feature_icon['alt'];
                                         }          
                                     if(get_sub_field('title')) { $feature_title = get_sub_field('title'); }
                                     if(get_sub_field('description')) { $feature_description = get_sub_field('description'); } ?>
                     <div class="package_feature selling_feature">
-                        <img src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />
-                        <h2>
+                        <div class="feature_icon"><?php echo $icon_url; ?></div>
+<!--                        <img src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />-->
+                        <h2 class="section_title">
                             <?php echo $feature_title; ?>
                         </h2>
                         <p>
