@@ -31,7 +31,7 @@ if (function_exists('get_field')) {
 ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-            <section id="team_hero">
+            <section id="team_hero" class="hero_section">
                 <div class="page_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
                     <div class="hero_text_overlay">
                         <div class="hero_text_wrap">

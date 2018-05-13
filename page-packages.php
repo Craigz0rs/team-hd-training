@@ -32,7 +32,7 @@ if (function_exists('get_field')) {
 
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-            <section id="packages_hero">
+            <section id="packages_hero" class="hero_section">
                 <div class="page_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
                     <div class="hero_text_overlay">
                         <div class="hero_text_wrap">
@@ -58,8 +58,10 @@ if (function_exists('get_field')) {
             </section>
             <!-- #packages_hero -->
             <section id="packages_section">
+                <div class="packages_section_wrap">
                 <section id="contest_prep" class="package_wrap">
-                    <h1 class="package_heading">CONTEST PREP</h1>
+                    <div class="package_content_wrap">
+                    <h1 class="package_heading section_title">CONTEST PREP</h1>
                     <?php
                         if (function_exists('get_field')) {
                             if(have_rows('contest_prep')) {
@@ -72,9 +74,12 @@ if (function_exists('get_field')) {
                                         while(have_rows('prep_package')) {
                                             the_row();
                                             if(get_sub_field('prep_package_name')) { $prep_package_name = get_sub_field('prep_package_name'); }
-                                            if(get_sub_field('prep_package_price')) { $prep_package_price = get_sub_field('prep_package_price'); } ?>
+                                            if(get_sub_field('prep_package_price')) { $prep_package_price = get_sub_field('prep_package_price'); } 
+                                            if(get_sub_field('prep_package_description')) { $prep_package_description = get_sub_field('prep_package_description'); }                         
+                            ?>
                                 <li class="package_list_item">
-                                    <p><span class="package_name"><?php echo $prep_package_name; ?></span> <span class="package_price"><?php echo $prep_package_price; ?></span></p>
+                                    <h2><span class="package_name"><?php echo strtoupper($prep_package_name); ?></span> <span class="package_price"><?php echo $prep_package_price; ?></span></h2>
+                                    <p class="package_description"><?php echo $prep_package_description; ?></p>
                                 </li>
                                 <?php                        
                                         } ?>
@@ -86,16 +91,19 @@ if (function_exists('get_field')) {
                         }
                     ?>
                             <div class="package_includes">
-                                <p>
+                                <h2 class="package_name package_includes_heading">PREP PACKAGES INCLUDE:</h2>
+                                <p class="package_description">
                                     <?php echo $prep_includes; ?>
                                 </p>
                             </div>
                             <div class="link_button">
                                 <a class="button1" href="<?php echo get_home_url(); ?>/contact#signup">START YOUR PREP</a>
                             </div>
+                    </div>
                 </section>
                 <section id="off_season" class="package_wrap">
-                    <h1 class="package_heading">OFF-SEASON</h1>
+                    <div class="package_content_wrap">
+                    <h1 class="package_heading section_title">OFF-SEASON</h1>
                     <?php
                         if (function_exists('get_field')) {
                             if(have_rows('offseason')) {
@@ -107,12 +115,15 @@ if (function_exists('get_field')) {
                             <?php
                                         while(have_rows('offseason_package')) {
                                             the_row();
-                                            if(get_sub_field('offseason_package_and_price')) { $offseason_package_and_price = get_sub_field('offseason_package_and_price'); }
+                                            if(get_sub_field('offseason_package_name')) { $offseason_package_name = get_sub_field('offseason_package_name'); }
+                                            if(get_sub_field('offseason_package_price')) { $offseason_package_price = get_sub_field('offseason_package_price'); }
+                                            if(get_sub_field('offseason_package_description')) { $offseason_package_description = get_sub_field('offseason_package_description'); }
                                             ?>
                                 <li class="package_list_item">
-                                    <p>
-                                        <?php echo $offseason_package_and_price; ?>
-                                    </p>
+                                    <h2>
+                                        <span class="package_name"><?php echo strtoupper($offseason_package_name); ?></span><br><span class="package_price"> <?php echo $offseason_package_price; ?></span>
+                                    </h2>
+                                    <p class="package_description"><?php echo $offseason_package_description; ?></p>
                                 </li>
                                 <?php   } ?>
                         </ul>
@@ -123,16 +134,19 @@ if (function_exists('get_field')) {
                         }
                     ?>
                             <div class="offseason_includes">
-                                <p>
+                                <h2 class="package_name package_includes_heading">OFF-SEASON INCLUDES:</h2>
+                                <p class="package_description">
                                     <?php echo $offseason_includes; ?>
                                 </p>
                             </div>
                             <div class="link_button">
                                 <a class="button1" href="<?php echo get_home_url(); ?>/contact#signup">START YOUR OFF-SEASON</a>
                             </div>
+                    </div>
                 </section>
                 <section id="lifestyle" class="package_wrap">
-                    <h1 class="package_heading">LIFESTYLE</h1>
+                    <div class="package_content_wrap">
+                    <h1 class="package_heading section_title">LIFESTYLE</h1>
                     <?php
                         if (function_exists('get_field')) {
                             if(have_rows('lifestyle')) {
@@ -148,7 +162,7 @@ if (function_exists('get_field')) {
                                             if(get_sub_field('lifestyle_package_price')) { $lifestyle_package_price = get_sub_field('lifestyle_package_price'); } 
                                             if(get_sub_field('lifestyle_package_description')) { $lifestyle_package_description = get_sub_field('lifestyle_package_description'); } ?>
                                 <li class="package_list_item">
-                                    <p><span class="package_name"><?php echo $lifestyle_package_name; ?></span> <span class="package_price"><?php echo $lifestyle_package_price; ?></span></p>
+                                    <p><span class="package_name"><?php echo strtoupper($lifestyle_package_name); ?></span> <span class="package_price"><?php echo $lifestyle_package_price; ?></span></p>
                                     <?php if($lifestyle_package_description) { ?>
                                     <p class="package_description">
                                         <?php echo $lifestyle_package_description; ?>
@@ -164,14 +178,17 @@ if (function_exists('get_field')) {
                         }
                     ?>
                             <div class="package_includes">
-                                <p>
+                                <h2 class="package_name package_includes_heading">LIFESTYLE INCLUDES:</h2>
+                                <p class="package_description">
                                     <?php echo $lifestyle_includes; ?>
                                 </p>
                             </div>
                             <div class="link_button">
                                 <a class="button1" href="<?php echo get_home_url(); ?>/contact#signup">GET STARTED NOW</a>
                             </div>
+                    </div>
                 </section>
+                </div>
                 <div id="packages_features" class="selling_features">
                     <div class="features_background"></div>
                     <?php if (function_exists('get_field')) {                   
@@ -202,8 +219,9 @@ if (function_exists('get_field')) {
                 <?php
                         if (function_exists('get_field')) {
                             if(have_rows('other_services')) { ?>
+<!--
                     <section id="other_services" class="package_wrap">
-                        <h1 class="package_heading">ALSO OFFERING</h1>
+                        <h1 class="package_heading section_title">ALSO OFFERING</h1>
                         <?php while (have_rows('other_services')) {
                                     the_row();
                                     if(get_sub_field('other_includes')) { $other_includes = get_sub_field('other_includes'); }
@@ -234,6 +252,7 @@ if (function_exists('get_field')) {
                                 </p>
                             </div>
                     </section>
+-->
                     <?php }
                         }
                     ?>

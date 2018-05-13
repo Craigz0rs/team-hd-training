@@ -97,6 +97,10 @@ p {
 /*--------------------------------------------------------------
 ## Hero Sections
 --------------------------------------------------------------*/
+.hero_section {
+    overflow: hidden;
+}
+
 .page_hero_container {
     position: relative;
     height: 80vh;
@@ -140,5 +144,11 @@ p {
     .page_hero_container .hero_text_overlay .hero_text_wrap {
         left: 45px;
         padding: 20px 25px;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    .page_hero_container {
+        height: 100vh;
     }
 }
