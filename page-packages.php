@@ -133,7 +133,7 @@ if (function_exists('get_field')) {
                             }
                         }
                     ?>
-                            <div class="offseason_includes">
+                            <div class="package_includes">
                                 <h2 class="package_name package_includes_heading">OFF-SEASON INCLUDES:</h2>
                                 <p class="package_description">
                                     <?php echo $offseason_includes; ?>

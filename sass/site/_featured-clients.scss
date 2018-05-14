@@ -11,12 +11,16 @@
         .client_name {
             font-family: $font_subheading;
             font-weight: 700;
-            font-size: 25px;
+            font-size: $font_subheading_size;
             color: white;
         }
         
         .client_stats_wrap {
             padding-bottom: 10px;
+            
+            strong {
+                font-size: $font_stat_size;
+            }
         }
     }
 

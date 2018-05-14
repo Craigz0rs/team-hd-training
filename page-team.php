@@ -56,10 +56,15 @@ if (function_exists('get_field')) {
                 </div>
             </section>
             <!-- #team_hero -->
-            <section id="about_the_team">
-                <p>
-                    <?php echo $about_the_team; ?>
-                </p>
+            <section id="about_section">
+                <div id="about_section_text">
+                    <h1 class="home_section_title section_title">
+                        WE ARE TEAM HD
+                    </h1>
+                    <p>
+                        <?php echo $about_the_team; ?>
+                    </p>
+                </div>
             </section>
             <!-- #about_the_team -->
             <section id="team_profiles">
@@ -80,7 +85,11 @@ if (function_exists('get_field')) {
                             if (get_sub_field('profile_name')) { $profile_name = get_sub_field('profile_name'); }
                             if (get_sub_field('profile_titles')) { $profile_titles = get_sub_field('profile_titles'); }
                             if (get_sub_field('profile_bio')) { $profile_bio = get_sub_field('profile_bio'); }
-                            
+                            if (get_sub_field('profile_age')) { $profile_age = get_sub_field('profile_age'); }
+                            if (get_sub_field('profile_dob')) { $profile_dob = get_sub_field('profile_dob'); }
+                            if (get_sub_field('profile_height')) { $profile_height = get_sub_field('profile_height'); }
+                            if (get_sub_field('profile_offseason')) { $profile_offseason = get_sub_field('profile_offseason'); }
+                            if (get_sub_field('profile_contest')) { $profile_contest = get_sub_field('profile_contest'); } 
                             if ($count % 2 != 0) {
                                 $profile_class = "odd_team";
                             } else {
@@ -94,49 +103,58 @@ if (function_exists('get_field')) {
                                     <div class="profile_image">
                                         <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" title="<?php echo $image_title; ?>" />
                                     </div>
+                                    <div class="profile_wrap">
+                                    <div class="profile_content_wrapper">
                                     <div class="bio_wrap">
-                                        <h2 class="profile_name"><?php echo $profile_name; ?></h2>
+                                        <h2 class="profile_name"><?php echo strtoupper($profile_name); ?></h2>
                                         <p class="profile_titles"><?php echo $profile_titles; ?></p>
+                                        <ul class="profile_stats">
+                                            <?php if ($profile_age) { ?><li><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $profile_age; ?></span></li><?php } ?>
+                                            <?php if ($profile_dob) { ?><li><span class="stat_title">DOB: </span><span class="stat_answer"><?php echo $profile_dob; ?></span></li><?php } ?>
+                                            <?php if ($profile_height) { ?><li><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $profile_height; ?></span></li><?php } ?>
+                                            <?php if ($profile_offseason) { ?><li><span class="stat_title">Off-Season: </span><span class="stat_answer"><?php echo $profile_offseason; ?></span></li><?php } ?>
+                                            <?php if ($profile_contest) { ?><li><span class="stat_title">Contest: </span><span class="stat_answer"><?php echo $profile_contest; ?></span></li><?php } ?>
+                                        </ul>
                                         <div class="profile_bio"><?php echo $profile_bio; ?></div>
                                     </div>
                                     <div class="profile_contact" >
                                         <div class="profile_email" >
                                             <?php if (get_sub_field('profile_email')) { 
-                                                $email = get_sub_field('profile_email'); ?>
-                                                <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+                                                $email = get_sub_field('profile_email'); ?><a href="mailto:<?php echo $email; ?>"><span><i class="far fa-envelope"></i></span>&nbsp; <?php echo $email; ?></a>
                                             <?php } ?>
                                         </div>
                                         <div class="profile_social">
                                             <ul>
                                             <?php if (get_sub_field('profile_instagram')) { $profile_instagram = get_sub_field('profile_instagram'); ?>
-                                                <li><a href="<?php echo $profile_instagram; ?>">Instagram</a></li>
+                                                <li><a href="<?php echo $profile_instagram; ?>"><i class="fab fa-instagram"></i></a></li>
                                             <?php } 
                                             if (get_sub_field('profile_youtube')) { $profile_youtube = get_sub_field('profile_youtube'); ?>
-                                                <li><a href="<?php echo $profile_youtube; ?>">YouTube</a></li>
+                                                <li><a href="<?php echo $profile_youtube; ?>"><i class="fab fa-youtube-square"></i></a></li>
                                             <?php }
                                             if (get_sub_field('profile_facebook')) { $profile_facebook = get_sub_field('profile_facebook'); ?>
-                                                <li><a href="<?php echo $profile_facebook; ?>">Facebook</a></li>
+                                                <li><a href="<?php echo $profile_facebook; ?>"><i class="fab fa-facebook-square"></i></a></li>
                                             <?php }
                                             if (get_sub_field('profile_snapchat')) { $profile_snapchat = get_sub_field('profile_snapchat'); ?>
-                                                <li><a href="<?php echo $profile_snapchat; ?>">Snapchat</a></li>
+                                                <li><a href="<?php echo $profile_snapchat; ?>"><i class="fab fa-snapchat-square"></i></a></li>
                                             <?php }
                                             if (get_sub_field('profile_twitter')) { $profile_twitter = get_sub_field('profile_twitter'); ?>
-                                                <li><a href="<?php echo $profile_twitter; ?>">Twitter</a></li>
+                                                <li><a href="<?php echo $profile_twitter; ?>"><i class="fab fa-twitter-square"></i></a></li>
                                             <?php } 
                                             if (get_sub_field('profile_tumblr')) { $profile_tumblr = get_sub_field('profile_tumblr'); ?>
-                                                <li><a href="<?php echo $profile_tumblr; ?>">Tumblr</a></li>
+                                                <li><a href="<?php echo $profile_tumblr; ?>"><i class="fab fa-tumblr-square"></i></a></li>
                                             <?php }
                                             if (get_sub_field('profile_twitch')) { $profile_twitch = get_sub_field('profile_twitch'); ?>
-                                                <li><a href="<?php echo $profile_twitch; ?>">Twitch</a></li>
+                                                <li><a href="<?php echo $profile_twitch; ?>"><i class="fab fa-twitch"></i></a></li>
                                             <?php }
                                             if (get_sub_field('profile_soundcloud')) { $profile_soundcloud = get_sub_field('profile_soundcloud'); ?>
-                                                <li><a href="<?php echo $profile_soundcloud; ?>">Soundcloud</a></li>
+                                                <li><a href="<?php echo $profile_soundcloud; ?>"><i class="fab fa-soundcloud"></i></a></li>
                                             <?php }
                                                 ?>                                            
                                             </ul>
                                         </div>
                                     </div>
-                                    
+                                </div>
+                                </div>
                                 </div> <!-- profile -->
                         <?php
                             $count ++;

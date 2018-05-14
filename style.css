@@ -787,7 +787,7 @@ html, body {
   width: 200px;
   min-height: 63px;
   margin-top: 25px;
-  color: white;
+  color: lightgrey;
   text-decoration: none;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 700;
@@ -828,7 +828,7 @@ p {
   margin: 0;
   padding: 0;
   font-family: "Barlow Semi Condensed", sans-serif;
-  color: white;
+  color: lightgrey;
   font-size: 20px;
   line-height: 24px; }
 
@@ -1005,10 +1005,12 @@ object {
     .featured_client .featured_client_text .client_name {
       font-family: "Barlow Semi Condensed", sans-serif;
       font-weight: 700;
-      font-size: 25px;
+      font-size: 23px;
       color: white; }
     .featured_client .featured_client_text .client_stats_wrap {
       padding-bottom: 10px; }
+      .featured_client .featured_client_text .client_stats_wrap strong {
+        font-size: 18px; }
   .featured_client .featured_client_images {
     width: 57%; }
     .featured_client .featured_client_images .featured_client_before {
@@ -1606,5 +1608,133 @@ header {
 @media screen and (min-width: 1366px) {
   .package_wrap {
     width: 33%; } }
+.team_profile .profile_image {
+  width: 100%;
+  height: 350px;
+  overflow: hidden; }
+  .team_profile .profile_image img {
+    object-fit: cover;
+    object-position: top; }
+.team_profile .profile_content_wrapper {
+  margin: 25px; }
+.team_profile .bio_wrap {
+  margin-bottom: 25px; }
+  .team_profile .bio_wrap .profile_name {
+    margin: 0 0 20px 0;
+    color: #F3DB43;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 30px; }
+  .team_profile .bio_wrap .profile_titles {
+    margin: 0 0 20px 0;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+    color: white; }
+  .team_profile .bio_wrap .profile_stats {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    margin: 0;
+    padding: 0 0 20px 0;
+    list-style-type: none; }
+    .team_profile .bio_wrap .profile_stats li {
+      width: 50%;
+      line-height: 20px; }
+    .team_profile .bio_wrap .profile_stats .stat_title {
+      margin: 0 0 20px 0;
+      font-family: "Barlow Semi Condensed", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: white; }
+    .team_profile .bio_wrap .profile_stats .stat_answer {
+      margin: 0;
+      padding: 0;
+      font-family: "Barlow Semi Condensed", sans-serif;
+      color: lightgrey;
+      font-size: 18px; }
+.team_profile .profile_contact {
+  border-top: 1px solid #75736f;
+  border-bottom: 1px solid #75736f;
+  padding: 15px 0; }
+  .team_profile .profile_contact .profile_email {
+    margin-bottom: 10px; }
+    .team_profile .profile_contact .profile_email a {
+      font-family: "Barlow Semi Condensed", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #F3DB43;
+      text-decoration: none;
+      transition: 0.4s; }
+      .team_profile .profile_contact .profile_email a svg {
+        font-size: 27px; }
+    .team_profile .profile_contact .profile_email a:hover,
+    .team_profile .profile_contact .profile_email a:active {
+      color: white;
+      transition: 0.4s; }
+  .team_profile .profile_contact .profile_social ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    .team_profile .profile_contact .profile_social ul li {
+      margin-right: 15px; }
+    .team_profile .profile_contact .profile_social ul svg {
+      color: lightgrey;
+      font-size: 30px;
+      transition: 0.4s; }
+    .team_profile .profile_contact .profile_social ul svg:hover {
+      transition: 0.4s;
+      color: #F3DB43; }
+
+@media screen and (min-width: 500px) {
+  .team_profile .profile_image {
+    height: 90vw; }
+  .team_profile .profile_content_wrapper {
+    margin: 25px 45px 45px 45px;
+    padding: 31px 25px 31px 31px;
+    border-left: 4px solid #F3DB43; } }
+@media screen and (min-width: 800px) {
+  .team_profile .profile_content_wrapper {
+    margin: 25px 45px 45px 45px; } }
+@media screen and (min-width: 960px) {
+  .team_profile {
+    overflow: hidden; }
+    .team_profile .profile_image {
+      width: 60%;
+      height: auto; }
+      .team_profile .profile_image img {
+        height: 100%;
+        width: 100%; }
+    .team_profile .profile_wrap {
+      position: relative;
+      width: 40%;
+      padding: 25px 0;
+      background-color: rgba(0, 0, 0, 0.4); }
+    .team_profile .profile_content_wrapper {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 0 0 45px;
+      padding: 31px;
+      max-width: 600px; }
+
+  .even_team,
+  .odd_team {
+    display: flex; }
+
+  .even_team .profile_image {
+    order: 2; }
+  .even_team .profile_content_wrapper {
+    order: 1; } }
+@media screen and (min-width: 1200px) {
+  .team_profile {
+    max-height: 750px; } }
+@media screen and (min-width: 1600px) {
+  .even_team .profile_content_wrapper {
+    position: absolute;
+    right: 0;
+    padding-right: 45px; } }
 
 /*# sourceMappingURL=style.css.map */
