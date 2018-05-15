@@ -29,10 +29,11 @@ if (function_exists('get_field')) {
 }
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
             <section id="client_spotlight_hero" class="hero_section">
                 <div class="page_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
+                    <?php if($hero_title || $hero_caption) { ?>}
                     <div class="hero_text_overlay">
                         <div class="hero_text_wrap">
                             <h1 class="hero_title">
@@ -43,6 +44,7 @@ if (function_exists('get_field')) {
                             </p>
                         </div>
                     </div>
+                    <?php } ?>
                     <div class="header_overlay_1"></div>
                     <div class="header_overlay_1_svg">
                         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1690 173.74"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="845" y1="174.05" x2="845" y2="0.31" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#202020"/><stop offset="0.32" stop-color="#202020" stop-opacity="0.9"/><stop offset="1" stop-color="#202020" stop-opacity="0.9"/></linearGradient></defs><title>Untitled-2</title><polygon class="cls-1" points="1690 173.74 0 173.74 0 0 1690 173.74"/></svg>
@@ -114,36 +116,43 @@ if (function_exists('get_field')) {
                         }
                 ?>
 
-                    
-                <div id="<?php echo $id; ?>" class="featured_client_profile team_profile <?php echo $featured_class; ?>">
-                    <div class="featured_client_images profile_image">
-<!--                            <div class="featured_client_before">-->
-                                <?php if($before_pic) { ?>
-                                <img src="<?php echo $before_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
-                                <?php } ?>
-<!--                            </div>-->
-<!--
+
+                    <div id="<?php echo $id; ?>" class="featured_client_profile team_profile <?php echo $featured_class; ?>">
+                        <div class="featured_client_images profile_image">
+                            <!--                            <div class="featured_client_before">-->
+                            <?php if($before_pic) { ?>
+                            <img src="<?php echo $before_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
+                            <?php } ?>
+                            <!--                            </div>-->
+                            <!--
                             <div class="featured_client_after">
                                 <?php if($after_pic) { ?>
                                 <img src="<?php echo $after_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
                                 <?php } ?>
                             </div>
 -->
-                    </div>
-                    <div class="featured_client_text profile_wrap">
-                        <div class="profile_content_wrapper">
-                            <div class="bio_wrap">
-                            <?php if ($client_name) { ?>
-                                <h2 class="client_name profile_name">
-                                    <?php echo $client_name; ?>
-                                </h2>
-                            <?php } ?>
-                            <?php if ($client_program) { ?>
-                                 <p class="profile_titles"><?php echo $client_program; ?></p>
-                            <?php } ?>
-                                <ul class="profile_stats"> <?php
-                                    if ($client_age) { ?><li class="client_age"><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $client_age; ?></span></li><?php }
-                                    if ($client_height) { ?><li class="client_height"><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $client_height; ?></span></li><?php }
+                        </div>
+                        <div class="featured_client_text profile_wrap">
+                            <div class="profile_content_wrapper">
+                                <div class="bio_wrap">
+                                    <?php if ($client_name) { ?>
+                                    <h2 class="client_name profile_name">
+                                        <?php echo $client_name; ?>
+                                    </h2>
+                                    <?php } ?>
+                                    <?php if ($client_program) { ?>
+                                    <p class="profile_titles">
+                                        <?php echo $client_program; ?>
+                                    </p>
+                                    <?php } ?>
+                                    <ul class="profile_stats">
+                                        <?php
+                                    if ($client_age) { ?>
+                                            <li class="client_age"><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $client_age; ?></span></li>
+                                            <?php }
+                                    if ($client_height) { ?>
+                                            <li class="client_height"><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $client_height; ?></span></li>
+                                            <?php }
                                     if ($before_weight) { ?>
                                             <li class="before_weight"><span class="stat_title">Weight Before: </span><span class="stat_answer">
                                                 <?php echo $before_weight; ?></span>
@@ -154,37 +163,39 @@ if (function_exists('get_field')) {
                                                 <?php echo $after_weight; ?></span>
                                             </li>
                                             <?php } ?>
-                                </ul> <?php
-                    if ($client_bio) { ?>
-                                <div class="profile_bio">
-                                    <p>
-                                        <?php echo $client_bio; ?>
-                                    </p>
-                                </div>
-                                               
-                            <?php } ?>
-                            </div> <?php
-                    if ($client_instagram) { ?>
-                            <div class="profile_contact" >
-                                <div class="profile_social">
-                                    <ul>
-                                        <li><a href="<?php echo $client_instagram; ?>" class="client_instagram"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
+                                    <?php
+                    if ($client_bio) { ?>
+                                        <div class="profile_bio">
+                                            <p>
+                                                <?php echo $client_bio; ?>
+                                            </p>
+                                        </div>
+
+                                        <?php } ?>
                                 </div>
+                                <?php
+                    if ($client_instagram) { ?>
+                                    <div class="profile_contact">
+                                        <div class="profile_social">
+                                            <ul>
+                                                <li><a href="<?php echo $client_instagram; ?>" class="client_instagram"><i class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
                             </div>
-                            <?php } ?>
                         </div>
                     </div>
-                </div>
-                        <?php
+                    <?php
                     $count ++;
                     endwhile;
                     wp_reset_postdata();
-                ?>            
+                ?>
             </section>
             <!-- #featured_clients -->
             <section id="other_clients">
-                 <?php
+                <?php
                       $args = array(
                         'post_type'=>'client_profile',
                         'tax_query' => array(
@@ -233,9 +244,9 @@ if (function_exists('get_field')) {
                         }
                 ?>
 
-                    
-                        <div class="client_tile">
-                            <div class="client_tile_text">
+
+                    <div class="client_tile">
+                        <div class="client_tile_text">
                             <?php if ($client_name) { ?>
                             <h2 class="client_name">
                                 <?php echo $client_name; ?>
@@ -286,12 +297,12 @@ if (function_exists('get_field')) {
                                 <?php } ?>
                             </div>
                         </div>
-                </div>
-                        <?php
+                    </div>
+                    <?php
                     $count ++;
                     endwhile;
                     wp_reset_postdata();
-                ?>               
+                ?>
             </section>
             <!-- #other_clients -->
             <section id="client_spotlight_signup" class="page_signup">
@@ -306,13 +317,18 @@ if (function_exists('get_field')) {
                         </p>
                     </div>
                     <div class="page_signup_form signup_form_1">
+                        <?php 
 
+                            echo do_shortcode('[contact-form-7 id="105" title="multistep-signup1" ]');
+                         ?>
                     </div>
                 </div>
             </section>
             <!-- #client_spotlight_signup -->
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </main>
+        <!-- #main -->
+    </div>
+    <!-- #primary -->
 
-<?php
+    <?php
 get_footer();

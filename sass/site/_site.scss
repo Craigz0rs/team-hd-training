@@ -25,7 +25,8 @@ html, body {
     width: 200px;
     min-height: 63px;
     margin-top: 25px;
-    color: $color_text;
+    color: $color_button;
+    background-color: transparent;
     text-decoration: none;
     font-family: $font_button;
     font-weight: 700;

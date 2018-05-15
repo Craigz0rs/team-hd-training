@@ -365,7 +365,10 @@ if (function_exists('get_field')) {
                         </p>
                     </div>
                     <div class="page_signup_form signup_form_1">
+                        <?php 
 
+                            echo do_shortcode('[contact-form-7 id="105" title="multistep-signup1" ]');
+                         ?>
                     </div>
                 </div>
             </section>

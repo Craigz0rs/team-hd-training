@@ -107,7 +107,7 @@
             }
             
             svg {
-                color: lightgrey;
+                color: $color_social;
                 font-size: 30px;
                 transition: 0.4s;
             }
@@ -169,6 +169,13 @@
             margin: 0 0 0 45px;
             padding: 31px;
             max-width: 600px;
+        }
+        
+        @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+            .profile_content_wrapper {
+                top: 2%;
+                transform: translateY(0%);
+            }
         }
     }
     

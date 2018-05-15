@@ -459,33 +459,6 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: .6em 1em .4em; }
-  button:hover,
-  input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover {
-    border-color: #ccc #bbb #aaa; }
-  button:active, button:focus,
-  input[type="button"]:active,
-  input[type="button"]:focus,
-  input[type="reset"]:active,
-  input[type="reset"]:focus,
-  input[type="submit"]:active,
-  input[type="submit"]:focus {
-    border-color: #aaa #bbb #bbb; }
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -787,7 +760,8 @@ html, body {
   width: 200px;
   min-height: 63px;
   margin-top: 25px;
-  color: lightgrey;
+  color: white;
+  background-color: transparent;
   text-decoration: none;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 700;
@@ -1681,7 +1655,7 @@ header {
     .team_profile .profile_contact .profile_social ul li {
       margin-right: 15px; }
     .team_profile .profile_contact .profile_social ul svg {
-      color: lightgrey;
+      color: white;
       font-size: 30px;
       transition: 0.4s; }
     .team_profile .profile_contact .profile_social ul svg:hover {
@@ -1718,8 +1692,13 @@ header {
       transform: translateY(-50%);
       margin: 0 0 0 45px;
       padding: 31px;
-      max-width: 600px; }
+      max-width: 600px; } }
+  @media screen and (min-width: 960px) and (-ms-high-contrast: active), screen and (min-width: 960px) and (-ms-high-contrast: none) {
+    .team_profile .profile_content_wrapper {
+      top: 2%;
+      transform: translateY(0%); } }
 
+@media screen and (min-width: 960px) {
   .even_team,
   .odd_team {
     display: flex; }
