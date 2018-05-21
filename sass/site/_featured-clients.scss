@@ -222,6 +222,7 @@
         width: calc(100% + 1px);
         background-color: rgba(0,0,0,0.7);
         clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
         padding: 20px;
         padding-top: 13px;
         transition: 0.4s;
@@ -396,38 +397,94 @@
     }
 }
 
+//.client_tile:hover {
+//
+//    .client_tile_bio_text {
+//            top: -17%;
+//            transition: 0.4s;
+//
+//        h2 {
+//            margin-top: 55px !important;
+//        }
+//    }
+//}
+
 @media screen and (min-width: 570px) {
     .toggled .client_tile_bio_text {
         top: 0%;
     }
+    
+//    .client_tile:hover {
+//          .client_tile_bio_text {
+//            top: 0%;
+//        }  
+//    }
 }
 
 @media screen and (min-width: 800px) {
     .toggled .client_tile_bio_text {
         top: -17%;
     }
+    
+//    .client_tile:hover {
+//          .client_tile_bio_text {
+//            top: -17%;
+//        }  
+//    }
 }
 
 @media screen and (min-width: 850px) {
     .toggled .client_tile_bio_text {
         top: -10%;
     }
+    
+//    .client_tile:hover {
+//          .client_tile_bio_text {
+//            top: -10%;
+//        }  
+//    }
 }
 
 @media screen and (min-width: 900px) {
     .toggled .client_tile_bio_text {
         top: 0;
     }
+
+//    .client_tile:hover {
+//          .client_tile_bio_text {
+//            top: 0%;
+//        }  
+//    }
 }
 
 @media screen and (min-width: 1200px) {
     .toggled .client_tile_bio_text {
         top: -13%;
     }
+
+    .client_tile:hover {
+          .client_tile_bio_text {
+            top: -13%;
+        } 
+        
+        .client_tile_bio_text h2 {
+            margin-top: 55px !important;
+        }
+    }
 }
 
 @media screen and (min-width: 1330px) {
     .toggled .client_tile_bio_text {
         top: 0;
+    }
+    
+    .client_tile:hover {
+          .client_tile_bio_text {
+            top: 0%;
+        }  
+    
+        .client_tile_bio_text h2 {
+            margin-top: 55px !important;
+        }    
     }
 }

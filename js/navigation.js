@@ -147,7 +147,6 @@
 	}( container ) );
 } )();
 
-var blah = "poop";
 
 $(document).ready(function(){
     $('.client_tile').on('click', function(e){
