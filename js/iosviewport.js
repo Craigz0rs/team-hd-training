@@ -19,3 +19,4 @@ function screenSize() {
 
 $(document).ready(screenSize);
 $(window).on("orientationchange", screenSize);
+

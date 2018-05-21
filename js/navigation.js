@@ -146,3 +146,16 @@
 		}
 	}( container ) );
 } )();
+
+var blah = "poop";
+
+$(document).ready(function(){
+    $('.client_tile').on('click', function(e){
+        if($(this).hasClass('toggled')) {
+            $(this).removeClass('toggled');
+        } else {
+            $(this).addClass('toggled');
+        }
+    });
+});
+

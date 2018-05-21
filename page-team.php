@@ -77,6 +77,17 @@ if (function_exists('get_field')) {
                         $today = new DateTime('now');
                         while (have_rows('member_profile')) {
                             the_row();
+                            
+                            //reset vars
+                            $profile_name = "";
+                            $profile_titles = "";
+                            $profile_bio = "";
+                            $show_birthday = false;
+                            $profile_dob = "";
+                            $profile_height = "";
+                            $profile_offseason = "";
+                            $profile_contest = "";
+                            
                             if (get_sub_field('profile_image')) {
                                 $image = get_sub_field('profile_image');
                                 $image_url = $image['url'];
@@ -115,29 +126,31 @@ if (function_exists('get_field')) {
                                     <p class="profile_titles">
                                         <?php echo $profile_titles; ?>
                                     </p>
-                                    <ul class="profile_stats">
-                                        <?php if ($profile_dob) { 
-                                                $dob = new DateTime($profile_dob);
-                                                $profile_age = $today->diff($dob);
-                                                
-                                            
-                                                ?>
-                                        <li><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $profile_age->y; ?></span></li>
-                                        <?php 
-                                            } ?>
-                                        <?php if ($show_birthday && $profile_dob) { ?>
-                                        <li><span class="stat_title">DOB: </span><span class="stat_answer"><?php echo date_format($dob, 'M d, Y'); ?></span></li>
-                                        <?php } ?>
-                                        <?php if ($profile_height) { ?>
-                                        <li><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $profile_height; ?></span></li>
-                                        <?php } ?>
-                                        <?php if ($profile_offseason) { ?>
-                                        <li><span class="stat_title">Off-Season: </span><span class="stat_answer"><?php echo $profile_offseason; ?></span></li>
-                                        <?php } ?>
-                                        <?php if ($profile_contest) { ?>
-                                        <li><span class="stat_title">Contest: </span><span class="stat_answer"><?php echo $profile_contest; ?></span></li>
-                                        <?php } ?>
-                                    </ul>
+                                    <?php if ($profile_dob || $profile_height || $profile_offseason || $profile_contest) { ?>
+                                        <ul class="profile_stats">
+                                            <?php if ($profile_dob) { 
+                                                    $dob = new DateTime($profile_dob);
+                                                    $profile_age = $today->diff($dob);
+
+
+                                                    ?>
+                                            <li><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $profile_age->y; ?></span></li>
+                                            <?php 
+                                                } ?>
+                                            <?php if ($show_birthday && $profile_dob) { ?>
+                                            <li><span class="stat_title">DOB: </span><span class="stat_answer"><?php echo date_format($dob, 'M d, Y'); ?></span></li>
+                                            <?php } ?>
+                                            <?php if ($profile_height) { ?>
+                                            <li><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $profile_height; ?></span></li>
+                                            <?php } ?>
+                                            <?php if ($profile_offseason) { ?>
+                                            <li><span class="stat_title">Off-Season: </span><span class="stat_answer"><?php echo $profile_offseason; ?></span></li>
+                                            <?php } ?>
+                                            <?php if ($profile_contest) { ?>
+                                            <li><span class="stat_title">Contest: </span><span class="stat_answer"><?php echo $profile_contest; ?></span></li>
+                                            <?php } ?>
+                                        </ul>
+                                    <?php } ?>
                                     <div class="profile_bio">
                                         <?php echo $profile_bio; ?>
                                     </div>

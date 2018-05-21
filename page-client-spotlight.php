@@ -76,6 +76,16 @@ if (function_exists('get_field')) {
                       $client_profiles = new WP_Query($args);
 
                       while ($client_profiles->have_posts()) : $client_profiles->the_post(); 
+                
+                        //reset vars
+                        $client_name = "";
+                        $client_age = "";
+                        $client_height = "";
+                        $before_weight = "";
+                        $after_weight = "";
+                        $client_program = "";
+                        $client_bio = "";
+                        $client_instagram = "";
                         
                         if($count % 2 != 0) {
                             $featured_class = "odd_team";
@@ -209,7 +219,17 @@ if (function_exists('get_field')) {
 
                       $client_profiles = new WP_Query($args);
 
-                      while ($client_profiles->have_posts()) : $client_profiles->the_post();                    
+                      while ($client_profiles->have_posts()) : $client_profiles->the_post();    
+                
+                        //reset vars
+                        $client_name = "";
+                        $client_age = "";
+                        $client_height = "";
+                        $before_weight = "";
+                        $after_weight = "";
+                        $client_program = "";
+                        $client_bio = "";
+                        $client_instagram = "";
                         
                         if(function_exists('get_field')) {
                             
@@ -247,43 +267,45 @@ if (function_exists('get_field')) {
 
                     <div class="client_tile">
                         <div class="client_tile_text">
+<!--                            <div class="client_tile_clip_overlay"></div>-->
+                            <div class="client_tile_bio_text">
                             <?php if ($client_name) { ?>
                             <h2 class="client_name">
                                 <?php echo $client_name; ?>
                             </h2>
-                            <?php }
-                    if ($client_age) { ?>
-                            <p class="client_age"><strong>Age:</strong>
-                                <?php echo $client_age; ?>
-                            </p>
-                            <?php }
-                    if ($client_height) { ?>
-                            <p class="client_height"><strong>Height:</strong>
-                                <?php echo $client_height; ?>
-                            </p>
-                            <?php }
-                    if ($client_program) { ?>
-                            <p class="client_program"><strong>Program:</strong>
-                                <?php echo $client_program; ?>
-                            </p>
-                            <?php }
-                    if ($before_weight) { ?>
-                            <p class="before_weight">
-                                <?php echo $before_weight; ?>
-                            </p>
-                            <?php }
-                    if ($after_weight) { ?>
-                            <p class="after_weight">
-                                <?php echo $after_weight; ?>
-                            </p>
-                            <?php }
+                            <?php } ?>
+                                    <?php if ($client_program) { ?>
+                                    <p class="profile_titles">
+                                        <?php echo $client_program; ?>
+                                    </p>
+                                    <?php } ?>
+                                    <ul class="profile_stats">
+                                        <?php
+                                    if ($client_age) { ?>
+                                            <li class="client_age"><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $client_age; ?></span></li>
+                                            <?php }
+                                    if ($client_height) { ?>
+                                            <li class="client_height"><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $client_height; ?></span></li>
+                                            <?php }
+                                    if ($before_weight) { ?>
+                                            <li class="before_weight"><span class="stat_title">Weight Before: </span><span class="stat_answer">
+                                                <?php echo $before_weight; ?></span>
+                                            </li>
+                                            <?php }
+                                    if ($after_weight) { ?>
+                                            <li class="after_weight"><span class="stat_title">Weight After: </span><span class="stat_answer">
+                                                <?php echo $after_weight; ?></span>
+                                            </li>
+                                            <?php } ?>
+                                    </ul> <?php
                     if ($client_bio) { ?>
                             <p class="client_bio">
                                 <?php echo $client_bio; ?>
                             </p>
                             <?php }
-                    if ($client_instagram) { ?> <a href="<?php echo $client_instagram; ?>" class="client_instagram">Insta Link</a>
+                    if ($client_instagram) { ?> <a href="<?php echo $client_instagram; ?>" class="client_instagram"><i class="fab fa-instagram"></i></a>
                             <?php } ?>
+                        </div>
                         </div>
                         <div class="client_tile_images">
                             <div class="client_tile_before">
@@ -291,11 +313,13 @@ if (function_exists('get_field')) {
                                 <img src="<?php echo $before_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
                                 <?php } ?>
                             </div>
+<!--
                             <div class="client_tile_after">
                                 <?php if($after_pic) { ?>
                                 <img src="<?php echo $after_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
                                 <?php } ?>
                             </div>
+-->
                         </div>
                     </div>
                     <?php

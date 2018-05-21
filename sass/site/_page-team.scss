@@ -65,6 +65,10 @@
                 font-size: $font_stat_size;
             }
         }
+        
+        .profile_bio p {
+            margin-bottom: 15px;
+        }
     }
     
     .profile_contact {
@@ -197,11 +201,15 @@
 
 @media screen and (min-width: 1200px) {
     .team_profile {
-        max-height: 750px;
+//        max-height: 750px;
     }
 }
 
 @media screen and (min-width: 1600px) {
+    .team_profile {
+        max-height: 850px;
+    }
+    
     .even_team .profile_content_wrapper {
         position: absolute;
         right: 0;
