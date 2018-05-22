@@ -1,8 +1,9 @@
 .page_signup {
     display: flex;
     position: relative;
-    height: 500px;
+//    height: 550px;
     width: 100%;
+    padding: 50px 0;
     background-image: url("images/signup_background.jpg");
     background-position: center;
     background-size: cover;
@@ -18,10 +19,21 @@
     }
     
     .page_signup_wrap {
-        width: 380px;
+        width: 400px;
         margin: auto;
         padding: 31px;
         border-left: 3px solid $color_yellow;
         z-index: 2;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .page_signup {
+        padding: 20px 0;
+    
+        .page_signup_wrap {
+            border-left: none;
+            padding: 25px;
+        }
     }
 }

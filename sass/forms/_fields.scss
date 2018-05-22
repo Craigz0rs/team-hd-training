@@ -17,7 +17,8 @@ textarea {
     display: block;
     border: 2px solid white;
     min-height: 63px;
-    margin-top: 25px;
+    width: 100%;
+    margin-top: 0px;
     padding-left: 15px;
     color: $color_button;
     background-color: transparent;
@@ -26,9 +27,13 @@ textarea {
     font-weight: 500;
     font-size: $font_button_size;
     line-height: 63px;
+    transition: 0.4s;
 
 	&:focus {
-		color: $color__text-input-focus;
+		color: black;
+        background-color: rgba(255,255,255,0.89);
+        border: 2px solid $color_yellow;
+        transition: 0.4s;
 	}
 }
 
