@@ -85,7 +85,13 @@
                 </div>
                 </div>
                 <?php if(function_exists('get_field')){  
-                if( have_rows('image_slider') ): ?>
+                if( have_rows('image_slider') ): 
+                //reset vars
+    $image = "";
+    $slide_title = "";
+    $slide_text = "";
+    $slide_button_text = ""; ?>
+                
                 <div class="flexslider hero_slider" id="hero_slider">
                     <ul class="slides hero_slides">
                         <?php while( have_rows('image_slider') ): the_row();
@@ -111,28 +117,31 @@
                         <li data-thumb="<?php echo $url; ?>">
                             <div class="slider_image">
                                 <img class="iosheight" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
-                                <div class="slider_overlay">
-                                    <div class="slider_info_wrap">
-                                    <?php 
-                                    if ($slide_title) { ?>
-                                    <h2>
-                                        <?php echo $slide_title; ?>
-                                    </h2>
-                                    <?php }
-                                    if ($slide_text) { ?>
-                                    <p>
-                                        <?php echo $slide_text; ?>
-                                    </p>
-                                    <?php }
-                                    if ($slide_button_text) { ?>
-                                    <div class="link_button">
-                                    <a href="<?php echo $slide_button_url; ?>" class="button1">
-                                        <?php echo $slide_button_text; ?>
-                                    </a>
+                                
+                                <?php if ($slide_text) { ?>
+                                    <div class="slider_overlay">
+                                        <div class="slider_info_wrap">
+                                        <?php 
+                                        if ($slide_title) { ?>
+                                        <h2>
+                                            <?php echo $slide_title; ?>
+                                        </h2>
+                                        <?php }
+                                        if ($slide_text) { ?>
+                                        <p>
+                                            <?php echo $slide_text; ?>
+                                        </p>
+                                        <?php }
+                                        if ($slide_button_text) { ?>
+                                        <div class="link_button">
+                                        <a href="<?php echo $slide_button_url; ?>" class="button1">
+                                            <?php echo $slide_button_text; ?>
+                                        </a>
+                                            </div>
+                                        <?php } ?>
                                         </div>
-                                    <?php } ?>
                                     </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </li>
                         <?php endwhile; ?>
