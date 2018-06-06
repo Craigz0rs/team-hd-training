@@ -178,26 +178,13 @@ if (function_exists('get_field')) {
                 </div>
                 <div id="form_section">
                     <div class="contact_signup_form">
-<!--
-                        <div class="page_signup_info">
-                            <?php if($contact_signup_title) { ?> 
-                                <h1 class="page_signup_title section_title">
-                                    <?php echo $contact_signup_title; ?>
-                                </h1>
-                            <?php } ?>
-                            <?php if(contact_signup_pitch) { ?> 
-                                <p class="page_signup_text">
-                                    <?php echo $contact_signup_pitch; ?>
-                                </p>
-                            <?php } ?>
-                    </div>
--->
-                    
+                    <div class="page_signup_wrap">
                         <div class="page_signup_form signup_form_1">
                             <?php 
                                 echo do_shortcode('[contact-form-7 id="105" title="multistep-signup1" ]');
                              ?>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

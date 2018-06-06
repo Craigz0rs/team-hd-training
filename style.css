@@ -780,6 +780,11 @@ html, body {
   margin: 0;
   background-color: #202020; }
 
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 50px; }
+
 /*--------------------------------------------------------------
 ## Buttons
 --------------------------------------------------------------*/
@@ -993,19 +998,21 @@ object {
     top: 0;
     left: 0;
     background-color: rgba(32, 32, 32, 0.85); }
-  .page_signup .page_signup_wrap {
-    width: 400px;
-    margin: auto;
-    padding: 31px;
-    border-left: 3px solid #F3DB43;
-    z-index: 2; }
+
+.page_signup_wrap {
+  width: 400px;
+  margin: auto;
+  padding: 31px;
+  border-left: 3px solid #F3DB43;
+  z-index: 2; }
 
 @media screen and (max-width: 499px) {
   .page_signup {
     padding: 20px 0; }
-    .page_signup .page_signup_wrap {
-      border-left: none;
-      padding: 25px; } }
+
+  .page_signup_wrap {
+    border-left: none;
+    padding: 25px; } }
 header {
   position: relative;
   overflow: hidden; }
@@ -1966,10 +1973,13 @@ header {
 
 .contact_wrapper {
   position: relative;
-  padding: 100px 25px 0px;
+  padding: 100px 25px 50px;
   z-index: 5; }
   .contact_wrapper .section_title {
     margin-bottom: 10px; }
+  .contact_wrapper .page_signup_wrap {
+    padding: 0;
+    width: auto; }
 
 .contact_packages_wrapper {
   margin-top: 25px;
@@ -2028,8 +2038,51 @@ header {
     color: #F3DB43;
     transition: 0.4s; }
 
+@media screen and (min-width: 500px) {
+  .contact_wrapper {
+    padding: 100px 45px 50px; }
+    .contact_wrapper .page_signup_wrap {
+      padding: 31px;
+      width: 400px; } }
+@media screen and (min-width: 800px) {
+  .contact_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 150px; }
+    .contact_wrapper #signupnow_section {
+      width: 50%;
+      max-width: 400px;
+      padding-right: 25px; }
+    .contact_wrapper #form_section {
+      width: 50%; }
+    .contact_wrapper .contact_info {
+      width: calc(400px + 50%);
+      border-bottom: none;
+      border-bottom: 1px solid #75736f;
+      margin-bottom: 60px; }
+    .contact_wrapper .page_signup_wrap {
+      width: auto;
+      max-width: 400px; } }
+@media screen and (min-width: 1000px) {
+  .contact_wrapper .contact_info {
+    width: calc(500px + 50%); }
+  .contact_wrapper #signupnow_section {
+    max-width: 500px; }
+  .contact_wrapper .page_signup_wrap {
+    max-width: 500px; }
+  .contact_wrapper .contact_packages_wrapper {
+    display: flex;
+    flex-wrap: wrap; }
+  .contact_wrapper .contact_package {
+    width: 50%;
+    padding-right: 25px; } }
 #colophon {
-  position: relative;
-  z-index: 99; }
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black; }
 
 /*# sourceMappingURL=style.css.map */

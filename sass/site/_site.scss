@@ -16,6 +16,12 @@ html, body {
     background-color: $color_darkgrey;
 }
 
+body {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 50px;
+}
+
 /*--------------------------------------------------------------
 ## Buttons
 --------------------------------------------------------------*/

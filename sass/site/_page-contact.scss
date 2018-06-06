@@ -22,11 +22,16 @@
 
 .contact_wrapper {
     position: relative;
-    padding: 100px 25px 0px;
+    padding: 100px 25px 50px;
     z-index: 5;
     
     .section_title {
         margin-bottom: 10px;
+    }
+    
+    .page_signup_wrap {
+        padding: 0;
+        width: auto;
     }
 }
 
@@ -114,4 +119,78 @@
         transition: 0.4s;
     }
 }
+
+@media screen and (min-width: 500px) {
+    .contact_wrapper {
+        padding: 100px 45px 50px;
+        
+        .page_signup_wrap {
+            padding: 31px;
+            width: 400px;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .contact_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 150px;
+        
+        #signupnow_section {
+            width: 50%;
+            max-width: 400px;
+            padding-right: 25px;
+        }
+        
+        #form_section {
+            width: 50%;
+        }
+        
+        .contact_info {
+//            order: 3;
+            width: calc(400px + 50%);
+            border-bottom: none;
+            border-bottom: 1px solid #75736f;
+            margin-bottom: 60px;
+//            padding-top: 30px;
+        }
+        
+        .page_signup_wrap {
+            width: auto;
+            max-width: 400px;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .contact_wrapper {
+        
+        .contact_info {
+            width: calc(500px + 50%);
+        }
+        
+        #signupnow_section {
+            max-width: 500px;
+        }
+        
+        .page_signup_wrap { 
+            max-width: 500px;   
+        }
+    
+        .contact_packages_wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .contact_package {
+            width: 50%;
+            padding-right: 25px;
+        }
+        
+    }
+}
+
+
 

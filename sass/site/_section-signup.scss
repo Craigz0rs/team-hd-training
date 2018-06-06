@@ -17,7 +17,8 @@
         left: 0;
         background-color: rgba(32,32,32,0.85);
     }
-    
+}
+
     .page_signup_wrap {
         width: 400px;
         margin: auto;
@@ -25,15 +26,13 @@
         border-left: 3px solid $color_yellow;
         z-index: 2;
     }
-}
 
 @media screen and (max-width: 499px) {
     .page_signup {
         padding: 20px 0;
-    
-        .page_signup_wrap {
-            border-left: none;
-            padding: 25px;
-        }
+    }
+    .page_signup_wrap {
+        border-left: none;
+        padding: 25px;
     }
 }
