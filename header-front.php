@@ -73,7 +73,7 @@
                 <!-- .site-branding -->
 
                 <nav id="site-navigation" class="main-navigation">
-                    <button class="menu-toggle button_nav" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+                    <button class="menu-toggle button_nav" aria-controls="primary-menu" aria-expanded="false"><span>MENU</span></button>
                     <?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',

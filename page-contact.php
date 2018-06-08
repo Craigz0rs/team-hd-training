@@ -54,7 +54,7 @@ if (function_exists('get_field')) {
                         <?php } ?>
                     </div>
                 <div id="signupnow_section">
-                    <h1 class="section_title">
+                    <h1 class="section_title" id="signup">
                         <?php if($contact_signup_title){ echo $contact_signup_title; } ?>
                     </h1>
                     <p class="page_signup_text" id="contact_signup_pitch">
