@@ -14,9 +14,12 @@ function screenSize() {
         $(".slider_image img").css("height", vh);
         $(".header_overlay_2").css("height", vhoverlay2);
         $(".header_overlay_3").css("height", vhoverlay3);
+        $("body").css("min-height", vh);
     }
 }
 
 $(document).ready(screenSize);
 $(window).on("orientationchange", screenSize);
+
+
 

@@ -54,6 +54,30 @@ body {
     color: black;
 }
 
+.button2 {
+    display: block;
+    border: 2px solid $color_yellow;
+    width: 200px;
+    min-height: 45px;
+//    margin-top: 25px;
+    margin: 0 auto;
+    color: $color_button;
+    background-color: transparent;
+    text-decoration: none;
+    font-family: $font_button;
+    font-weight: 700;
+    font-size: $font_button_size;
+    line-height: 45px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.button2:hover,
+.button2:active {
+    background-color: rgba(255,255,255,0.89);
+    color: black;
+}
+
 .button_nav {
     position: absolute;
     right: 0;

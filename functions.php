@@ -117,6 +117,16 @@ function team_hd_training_widgets_init() {
 add_action( 'widgets_init', 'team_hd_training_widgets_init' );
 
 
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function new_excerpt_more($more) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
 
 /*Plugin Name: HD Training Theme Custom Post Types
 Description: Add Client Profile CPT and taxonomy
@@ -219,9 +229,6 @@ function hdtraining_rewrite_flush() {
  add_action( 'init', 'hdtraining_register_taxonomies', 0 );
 
 
-
-
-
 /**
  * Enqueue scripts and styles.
  */
@@ -264,6 +271,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-
-

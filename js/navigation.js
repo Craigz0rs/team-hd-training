@@ -158,3 +158,7 @@ $(document).ready(function(){
     });
 });
 
+
+$(document).ready(function() {
+    document.getElementsByClassName('search-submit')[0].value = "";
+});

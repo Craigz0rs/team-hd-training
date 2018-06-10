@@ -1,0 +1,144 @@
+.widget-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    section {
+        background-color: rgba(0,0,0,0.4);
+        width: 100%;
+    }
+}
+
+.widget-title {
+    margin: 0;
+    padding: 10px 0 10px 15px;
+    color: $color_heading;
+    font-family: $font_heading;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 27px;    
+}
+
+#search-2 .search-form {
+    position: relative;
+    padding: 10px 25px 25px;
+}
+
+#search-2 .search-submit {
+    position: absolute;
+    top: 0;
+    bottom: 15px;
+    right: 30px;
+    margin: auto;
+    height: 2.5em;
+    font-family: fontawesome;
+    font-size: 20px;
+    color: #6F6F6F;
+    background-color: transparent;
+    border: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.rpwwt-widget ul {
+    padding-bottom: 20px;
+    
+    li {
+        overflow: hidden;
+        margin: 0 !important;
+        padding: 5px 0;
+        
+        a {
+            text-decoration: none;
+        }
+    }
+    
+    li:first-of-type {
+        padding-top: 0;
+    }
+}
+
+#rpwwt-recent-posts-widget-with-thumbnails-2 img {
+    margin: 0;
+    padding-right: 10px;
+    height: 100px !important;
+    width: 120px !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+.rpwwt-post-title {
+    font-weight: 700;
+    color: white;
+    transition: 0.4s;
+}
+
+.rpwwt-widget ul {
+    li:hover,
+    li:focus,
+    li:active {
+        .rpwwt-post-title {
+            color: $color_yellow;
+            transition: 0.4s;
+        }
+    }
+}
+
+.rpwwt-post-excerpt {
+    color: $color_text;
+    line-height: 16px;
+    padding: 10px 10px 0 0;
+    
+    a {
+        color: $color_yellow;
+        font-weight: 700;
+    }
+}
+
+.widget_categories ul {
+    margin: 0;
+    padding: 0 25px 25px 25px;
+    list-style-type: none;
+    color: $color_text;
+    
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        padding-right: 5px;
+        transition: 0.4s;
+    }
+    
+    a:hover,
+    a:active,
+    a:focus {
+        color: $color_yellow;
+        transition: 0.4s;
+    }
+}
+
+.tagcloud {
+    padding: 0 25px 25px;
+    
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px !important;
+        font-weight: 700;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        color: $color_yellow;
+        transition: 0.4s;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    #categories-2,
+    #tag_cloud-2 {
+        width: calc(50% - 16px);
+    }
+}
+

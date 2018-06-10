@@ -37,6 +37,12 @@ textarea {
 	}
 }
 
+input[type="search"] {
+    padding-right: 43px;
+    line-height: 45px;
+    min-height: 45px;
+}
+
 select {
 	border: 1px solid $color__border-input;
 }

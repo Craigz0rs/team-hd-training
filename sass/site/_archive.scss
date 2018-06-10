@@ -1,0 +1,148 @@
+.page_main_wrapper {
+    padding: 0 10px;
+}
+
+.article_media {
+    background-color: rgba(0,0,0,0.4);
+    overflow: hidden;
+    
+    figure {
+        margin: 0;
+        line-height: 0;
+        
+        img {
+            height: auto;
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+.article_preview_content_wrap {
+    background-color: rgba(0,0,0,0.4);
+    
+    h2 {
+        margin: 0;
+        padding: 20px 10px;
+        text-align: center;
+        
+        a {
+            text-decoration: none;
+            transition: 0.4s;
+        }
+        
+        a:hover,
+        a:focus,
+        a:active {
+            color: white;
+            transition: 0.4s;
+        }
+    }
+}
+
+.article_excerpt {
+    padding: 0 15px;
+}
+
+.article_read_more {
+    margin-top: 20px;
+}
+
+
+.article_footer {
+    display: block;
+    min-height: 75px;
+    padding: 25px 10px 15px;
+    font-family: $font_main;
+    color: $color_text;
+}
+
+.entry-meta {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #75736f;
+    padding-top: 11px;
+    
+    svg {
+        color: white;
+    }
+}
+
+.article_meta_list {
+    min-width: 190px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.article_category_list {
+
+    a {
+        color: $color_text;
+        text-decoration: none;
+        transition: 0.4s;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        color: $color_yellow;
+        transition: 0.4s;
+    }
+}
+
+.article_category_list ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.article_meta_list li,
+.article_category_list li {
+    display: inline-block;
+}
+
+.article_meta_list li {
+    margin-right: 20px;
+}
+
+.article_category_list li {
+    margin-right: 5px;
+}
+
+.post-categories {
+    display: inline-block;
+}
+
+.post-categories a {
+    text-decoration: none;
+    padding: 3px;
+    color: $color_text;
+    transition: 0.2s;
+}
+
+.post-categories a:hover,
+.post-categories a:focus {
+
+}
+
+.article_preview_tile {
+    .article_media img {
+        transform: scale(1);
+        transition: 3s ease;
+    }
+}
+.article_preview_tile:hover {
+    .article_media img {
+        transform: scale(1.1);
+        transition: 3s ease;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .page_main_wrapper {
+        padding: 0 30px;
+    }
+}
