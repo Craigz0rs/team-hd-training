@@ -71,8 +71,8 @@ if (function_exists('get_field')) {
                 pauseOnAction: true
             });
         });
-        </script>
-            <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/iosviewport.js"></script>
     <?php } ?>
+                    </script>
+            <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/iosviewport.js"></script>
 </body>
 </html>

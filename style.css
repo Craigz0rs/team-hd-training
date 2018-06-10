@@ -477,6 +477,7 @@ input[type="color"],
 textarea {
   display: block;
   border: 2px solid white;
+  border-radius: 0px !important;
   min-height: 63px;
   width: 100%;
   margin-top: 0px;
@@ -2006,7 +2007,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url("images/signup_background.jpg");
   background-position: center;
   background-size: cover;
@@ -2267,16 +2268,14 @@ header {
   transition: 0.2s;
   cursor: pointer; }
 
-.rpwwt-widget ul {
-  padding-bottom: 20px; }
-  .rpwwt-widget ul li {
-    overflow: hidden;
-    margin: 0 !important;
-    padding: 5px 0; }
-    .rpwwt-widget ul li a {
-      text-decoration: none; }
-  .rpwwt-widget ul li:first-of-type {
-    padding-top: 0; }
+.rpwwt-widget ul li {
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 5px 0; }
+  .rpwwt-widget ul li a {
+    text-decoration: none; }
+.rpwwt-widget ul li:first-of-type {
+  padding-top: 0; }
 
 #rpwwt-recent-posts-widget-with-thumbnails-2 img {
   margin: 0;
