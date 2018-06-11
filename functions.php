@@ -180,6 +180,7 @@ function hdtraining_register_custom_post_types() {
             'menu_position'      => 5,
             'supports'           => array( 'title', 'thumbnail', 'editor' ),
             'menu_icon'          => 'dashicons-thumbs-up',
+            'exclude_from_search'=> true,
 	);
 
 	register_post_type( 'client_profile', $args );
@@ -227,6 +228,17 @@ function hdtraining_rewrite_flush() {
 
  }
  add_action( 'init', 'hdtraining_register_taxonomies', 0 );
+
+//Exclude pages from WordPress Search
+if (!is_admin()) {
+function wpb_search_filter($query) {
+if ($query->is_search) {
+$query->set('post_type', 'post');
+}
+return $query;
+}
+add_filter('pre_get_posts','wpb_search_filter');
+}
 
 
 /**

@@ -25,8 +25,8 @@ if (function_exists('get_field')) {
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-            <section id="packages_hero" class="hero_section">
-                <div class="page_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
+            <section id="index_hero" class="hero_section">
+                <div class="page_hero_container primary_news_hero_container news_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
                     <?php if($hero_title || $hero_caption) { ?>}
                     <div class="hero_text_overlay">
                         <div class="hero_text_wrap">

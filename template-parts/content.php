@@ -12,24 +12,24 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+//		if ( is_singular() ) :
+//			the_title( '<h1 class="entry-title">', '</h1>' );
+//		else :
+//			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+//		endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta">
-				<?php
-				team_hd_training_posted_on();
-				team_hd_training_posted_by();
-				?>
-			</div><!-- .entry-meta -->
+            <div class="entry-meta">
+                <ul class="article_meta_list">
+                    <li><i class="far fa-user"></i> by <?php echo get_the_author('display_name'); ?></li>
+                    <li><i class="far fa-calendar"></i> on  <?php echo get_the_date(); ?></li>
+                </ul>
+            </div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php team_hd_training_post_thumbnail(); ?>
+
 
 	<div class="entry-content">
 		<?php
@@ -53,7 +53,19 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php team_hd_training_entry_footer(); ?>
+	<footer class="entry-footer article_footer">
+        <div class="entry-meta entry_meta_single_footer">
+                <ul class="article_meta_list">
+                    <li><i class="far fa-user"></i> by <?php echo get_the_author('display_name'); ?></li>
+                    <li><i class="far fa-calendar"></i> on  <?php echo get_the_date(); ?></li>
+                </ul>
+                <div class="article_category_list">
+                    <strong>Posted in: </strong> <?php echo get_the_category_list('', ' '); ?>
+                </div>
+                <div class="article_category_list">
+                    <i class="fas fa-tags"></i> <?php echo get_the_tag_list('', ' '); ?>
+                </div>
+        </div><!-- .entry-meta -->
+<!--		<?php team_hd_training_entry_footer(); ?>-->
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
