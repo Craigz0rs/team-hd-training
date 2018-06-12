@@ -12,47 +12,19 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
+            <div id="contact_background">
+                <div class="contact_overlay"></div>
+            </div>
+            <div class="contact_wrapper page_404_wrapper">
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'team_hd_training' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'team_hd_training' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'team_hd_training' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$team_hd_training_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'team_hd_training' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$team_hd_training_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
+                <div class="wrapper_404">
+                    <header class="page-header">
+                        <h1 class="section_title" id="404_error">404 ERROR</h1>
+                        <p class=""><?php esc_html_e( 'Page not found, please try again.', 'team_hd_training' ); ?></p>
+                    </header><!-- .page-header -->
+                </div>
 			</section><!-- .error-404 -->
-
+            </div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

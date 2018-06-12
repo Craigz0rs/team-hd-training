@@ -240,6 +240,20 @@ return $query;
 add_filter('pre_get_posts','wpb_search_filter');
 }
 
+//Removes 'Category:' prefix from category archives
+function prefix_category_title( $title ) {
+    if ( is_category() ) {
+        $title = single_cat_title( '<i class="far fa-newspaper"></i> ', false );
+    }
+    
+    
+    else if ( is_tag() ) {
+        $title = single_tag_title( '<i class="fas fa-tag"></i> ', false );
+    }
+    
+    return $title;
+}
+add_filter( 'get_the_archive_title', 'prefix_category_title' );
 
 /**
  * Enqueue scripts and styles.

@@ -11,6 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+        
 		<?php
 //		if ( is_singular() ) :
 //			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -18,9 +19,13 @@
 //			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 //		endif;
 
+
 		if ( 'post' === get_post_type() ) :
 			?>
-            <div class="entry-meta">
+            <h1 class="page-title section_title">
+				<?php echo get_the_title(); ?>
+            </h1>
+            <div class="entry-meta entry-meta-top">
                 <ul class="article_meta_list">
                     <li><i class="far fa-user"></i> by <?php echo get_the_author('display_name'); ?></li>
                     <li><i class="far fa-calendar"></i> on  <?php echo get_the_date(); ?></li>
@@ -60,7 +65,7 @@
                     <li><i class="far fa-calendar"></i> on  <?php echo get_the_date(); ?></li>
                 </ul>
                 <div class="article_category_list">
-                    <strong>Posted in: </strong> <?php echo get_the_category_list('', ' '); ?>
+                    <i class="far fa-newspaper"></i> in <?php echo get_the_category_list('', ' '); ?>
                 </div>
                 <div class="article_category_list">
                     <i class="fas fa-tags"></i> <?php echo get_the_tag_list('', ' '); ?>

@@ -27,18 +27,11 @@ if (function_exists('get_field')) {
 		<main id="main" class="site-main">
             <section id="index_hero" class="hero_section">
                 <div class="page_hero_container primary_news_hero_container news_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
-                    <?php if($hero_title || $hero_caption) { ?>}
                     <div class="hero_text_overlay">
-                        <div class="hero_text_wrap">
-                            <h1 class="hero_title">
-                                <?php echo $hero_title; ?>
-                            </h1>
-                            <p class="hero_caption">
-                                <?php echo $hero_caption ?>
-                            </p>
+                        <div class="news_hero_title">
+                            <h1 class="section_title">TEAM HD NEWS</h1>
                         </div>
                     </div>
-                    <?php } ?>
                     <div class="header_overlay_1"></div>
                     <div class="header_overlay_1_svg">
                         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1690 173.74"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="845" y1="174.05" x2="845" y2="0.31" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#202020"/><stop offset="0.32" stop-color="#202020" stop-opacity="0.9"/><stop offset="1" stop-color="#202020" stop-opacity="0.9"/></linearGradient></defs><title>Untitled-2</title><polygon class="cls-1" points="1690 173.74 0 173.74 0 0 1690 173.74"/></svg>

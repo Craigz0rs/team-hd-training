@@ -76,7 +76,7 @@ header {
 
 .header_overlay_1 {
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     @include gradient_header_overlay_1();
     height: 150px;
     width: 100%;

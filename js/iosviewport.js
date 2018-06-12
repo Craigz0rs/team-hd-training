@@ -9,6 +9,7 @@ function screenSize() {
         var vhoverlay3 = vh * 0.6;
         var herovh = vh * 0.8;
         var contactvh = vh * 1.1;
+        var newsvh = vh * 0.65;
 
         document.getElementById('masthead').classList.remove("header_standard_size");
 //        $("#masthead").css("height", vh);
@@ -19,6 +20,7 @@ function screenSize() {
         $("body").css("min-height", vh);
         $(".page_hero_container").css("height", herovh);
         $("#contact_background").css("height", contactvh);
+        $(".news_hero_container").css("height", newsvh);
     }
 }
 

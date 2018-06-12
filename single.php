@@ -33,7 +33,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
             <section id="packages_hero" class="hero_section">
-                <div class="page_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
+                <div class="page_hero_container news_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
                     <?php if($hero_title || $hero_caption) { ?>}
                     <div class="hero_text_overlay">
                         <div class="hero_text_wrap">
@@ -58,11 +58,13 @@ get_header();
                     </div>
                 </div>
             </section>
+<!--
 			<header class="page-header news_archive_title">
 				<h1 class="page-title section_title">
 					<?php echo $thetitle; ?>
 				</h1>
-			</header><!-- .page-header -->
+			</header> .page-header 
+-->
             <div id="single_wrapper" class="page_main_wrapper">
                 <div class="news_tile_wrap">
 		<?php
