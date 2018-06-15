@@ -183,7 +183,8 @@ if (function_exists('get_field')) {
             <div class="shop_news_wrap">
            <section id="shop_section" class="home_link_section">
                 <a href="http://heavydapparel.com">
-                    <div class="home_link_section" style="background-image: url('<?php echo $shop_image_url; ?>')">
+                    <div class="home_link_section">
+                        <div class="home_link_image" style="background-image: url('<?php echo $shop_image_url; ?>')"></div>
                         <div class="shop_news_overlay"></div>
                         <div class="shop_text home_link_section_text">
                             <h1><?php echo $shop_title; ?></h1>
@@ -200,7 +201,8 @@ if (function_exists('get_field')) {
             <!-- #shop_section -->
             <section id="news_section" class="home_link_section">
                 <a href="<?php echo get_home_url(); ?>/news">
-                    <div class="home_link_section" style="background-image: url('<?php echo $news_image_url; ?>')">
+                    <div class="home_link_section">
+                        <div class="home_link_image" style="background-image: url('<?php echo $news_image_url; ?>')"></div>
                         <div class="shop_news_overlay"></div>
                         <div class="news_text home_link_section_text">
                             <h1><?php echo $news_title; ?></h1>

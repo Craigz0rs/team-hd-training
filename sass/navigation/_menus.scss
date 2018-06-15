@@ -63,6 +63,14 @@
                 font-weight:700; 
                 color: $color_navtext;
                 font-size: 17px;
+                transition: 0.4s;
+            }
+            
+            a:hover,
+            a:focus,
+            a:active {
+                color: $color_yellow;
+                transition: 0.4s;
             }
         }
     }
@@ -150,7 +158,9 @@
 		display: none;
 	}
 	.main-navigation ul {
-//		display: block;
+        .current-menu-item a {
+            border-bottom: 3px solid $color_yellow;
+        }
 	}
 }
 

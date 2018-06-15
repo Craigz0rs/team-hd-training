@@ -27,6 +27,18 @@
         z-index: 2;
     }
 
+.packages-input textarea {
+    height: 69px;
+    line-height: 19px;
+    padding-top: 23px;
+}
+
+.about-you-input textarea {
+    height: 200px;
+    line-height: 19px;
+    padding-top: 23px;    
+}
+
 @media screen and (max-width: 499px) {
     .page_signup {
         padding: 20px 0;

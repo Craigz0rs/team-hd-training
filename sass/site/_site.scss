@@ -174,9 +174,7 @@ p {
         
         .hero_text_wrap {
             position: absolute;
-            top: 25%;
-//            bottom: 65%;
-//            transform: translateY(50%);
+            top: 20%;
             left: 25px;
             max-width: 335px;
             padding: 10px 25px;
@@ -207,5 +205,17 @@ p {
 @media screen and (max-height: 400px) {
     .page_hero_container {
         height: 100vh;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .page_hero_container .hero_text_overlay .hero_text_wrap {
+       top: 25%;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .page_hero_container .hero_text_overlay .hero_text_wrap {
+       left: 10%; 
     }
 }
