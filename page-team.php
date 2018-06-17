@@ -112,7 +112,7 @@ if (function_exists('get_field')) {
                 ?>
 
 
-                    <div class="team_profile <?php echo $profile_class ?>">
+                    <div id="profile_<?php $counter = $count - 1; echo $counter; ?>"class="team_profile <?php echo $profile_class ?>">
 
                         <div class="profile_image">
                             <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" title="<?php echo $image_title; ?>" />

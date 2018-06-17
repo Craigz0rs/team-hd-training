@@ -67,6 +67,7 @@ if (function_exists('get_field')) {
                         <a class="button1" href="<?php echo get_home_url(); ?>/packages#packages">SEE COACHING PACKAGES</a>
                     </div>
                 </div>
+                <!-- .about_section_text -->
                 <div id="about_features" class="selling_features">
                     <div class="features_background"></div>
                     <?php if (function_exists('get_field')) {                   
@@ -74,20 +75,13 @@ if (function_exists('get_field')) {
                                 while (have_rows('selling_points')): the_row(); 
                                     if(get_sub_field('selling_point_icon')) { 
                                         $icon_url = get_sub_field('selling_point_icon');
-//                                        $selling_point_icon = get_sub_field('selling_point_icon'); 
-//
-//                                        $icon_title = $selling_point_icon['title'];
-//                                        $icon_description = $selling_point_icon['description'];
-//                                        $icon_caption = $selling_point_icon['caption'];
-//
-//                                        $icon_url = $selling_point_icon['url'];
-//                                        $icon_alt = $selling_point_icon['alt'];
                                         }          
                                     if(get_sub_field('selling_point_name')) { $selling_point_name = get_sub_field('selling_point_name'); }
                                     if(get_sub_field('selling_point_content')) { $selling_point_content = get_sub_field('selling_point_content'); } ?>
                     <div class="about_feature selling_feature">
-                        <div class="feature_icon"><?php echo $icon_url; ?></div>
-<!--                        <img src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />-->
+                        <div class="feature_icon">
+                            <?php echo $icon_url; ?>
+                        </div>
                         <h2 class="section_title">
                             <?php echo $selling_point_name; ?>
                         </h2>
@@ -95,6 +89,7 @@ if (function_exists('get_field')) {
                             <?php echo $selling_point_content; ?>
                         </p>
                     </div>
+                    <!-- .about_feature -->
                     <?php endwhile; } } ?>
                 </div>
                 <!-- #about_features -->
@@ -113,20 +108,16 @@ if (function_exists('get_field')) {
                                         if(get_sub_field('profile_image')) { 
                                             $profile_image = get_sub_field('profile_image'); 
 
-                                            $profile_image_title = $profile_image['title'];
-                                            $profile_image_description = $profile_image['description'];
-                                            $profile_image_caption = $profile_image['caption'];
-
                                             $profile_image_url = $profile_image['url'];
                                             $profile_image_alt = $profile_image['alt'];
                                             }          
                                         if(get_sub_field('profile_name')) { $profile_name = get_sub_field('profile_name'); }
                                         if(get_sub_field('profile_titles')) { $profile_titles = get_sub_field('profile_titles'); } ?>
-                    
-                        <div class="home_team_profile">
-<!--                            <a href="<?php echo get_home_url(); ?>/team">-->
+
+                    <div class="home_team_profile" id="profile_<?php echo $counter; ?>">
+                        <a href="<?php echo get_home_url(); ?>/team#profile_<?php echo $counter; ?>" class="home_profile_anchor">
+
                             <img src="<?php echo $profile_image_url; ?>" alt="<?php echo $profile_image_alt; ?>" />
-<!--                                 </a>-->
                             <?php if ($counter == 0 || $counter == 1) {
                                             $overlay_class = "_top";
                                         } else if ($counter == 2 || $counter == 3 ) {
@@ -151,9 +142,11 @@ if (function_exists('get_field')) {
                                 <div class="home_profile_overlay2">
                                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 163.33 163.33"><defs><style>.cls-7{fill:#f3db43;fill-opacity:0.58;}</style></defs><polygon class="cls-7" points="13.9 163.33 0 163.33 163.33 0 163.23 14 13.9 163.33"/></svg>
                                 </div>
-                            </div>
-                        </div>
-                   
+                            </div><!-- .home_profile_text -->
+                                </a>
+                    </div>
+                    <!-- .home_team_profile -->
+
                     <?php $counter ++;  endwhile; } endwhile; } } ?>
                 </div>
                 <!-- #home_team_profiles -->
@@ -166,9 +159,9 @@ if (function_exists('get_field')) {
                             <p>
                                 <?php echo $team_section_content; ?>
                             </p>
-                             <div class="link_button">
+                            <div class="link_button">
                                 <a class="button1" href="<?php echo get_home_url(); ?>/team">MEET THE TEAM</a>
-                            </div>                           
+                            </div>
                         </div>
                     </div>
                     <div class="team_section_overlay1">
@@ -178,46 +171,56 @@ if (function_exists('get_field')) {
                         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291 163.33"><defs><style>.cls-11{fill:#E7CD35;fill-opacity:1;}</style></defs><polygon class="cls-11" points="24.77 163.33 0 163.33 291 0 290.82 14 24.77 163.33"/></svg>
                     </div>
                 </div>
+                <!-- #team_section_text -->
             </section>
             <!-- #home_team_section -->
             <div class="shop_news_wrap">
-           <section id="shop_section" class="home_link_section">
-                <a href="http://heavydapparel.com">
-                    <div class="home_link_section">
-                        <div class="home_link_image" style="background-image: url('<?php echo $shop_image_url; ?>')"></div>
-                        <div class="shop_news_overlay"></div>
-                        <div class="shop_text home_link_section_text">
-                            <h1><?php echo $shop_title; ?></h1>
-                            <?php if ($shop_caption) { ?>
-                                <p class="home_link_caption"><?php echo $shop_caption; ?></p>
-                            <?php } ?>
-                            <div class="link_button">
-                                <p class="button1">SHOP NOW</p>
+                <section id="shop_section" class="home_link_section">
+                    <a href="http://heavydapparel.com">
+                        <div class="home_link_section">
+                            <div class="home_link_image" style="background-image: url('<?php echo $shop_image_url; ?>')"></div>
+                            <div class="shop_news_overlay"></div>
+                            <div class="shop_text home_link_section_text">
+                                <h1>
+                                    <?php echo $shop_title; ?>
+                                </h1>
+                                <?php if ($shop_caption) { ?>
+                                <p class="home_link_caption">
+                                    <?php echo $shop_caption; ?>
+                                </p>
+                                <?php } ?>
+                                <div class="link_button">
+                                    <p class="button1">SHOP NOW</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </section>
-            <!-- #shop_section -->
-            <section id="news_section" class="home_link_section">
-                <a href="<?php echo get_home_url(); ?>/news">
-                    <div class="home_link_section">
-                        <div class="home_link_image" style="background-image: url('<?php echo $news_image_url; ?>')"></div>
-                        <div class="shop_news_overlay"></div>
-                        <div class="news_text home_link_section_text">
-                            <h1><?php echo $news_title; ?></h1>
-                            <?php if ($news_caption) { ?>
-                                <p class="home_link_caption"><?php echo $news_caption; ?></p>
-                            <?php } ?>
-                            <div class="link_button">
-                                <p class="button1">SEE LATEST</p>
+                    </a>
+                </section>
+                <!-- #shop_section -->
+                <section id="news_section" class="home_link_section">
+                    <a href="<?php echo get_home_url(); ?>/news">
+                        <div class="home_link_section">
+                            <div class="home_link_image" style="background-image: url('<?php echo $news_image_url; ?>')"></div>
+                            <div class="shop_news_overlay"></div>
+                            <div class="news_text home_link_section_text">
+                                <h1>
+                                    <?php echo $news_title; ?>
+                                </h1>
+                                <?php if ($news_caption) { ?>
+                                <p class="home_link_caption">
+                                    <?php echo $news_caption; ?>
+                                </p>
+                                <?php } ?>
+                                <div class="link_button">
+                                    <p class="button1">SEE LATEST</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </section>
-            <!-- #news_section -->
+                    </a>
+                </section>
+                <!-- #news_section -->
             </div>
+            <!-- .shop_news_wrap -->
             <section id="home_client_spotlight" class="featured_client">
                 <?php
                       $args = array(
@@ -258,97 +261,63 @@ if (function_exists('get_field')) {
                             if(get_field('before_pic')) { 
                                 $before_pic = get_field('before_pic'); 
 
-                                $before_pic_title = $before_pic['title'];
-                                $before_pic_description = $before_pic['description'];
-                                $before_pic_caption = $before_pic['caption'];
-
                                 $before_pic_url = $before_pic['url'];
                                 $before_pic_alt = $before_pic['alt'];
-                            }
-                            if(get_field('after_pic')) { 
-                                $after_pic = get_field('after_pic'); 
-
-                                $after_pic_title = $after_pic['title'];
-                                $after_pic_description = $after_pic['description'];
-                                $after_pic_caption = $after_pic['caption'];
-
-                                $after_pic_url = $after_pic['url'];
-                                $after_pic_alt = $after_pic['alt'];
-                            }     
+                            }   
                         }
                 ?>
 
-<div class="featured_client_text">
-            <div class="text_overlay text_overlay_left">
-                    <div class="text_overlay_wrap">
-                        <div class="featured_client_info">
-                            <h1 class="section_title">CLIENT SPOTLIGHT</h1>
-                            <?php if ($client_name) { ?>
-                            <h2 class="client_name">
-                                <?php echo $client_name; ?>
-                            </h2>
-                            <div class="client_stats_wrap">
-                            <?php }
+                    <div class="featured_client_text">
+                        <div class="text_overlay text_overlay_left">
+                            <div class="text_overlay_wrap">
+                                <div class="featured_client_info">
+                                    <h1 class="section_title">CLIENT SPOTLIGHT</h1>
+                                    <?php if ($client_name) { ?>
+                                    <h2 class="client_name">
+                                        <?php echo $client_name; ?>
+                                    </h2>
+                                    <div class="client_stats_wrap">
+                                        <?php }
                     if ($client_age) { ?>
-                            <p class="client_age"><strong>Age:</strong>
-                                <?php echo $client_age; ?>
-                            </p>
-                            <?php }
+                                        <p class="client_age"><strong>Age:</strong>
+                                            <?php echo $client_age; ?>
+                                        </p>
+                                        <?php }
                     if ($client_height) { ?>
-                            <p class="client_height"><strong>Height:</strong>
-                                <?php echo $client_height; ?>
-                            </p>
-<!--
-                            <?php }
-                    if ($client_program) { ?>
-                            <p class="client_program"><strong>Program:</strong>
-                                <?php echo $client_program; ?>
-                            </p>
-                            <?php }
-                    if ($before_weight) { ?>
-                            <p class="before_weight">
-                                <?php echo $before_weight; ?>
-                            </p>
-                            <?php }
-                    if ($after_weight) { ?>
-                            <p class="after_weight">
-                                <?php echo $after_weight; ?>
-                            </p>
--->
-                            <?php } ?>
-                            </div>
-                            <?php
+                                        <p class="client_height"><strong>Height:</strong>
+                                            <?php echo $client_height; ?>
+                                        </p>
+
+                                        <?php } ?>
+                                    </div>
+                                    <?php
                             
                     if ($client_bio) { ?>
-                            <p class="client_bio">
-                                <?php echo $client_bio; ?>
-                            </p>
+                                        <p class="client_bio">
+                                            <?php echo $client_bio; ?>
+                                        </p>
+                                        <?php } ?>
 
-<!--
-                            <?php }
-                    if ($client_instagram) { ?> <a href="<?php echo $client_instagram; ?>" class="client_instagram">Insta Link</a>
+                                </div>
+                                <div class="featured_client_link link_button">
+                                    <a class="button1" href="<?php echo get_home_url(); ?>/client-spotlight">SEE MORE CLIENTS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured_client_images">
+                        <div class="featured_client_before">
+                            <?php if($before_pic) { ?>
+                            <img src="<?php echo $before_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
                             <?php } ?>
--->
                         </div>
-                        <div class="featured_client_link link_button">
-                            <a class="button1" href="<?php echo get_home_url(); ?>/client-spotlight">SEE MORE CLIENTS</a>
+                        <div class="featured_client_after">
+                            <?php if($after_pic) { ?>
+                            <img src="<?php echo $after_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
+                            <?php } ?>
                         </div>
-                                        </div>
-                </div>
-                </div>
-                        <div class="featured_client_images">
-                            <div class="featured_client_before">
-                                <?php if($before_pic) { ?>
-                                <img src="<?php echo $before_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
-                                <?php } ?>
-                            </div>
-                            <div class="featured_client_after">
-                                <?php if($after_pic) { ?>
-                                <img src="<?php echo $after_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <?php         
+                    </div>
+                    <?php         
                     endwhile;
                     wp_reset_postdata();
                 ?>
