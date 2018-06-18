@@ -17,6 +17,8 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="<?php echo get_bloginfo( 'template_directory' ); ?>/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="<?php echo get_bloginfo( 'template_directory' ); ?>/favicon-16x16.png" sizes="16x16" />
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:600,700|Barlow+Semi+Condensed:400,700" rel="stylesheet">
         <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
