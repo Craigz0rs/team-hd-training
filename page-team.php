@@ -33,7 +33,7 @@ if (function_exists('get_field')) {
         <main id="main" class="site-main">
             <section id="team_hero" class="hero_section">
                 <div class="page_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
-                    <?php if($hero_title || $hero_caption) { ?>}
+                    <?php if($hero_title || $hero_caption) { ?>
                     <div class="hero_text_overlay">
                         <div class="hero_text_wrap">
                             <h1 class="hero_title">

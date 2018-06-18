@@ -33,7 +33,7 @@ if (function_exists('get_field')) {
         <main id="main" class="site-main">
             <section id="client_spotlight_hero" class="hero_section">
                 <div class="page_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
-                    <?php if($hero_title || $hero_caption) { ?>}
+                    <?php if($hero_title || $hero_caption) { ?>
                     <div class="hero_text_overlay">
                         <div class="hero_text_wrap">
                             <h1 class="hero_title">
@@ -47,15 +47,16 @@ if (function_exists('get_field')) {
                     <?php } ?>
                     <div class="header_overlay_1"></div>
                     <div class="header_overlay_1_svg">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1690 173.74"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="845" y1="174.05" x2="845" y2="0.31" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#202020"/><stop offset="0.32" stop-color="#202020" stop-opacity="0.9"/><stop offset="1" stop-color="#202020" stop-opacity="0.9"/></linearGradient></defs><title>Untitled-2</title><polygon class="cls-1" points="1690 173.74 0 173.74 0 0 1690 173.74"/></svg>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1690 173.74"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="845" y1="174.05" x2="845" y2="0.31" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#202020"/><stop offset="0.32" stop-color="#202020" stop-opacity="0.9"/><stop offset="1" stop-color="#202020" stop-opacity="0.9"/></linearGradient></defs><polygon class="cls-1" points="1690 173.74 0 173.74 0 0 1690 173.74"/></svg>
                     </div>
                     <div class="header_overlay_2 iosheight">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.26 526.88"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><title>Untitled-1</title><polygon class="cls-2" points="315.09 46.6 26.66 526.88 0 524.67 315.26 0 315.09 46.6"/></svg>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.26 526.88"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><polygon class="cls-2" points="315.09 46.6 26.66 526.88 0 524.67 315.26 0 315.09 46.6"/></svg>
                     </div>
                     <div class="header_overlay_3 iosheight">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.1 477.9"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><title>Untitled-1</title><polygon class="cls-2" points="287.1 477.9 0 477.9 287.1 0 287.1 477.9"/></svg>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.1 477.9"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><polygon class="cls-2" points="287.1 477.9 0 477.9 287.1 0 287.1 477.9"/></svg>
                     </div>
                 </div>
+                <!-- .page_hero_container -->
             </section>
             <!-- #packages_hero -->
             <section id="featured_clients">
@@ -184,6 +185,7 @@ if (function_exists('get_field')) {
 
                                         <?php } ?>
                                 </div>
+                                <!-- .bio_wrap -->
                                 <?php
                     if ($client_instagram) { ?>
                                     <div class="profile_contact">
@@ -195,8 +197,11 @@ if (function_exists('get_field')) {
                                     </div>
                                     <?php } ?>
                             </div>
+                            <!-- .profile_content_wrapper -->
                         </div>
+                        <!-- .profile_wrap -->
                     </div>
+                    <!-- .featured_client_profile -->
                     <?php
                     $count ++;
                     endwhile;
@@ -267,53 +272,56 @@ if (function_exists('get_field')) {
 
                     <div class="client_tile">
                         <div class="client_tile_text">
-<!--                            <div class="client_tile_clip_overlay"></div>-->
+                            <!--                            <div class="client_tile_clip_overlay"></div>-->
                             <div class="client_tile_bio_text">
-                            <?php if ($client_name) { ?>
-                            <h2 class="client_name">
-                                <?php echo $client_name; ?>
-                            </h2>
-                            <?php } ?>
-                                    <?php if ($client_program) { ?>
-                                    <p class="profile_titles">
-                                        <?php echo $client_program; ?>
-                                    </p>
-                                    <?php } ?>
-                                    <ul class="profile_stats">
-                                        <?php
+                                <?php if ($client_name) { ?>
+                                <h2 class="client_name">
+                                    <?php echo $client_name; ?>
+                                </h2>
+                                <?php } ?>
+                                <?php if ($client_program) { ?>
+                                <p class="profile_titles">
+                                    <?php echo $client_program; ?>
+                                </p>
+                                <?php } ?>
+                                <ul class="profile_stats">
+                                    <?php
                                     if ($client_age) { ?>
-                                            <li class="client_age"><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $client_age; ?></span></li>
-                                            <?php }
+                                        <li class="client_age"><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $client_age; ?></span></li>
+                                        <?php }
                                     if ($client_height) { ?>
-                                            <li class="client_height"><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $client_height; ?></span></li>
-                                            <?php }
+                                        <li class="client_height"><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $client_height; ?></span></li>
+                                        <?php }
                                     if ($before_weight) { ?>
-                                            <li class="before_weight"><span class="stat_title">Weight Before: </span><span class="stat_answer">
+                                        <li class="before_weight"><span class="stat_title">Weight Before: </span><span class="stat_answer">
                                                 <?php echo $before_weight; ?></span>
-                                            </li>
-                                            <?php }
+                                        </li>
+                                        <?php }
                                     if ($after_weight) { ?>
-                                            <li class="after_weight"><span class="stat_title">Weight After: </span><span class="stat_answer">
+                                        <li class="after_weight"><span class="stat_title">Weight After: </span><span class="stat_answer">
                                                 <?php echo $after_weight; ?></span>
-                                            </li>
-                                            <?php } ?>
-                                    </ul> <?php
+                                        </li>
+                                        <?php } ?>
+                                </ul>
+                                <?php
                     if ($client_bio) { ?>
-                            <p class="client_bio">
-                                <?php echo $client_bio; ?>
-                            </p>
-                            <?php }
+                                    <p class="client_bio">
+                                        <?php echo $client_bio; ?>
+                                    </p>
+                                    <?php }
                     if ($client_instagram) { ?> <a href="<?php echo $client_instagram; ?>" class="client_instagram"><i class="fab fa-instagram"></i></a>
-                            <?php } ?>
+                                    <?php } ?>
+                            </div>
+                            <!-- .client_tile_bio_text -->
                         </div>
-                        </div>
+                        <!-- .client_tile_text -->
                         <div class="client_tile_images">
                             <div class="client_tile_before">
                                 <?php if($before_pic) { ?>
                                 <img src="<?php echo $before_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
                                 <?php } ?>
                             </div>
-<!--
+                            <!--
                             <div class="client_tile_after">
                                 <?php if($after_pic) { ?>
                                 <img src="<?php echo $after_pic_url; ?>" alt="<?php echo $before_pic_alt; ?>" />
@@ -322,6 +330,7 @@ if (function_exists('get_field')) {
 -->
                         </div>
                     </div>
+                    <!-- .client_tile -->
                     <?php
                     $count ++;
                     endwhile;
@@ -347,6 +356,7 @@ if (function_exists('get_field')) {
                          ?>
                     </div>
                 </div>
+                <!-- .page_signup_wrap -->
             </section>
             <!-- #client_spotlight_signup -->
         </main>
