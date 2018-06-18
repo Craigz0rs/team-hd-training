@@ -19,9 +19,10 @@ if (function_exists('get_field')) {
 
 ?>
 
-	</div><!-- #content -->
+    </div>
+    <!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+    <footer id="colophon" class="site-footer">
         <div class="footer_wrapper">
             <div class="site-info">
                 <p>
@@ -30,49 +31,60 @@ if (function_exists('get_field')) {
                     printf( esc_html__( 'Site %1$s by %2$s', 'team_hd_training' ), '', '<a href="https://maxrepmedia.com">Max Rep Media</a>' );
                     ?>
                 </p>
-            </div><!-- .site-info -->
+            </div>
+            <!-- .site-info -->
             <div class="site_copyright">
-                <p>&#169; HD Training 2018<?php if(date('Y') != 2018){ echo ' - ' . date('Y'); } ?></p>
-            </div><!-- .site_copyright -->
+                <p>&#169; HD Training 2018
+                    <?php if(date('Y') != 2018){ echo ' - ' . date('Y'); } ?>
+                </p>
+            </div>
+            <!-- .site_copyright -->
             <?php if($footinstagram || $footyoutube || $footfacebook) { ?>
             <div class="site_follow">
-                                    <ul>
-                                                <?php if ($footinstagram) { ?>
-                                                <li><a href="<?php echo $footinstagram; ?>"><i class="fab fa-instagram"></i></a></li>
-                                                <?php } 
+                <ul>
+                    <?php if ($footinstagram) { ?>
+                    <li><a href="<?php echo $footinstagram; ?>"><i class="fab fa-instagram"></i></a></li>
+                    <?php } 
                                                 if ($footyoutube) { ?>
-                                                <li><a href="<?php echo $footyoutube; ?>"><i class="fab fa-youtube-square"></i></a></li>
-                                                <?php }
+                    <li><a href="<?php echo $footyoutube; ?>"><i class="fab fa-youtube-square"></i></a></li>
+                    <?php }
                                                 if ($footfacebook) { ?>
-                                                <li><a href="<?php echo $footfacebook; ?>"><i class="fab fa-facebook-square"></i></a></li>
-                                                <?php } ?>
-                                    </ul>        
-            </div><!-- .site_follow -->
+                    <li><a href="<?php echo $footfacebook; ?>"><i class="fab fa-facebook-square"></i></a></li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <!-- .site_follow -->
             <?php } ?>
-        </div><!-- .footer_wrapper -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<?php wp_footer(); ?>
+        </div>
+        <!-- .footer_wrapper -->
+    </footer>
+    <!-- #colophon -->
+    </div>
+    <!-- #page -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <?php wp_footer(); ?>
 
     <?php if(is_front_page()) { ?>
-        <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/flexslider/jquery.flexslider-min.js"></script>
-        <script type="text/javascript" charset="utf-8">
-//          $(window).load(function() {
-//            $('.flexslider').flexslider();
-//          });
-            $(window).on("load", function() {
+    <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(window).on("load", function() {
             $('.flexslider').flexslider({
                 animation: "fade",
                 controlNav: true,
                 directionNav: true,
                 pauseOnHover: true,
-                pauseOnAction: true
+                pauseOnAction: true,
+                start: function(slider) {
+                    $('.loading_hidden').removeClass('loading loading_text');
+                    
+                }
             });
         });
-    <?php } ?>
-                    </script>
-            <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/iosviewport.js"></script>
-</body>
-</html>
+        <?php } ?>
+
+    </script>
+    <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/iosviewport.js"></script>
+    </body>
+
+    </html>

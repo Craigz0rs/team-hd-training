@@ -2,30 +2,31 @@
     padding-top: 0;
     max-width: 1400px;
     margin: 0 auto;
-    
+
     article {
         padding: 15px;
     }
-    
+
     .entry-meta-top {
         border-bottom: 1px solid #75736f;
         border-top: none;
         padding-top: 0;
         padding-bottom: 20px;
-        color: $color_text;
-        
+        color: white;
+        font-weight: 700;
+
         svg {
             color: white;
         }
     }
-    
+
     .article_footer {
         padding: 25px 0 0;
-        
+
         .entry-meta {
             padding-bottom: 14px;
             border-bottom: 1px solid #75736f;
-            
+
             svg {
                 color: white;
             }
@@ -33,17 +34,21 @@
     }
 }
 
+.wp-caption-text {
+    color: darkgrey;
+}
+
 @media screen and (min-width: 960px) {
     #single_wrapper {
         display: flex;
         padding: 30px;
-        
+
         article {
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 0, 0.4);
             margin-bottom: 0px;
             padding: 15px 25px 50px;
         }
-        
+
         .article_footer {
             padding: 40px 0 0;
         }

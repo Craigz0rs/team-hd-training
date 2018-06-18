@@ -97,6 +97,8 @@
     $slide_button_text = ""; ?>
 
                 <div class="flexslider hero_slider" id="hero_slider">
+                    <div class="loading loading_hidden"></div>
+                    <h2 class="loading_text loading_hidden section_title">LOADING...</h2>
                     <ul class="slides hero_slides">
                         <?php while( have_rows('image_slider') ): the_row();
                                                     $image = get_sub_field('slider_image');

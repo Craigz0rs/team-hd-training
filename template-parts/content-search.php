@@ -5,31 +5,37 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Team_HD_Training
+ * @author Craig D'Arcy - Max Rep Media
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <header class="entry-header">
+            <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
+            <?php if ( 'post' === get_post_type() ) : ?>
+            <div class="entry-meta">
+                <?php
 			team_hd_training_posted_on();
 			team_hd_training_posted_by();
 			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+            </div>
+            <!-- .entry-meta -->
+            <?php endif; ?>
+        </header>
+        <!-- .entry-header -->
 
-	<?php team_hd_training_post_thumbnail(); ?>
+        <?php team_hd_training_post_thumbnail(); ?>
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+        <div class="entry-summary">
+            <?php the_excerpt(); ?>
+        </div>
+        <!-- .entry-summary -->
 
-	<footer class="entry-footer">
-		<?php team_hd_training_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+        <footer class="entry-footer">
+            <?php team_hd_training_entry_footer(); ?>
+        </footer>
+        <!-- .entry-footer -->
+    </article>
+    <!-- #post-<?php the_ID(); ?> -->
