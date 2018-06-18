@@ -47,15 +47,16 @@ if (function_exists('get_field')) {
                     <?php } ?>
                     <div class="header_overlay_1"></div>
                     <div class="header_overlay_1_svg">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1690 173.74"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="845" y1="174.05" x2="845" y2="0.31" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#202020"/><stop offset="0.32" stop-color="#202020" stop-opacity="0.9"/><stop offset="1" stop-color="#202020" stop-opacity="0.9"/></linearGradient></defs><title>Untitled-2</title><polygon class="cls-1" points="1690 173.74 0 173.74 0 0 1690 173.74"/></svg>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1690 173.74"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="845" y1="174.05" x2="845" y2="0.31" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#202020"/><stop offset="0.32" stop-color="#202020" stop-opacity="0.9"/><stop offset="1" stop-color="#202020" stop-opacity="0.9"/></linearGradient></defs><polygon class="cls-1" points="1690 173.74 0 173.74 0 0 1690 173.74"/></svg>
                     </div>
                     <div class="header_overlay_2 iosheight">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.26 526.88"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><title>Untitled-1</title><polygon class="cls-2" points="315.09 46.6 26.66 526.88 0 524.67 315.26 0 315.09 46.6"/></svg>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.26 526.88"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><polygon class="cls-2" points="315.09 46.6 26.66 526.88 0 524.67 315.26 0 315.09 46.6"/></svg>
                     </div>
                     <div class="header_overlay_3 iosheight">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.1 477.9"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><title>Untitled-1</title><polygon class="cls-2" points="287.1 477.9 0 477.9 287.1 0 287.1 477.9"/></svg>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.1 477.9"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><polygon class="cls-2" points="287.1 477.9 0 477.9 287.1 0 287.1 477.9"/></svg>
                     </div>
                 </div>
+                <!-- .page_hero_container -->
             </section>
             <!-- #team_hero -->
             <section id="about_section">
@@ -92,8 +93,6 @@ if (function_exists('get_field')) {
                                 $image = get_sub_field('profile_image');
                                 $image_url = $image['url'];
                                 $image_alt = $image['alt'];
-                                $image_caption = $image['caption'];
-                                $image_description = $image['description'];
                                 $image_title = $image['title'];
                             }
                             if (get_sub_field('profile_name')) { $profile_name = get_sub_field('profile_name'); }
@@ -112,10 +111,10 @@ if (function_exists('get_field')) {
                 ?>
 
 
-                    <div id="profile_<?php $counter = $count - 1; echo $counter; ?>"class="team_profile <?php echo $profile_class ?>">
+                    <div id="profile_<?php $counter = $count - 1; echo $counter; ?>" class="team_profile <?php echo $profile_class ?>">
 
                         <div class="profile_image">
-                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" title="<?php echo $image_title; ?>" />
+                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
                         </div>
                         <div class="profile_wrap">
                             <div class="profile_content_wrapper">
@@ -127,34 +126,35 @@ if (function_exists('get_field')) {
                                         <?php echo $profile_titles; ?>
                                     </p>
                                     <?php if ($profile_dob || $profile_height || $profile_offseason || $profile_contest) { ?>
-                                        <ul class="profile_stats">
-                                            <?php if ($profile_dob) { 
+                                    <ul class="profile_stats">
+                                        <?php if ($profile_dob) { 
                                                     $dob = new DateTime($profile_dob);
                                                     $profile_age = $today->diff($dob);
 
 
                                                     ?>
-                                            <li><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $profile_age->y; ?></span></li>
-                                            <?php 
+                                        <li><span class="stat_title">Age: </span><span class="stat_answer"><?php echo $profile_age->y; ?></span></li>
+                                        <?php 
                                                 } ?>
-                                            <?php if ($show_birthday && $profile_dob) { ?>
-                                            <li><span class="stat_title">DOB: </span><span class="stat_answer"><?php echo date_format($dob, 'M d, Y'); ?></span></li>
-                                            <?php } ?>
-                                            <?php if ($profile_height) { ?>
-                                            <li><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $profile_height; ?></span></li>
-                                            <?php } ?>
-                                            <?php if ($profile_offseason) { ?>
-                                            <li><span class="stat_title">Off-Season: </span><span class="stat_answer"><?php echo $profile_offseason; ?></span></li>
-                                            <?php } ?>
-                                            <?php if ($profile_contest) { ?>
-                                            <li><span class="stat_title">Contest: </span><span class="stat_answer"><?php echo $profile_contest; ?></span></li>
-                                            <?php } ?>
-                                        </ul>
+                                        <?php if ($show_birthday && $profile_dob) { ?>
+                                        <li><span class="stat_title">DOB: </span><span class="stat_answer"><?php echo date_format($dob, 'M d, Y'); ?></span></li>
+                                        <?php } ?>
+                                        <?php if ($profile_height) { ?>
+                                        <li><span class="stat_title">Height: </span><span class="stat_answer"><?php echo $profile_height; ?></span></li>
+                                        <?php } ?>
+                                        <?php if ($profile_offseason) { ?>
+                                        <li><span class="stat_title">Off-Season: </span><span class="stat_answer"><?php echo $profile_offseason; ?></span></li>
+                                        <?php } ?>
+                                        <?php if ($profile_contest) { ?>
+                                        <li><span class="stat_title">Contest: </span><span class="stat_answer"><?php echo $profile_contest; ?></span></li>
+                                        <?php } ?>
+                                    </ul>
                                     <?php } ?>
                                     <div class="profile_bio">
                                         <?php echo $profile_bio; ?>
                                     </div>
                                 </div>
+                                <!-- .bio_wrap -->
                                 <div class="profile_contact">
                                     <div class="profile_email">
                                         <?php if (get_sub_field('profile_email')) { 
@@ -190,11 +190,15 @@ if (function_exists('get_field')) {
                                                 ?>
                                         </ul>
                                     </div>
+                                    <!-- .profile_social -->
                                 </div>
+                                <!-- .profile_content -->
                             </div>
+                            <!-- .profile_content_wrapper -->
                         </div>
+                        <!-- .profile_wrap -->
                     </div>
-                    <!-- profile -->
+                    <!-- #profile -->
                     <?php
                             $count ++;
                         }
@@ -221,7 +225,9 @@ if (function_exists('get_field')) {
                          ?>
                     </div>
                 </div>
+                <!-- .page_signup_wrap -->
             </section>
+            <!-- #team_signup -->
         </main>
         <!-- #main -->
     </div>

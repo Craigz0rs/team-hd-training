@@ -2,26 +2,26 @@
     margin: 0 25px;
     margin-bottom: 40px;
     border-bottom: 1px solid #75736f;
-    
+
     #package_heading {
         margin: 0 0 30px 0;
     }
-    
+
     ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
-        
+
         li {
             padding-bottom: 15px;
-            
-            h2 { 
+
+            h2 {
                 margin: 0;
                 line-height: 21px;
             }
         }
     }
-    
+
     .package_name {
         margin: 0;
         padding: 0;
@@ -30,19 +30,19 @@
         color: $color_heading;
         font-size: 21px;
     }
-    
+
     .package_price {
         font-family: $font_subheading;
         font-weight: 700;
         font-size: 21px;
         color: white;
     }
-    
+
     .package_description {
         padding: 5px 0 0 20px;
         line-height: 20px;
     }
-    
+
     .link_button a {
         margin: 35px auto;
         margin-bottom: 40px;
@@ -58,24 +58,23 @@
 @media screen and (min-width: 500px) {
     .package_wrap {
         margin: 0 45px 40px 45px;
-//        max-width: 500px;
     }
 }
 
 @media screen and (min-width: 800px) {
     .package_wrap {
         margin: 0 115px 65px 115px;
-        
+
         .section_title {
             margin: 0 0 45px 0;
         }
-        
+
         .link_button a {
             margin: 35px 0;
             margin-bottom: 65px;
         }
     }
-    
+
     .package_content_wrap {
         max-width: 600px;
     }
@@ -87,7 +86,7 @@
         flex-wrap: wrap;
         margin: 0 0 0 70px;
     }
-    
+
     .package_wrap {
         width: 50%;
         margin: 0 0 75px 0;
@@ -95,22 +94,22 @@
         border: none;
         border-left: 4px solid $color_yellow;
     }
-    
+
     .package_content_wrap {
         position: relative;
         height: 100%;
         padding-bottom: 110px;
-        
+
         .link_button {
             position: absolute;
             bottom: 0;
-            
+
             a {
                 margin: 35px 0 0;
             }
         }
     }
-    
+
     .package_includes {
         margin-top: 20px;
     }

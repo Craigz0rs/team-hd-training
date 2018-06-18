@@ -1,24 +1,24 @@
 .team_profile {
-    
+
     .profile_image {
         width: 100%;
         height: 350px;
         overflow: hidden;
-        
+
         img {
             object-fit: cover;
-            object-position: top;            
+            object-position: top;
         }
     }
-    
+
     .profile_content_wrapper {
         margin: 25px;
     }
-    
+
     .bio_wrap {
-        
+
         margin-bottom: 25px;
-        
+
         .profile_name {
             margin: 0 0 20px 0;
             color: $color_heading;
@@ -27,7 +27,7 @@
             font-size: $font_heading_size;
             line-height: 30px;
         }
-        
+
         .profile_titles {
             margin: 0 0 20px 0;
             font-family: $font_subheading;
@@ -35,7 +35,7 @@
             font-size: $font_subheading_size;
             color: white;
         }
-        
+
         .profile_stats {
             display: flex;
             flex-wrap: wrap;
@@ -43,20 +43,20 @@
             margin: 0;
             padding: 0 0 20px 0;
             list-style-type: none;
-            
+
             li {
                 width: 50%;
                 line-height: 20px;
             }
-            
+
             .stat_title {
                 margin: 0 0 20px 0;
                 font-family: $font_subheading;
                 font-weight: 700;
                 font-size: $font_stat_size;
-                color: white;               
+                color: white;
             }
-            
+
             .stat_answer {
                 margin: 0;
                 padding: 0;
@@ -65,20 +65,20 @@
                 font-size: $font_stat_size;
             }
         }
-        
+
         .profile_bio p {
             margin-bottom: 15px;
         }
     }
-    
+
     .profile_contact {
         border-top: 1px solid #75736f;
         border-bottom: 1px solid #75736f;
         padding: 15px 0;
-        
+
         .profile_email {
             margin-bottom: 10px;
-            
+
             a {
                 font-family: $font_subheading;
                 font-weight: 700;
@@ -86,36 +86,35 @@
                 color: $color_yellow;
                 text-decoration: none;
                 transition: 0.4s;
-                
+
                 svg {
                     font-size: 27px;
                 }
             }
-            
+
             a:hover,
             a:active {
                 color: white;
                 transition: 0.4s;
             }
         }
-        
+
         .profile_social ul {
             display: flex;
-//            justify-content: space-between;
             margin: 0;
             padding: 0;
             list-style-type: none;
-            
+
             li {
                 margin-right: 15px;
             }
-            
+
             svg {
                 color: $color_social;
                 font-size: 30px;
                 transition: 0.4s;
             }
-            
+
             svg:hover {
                 transition: 0.4s;
                 color: $color_yellow;
@@ -126,7 +125,7 @@
 
 @media screen and (min-width: 500px) {
     .team_profile {
-        
+
         .profile_image {
             height: 90vw;
         }
@@ -146,26 +145,25 @@
 
 @media screen and (min-width: 960px) {
     .team_profile {
-//        max-height: 800px;
         overflow: hidden;
-        
+
         .profile_image {
             width: 60%;
             height: auto;
-            
+
             img {
                 height: 100%;
                 width: 100%;
             }
         }
-        
+
         .profile_wrap {
             position: relative;
             width: 40%;
             padding: 25px 0;
             background-color: rgba(0, 0, 0, 0.4);
         }
-        
+
         .profile_content_wrapper {
             position: relative;
             top: 50%;
@@ -174,34 +172,29 @@
             padding: 31px;
             max-width: 600px;
         }
-        
-        @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+
+        @media screen and (-ms-high-contrast: active),
+        screen and (-ms-high-contrast: none) {
             .profile_content_wrapper {
                 top: 2%;
                 transform: translateY(0%);
             }
         }
     }
-    
+
     .even_team,
     .odd_team {
         display: flex;
     }
-    
+
     .even_team {
         .profile_image {
             order: 2;
         }
-        
+
         .profile_content_wrapper {
             order: 1;
         }
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .team_profile {
-//        max-height: 750px;
     }
 }
 
@@ -209,7 +202,7 @@
     .team_profile {
         max-height: 850px;
     }
-    
+
     .even_team .profile_content_wrapper {
         position: absolute;
         right: 0;
