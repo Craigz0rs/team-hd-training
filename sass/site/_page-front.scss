@@ -87,10 +87,12 @@ header {
             width: 100%;
             border: none;
         }
-
-        .header_overlay_1,
-        .header_overlay_1_svg {
-            display: none;
+        
+        .front-header {
+            .header_overlay_1,
+            .header_overlay_1_svg {
+                display: none;
+            }
         }
 
         #about_section {

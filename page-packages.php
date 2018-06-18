@@ -48,15 +48,16 @@ if (function_exists('get_field')) {
                     <?php } ?>
                     <div class="header_overlay_1"></div>
                     <div class="header_overlay_1_svg">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1690 173.74"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="845" y1="174.05" x2="845" y2="0.31" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#202020"/><stop offset="0.32" stop-color="#202020" stop-opacity="0.9"/><stop offset="1" stop-color="#202020" stop-opacity="0.9"/></linearGradient></defs><title>Untitled-2</title><polygon class="cls-1" points="1690 173.74 0 173.74 0 0 1690 173.74"/></svg>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1690 173.74"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="845" y1="174.05" x2="845" y2="0.31" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#202020"/><stop offset="0.32" stop-color="#202020" stop-opacity="0.9"/><stop offset="1" stop-color="#202020" stop-opacity="0.9"/></linearGradient></defs><polygon class="cls-1" points="1690 173.74 0 173.74 0 0 1690 173.74"/></svg>
                     </div>
                     <div class="header_overlay_2 iosheight">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.26 526.88"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><title>Untitled-1</title><polygon class="cls-2" points="315.09 46.6 26.66 526.88 0 524.67 315.26 0 315.09 46.6"/></svg>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.26 526.88"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><polygon class="cls-2" points="315.09 46.6 26.66 526.88 0 524.67 315.26 0 315.09 46.6"/></svg>
                     </div>
                     <div class="header_overlay_3 iosheight">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.1 477.9"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><title>Untitled-1</title><polygon class="cls-2" points="287.1 477.9 0 477.9 287.1 0 287.1 477.9"/></svg>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.1 477.9"><defs><style>.cls-2{fill:#ebc520;opacity:0.58;}</style></defs><polygon class="cls-2" points="287.1 477.9 0 477.9 287.1 0 287.1 477.9"/></svg>
                     </div>
                 </div>
+                <!-- .page_hero_container -->
             </section>
             <!-- #packages_hero -->
             <section id="packages_section">
@@ -104,7 +105,9 @@ if (function_exists('get_field')) {
                                         <a class="button1" href="<?php echo get_home_url(); ?>/contact#signup">START YOUR PREP</a>
                                     </div>
                         </div>
+                        <!-- .package_content_wrap -->
                     </section>
+                    <!-- #contest_prep -->
                     <section id="off_season" class="package_wrap">
                         <div class="package_content_wrap">
                             <h1 class="package_heading section_title">OFF-SEASON</h1>
@@ -149,7 +152,9 @@ if (function_exists('get_field')) {
                                         <a class="button1" href="<?php echo get_home_url(); ?>/contact#signup">START YOUR OFF-SEASON</a>
                                     </div>
                         </div>
+                        <!-- .package_content_wrap -->
                     </section>
+                    <!-- #off_season -->
                     <section id="lifestyle" class="package_wrap">
                         <div class="package_content_wrap">
                             <h1 class="package_heading section_title">LIFESTYLE</h1>
@@ -193,8 +198,11 @@ if (function_exists('get_field')) {
                                         <a class="button1" href="<?php echo get_home_url(); ?>/contact#signup">GET STARTED NOW</a>
                                     </div>
                         </div>
+                        <!-- .package_content_wrap -->
                     </section>
+                    <!-- #lifestyle -->
                 </div>
+                <!-- .packages_section_wrap -->
                 <div id="packages_features" class="selling_features">
                     <div class="features_background"></div>
                     <?php if (function_exists('get_field')) {                   
