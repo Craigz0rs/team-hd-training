@@ -1,0 +1,87 @@
+.login {
+    padding-top: 50px;
+    min-height: 660px;
+    background-image: url("images/login-background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    form {
+        padding-bottom: 0px;
+        background: transparent;
+    }
+}
+
+#loginform {
+    background-color: transparent;
+}
+
+.login h1 a {
+  background-image: url('images/logo2.png');
+    transform: scale(2);
+}
+
+.login form .input {
+    display: block;
+    border: 2px solid white;
+    border-radius: 0px !important;
+    min-height: 63px;
+    width: 100%;
+    margin-top: 0px;
+    padding-left: 15px;
+    color: $color_button;
+    background-color: transparent;
+    text-decoration: none;
+    font-family: $font_button;
+    font-weight: 500;
+    font-size: $font_button_size;
+    line-height: 63px;
+    transition: 0.4s;
+}
+
+.login form .input:focus {
+    color: black;
+    background-color: rgba(255,255,255,0.89);
+    border: 2px solid $color_yellow;
+    transition: 0.4s;
+}
+
+.login label {
+    font-size: 0.1px;
+    color: transparent;
+}
+
+.forgetmenot { 
+    padding-bottom: 25px;
+    
+    label {
+        color: lightgrey;
+        font-weight: 700;
+    }
+}
+
+p#backtoblog {
+  display: none;
+}
+
+.login .message,
+.login #login_error {
+    background: transparent;
+    color: lightgrey;
+    font-weight: 700;
+}
+
+#nav a {
+    color: lightgrey;
+    font-weight: 700;
+    box-shadow: none;
+    transition: 0.4s;
+}
+
+.login #nav a:hover,
+.login #nav a:focus,
+.login #nav a:active {
+    color: white;
+    transition: 0.4s;
+    box-shadow: none;
+} 

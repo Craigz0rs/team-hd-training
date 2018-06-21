@@ -31,7 +31,8 @@ body {
 /*--------------------------------------------------------------
 ## Buttons
 --------------------------------------------------------------*/
-.button1 {
+.button1,
+#wp-submit {
     display: block;
     border: 2px solid $color_yellow;
     width: 200px;
@@ -46,10 +47,13 @@ body {
     line-height: 63px;
     text-align: center;
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .button1:hover,
-.button1:active {
+.button1:active,
+#wp-submit:hover,
+#wp-submit:active {
     background-color: rgba(255,255,255,0.89);
     color: black;
 }

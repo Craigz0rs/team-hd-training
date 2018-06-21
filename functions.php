@@ -298,6 +298,29 @@ function awesome_acf_responsive_image($image_id,$image_size,$max_width){
 	}
 }
 
+//Custom login page
+function my_custom_login() {
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/style.css" />';
+    echo '<script type="text/javascript" src="' . get_bloginfo('template_directory') . '/js/inputs.js"></script>';
+}
+add_action('login_head', 'my_custom_login');
+
+function my_login_logo_url() {
+return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+return '';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+function login_error_override()
+{
+    return 'Incorrect login details.';
+}
+add_filter('login_errors', 'login_error_override');
+
 
 /**
  * Implement the Custom Header feature.
