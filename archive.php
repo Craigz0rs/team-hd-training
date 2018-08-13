@@ -12,6 +12,8 @@ if (function_exists('get_field')) {
     if (get_field('news_hero_image', 21)) { 
             $hero_image = get_field('news_hero_image', 21); 
             $hero_image_url = $hero_image['url'];
+            $hero_image_id = $hero_image['id'];
+            $hero_image_alt = $hero_image['alt'];
     }
 }
 ?>
@@ -19,7 +21,8 @@ if (function_exists('get_field')) {
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
             <section id="packages_hero" class="hero_section">
-                <div class="page_hero_container news_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
+                <div class="page_hero_container news_hero_container">
+                    <img class="page_hero_image" <?php ar_responsive_image($hero_image_id,'large','1600px'); ?>  alt="<?php echo $hero_image_alt; ?>" /> 
                     <div class="hero_text_overlay">
                         <div class="news_hero_title">
                             <h1 class="section_title">TEAM HD NEWS</h1>

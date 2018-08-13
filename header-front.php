@@ -108,6 +108,7 @@
 
                                                     $url = $image['url'];
                                                     $alt = $image['alt'];
+                                                    $id = $image['id'];
 
 
                                                     $size = 'full';
@@ -121,8 +122,8 @@
                                                     $slide_button_url = get_sub_field('slide_button_url');
                                                 ?>
                         <li data-thumb="<?php echo $url; ?>">
-                            <div class="slider_image" style="background-image: url(<?php echo $url; ?>)">
-                                <!--                                <img class="iosheight" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />-->
+                            <div class="slider_image" >
+                                <img class="iosheight" <?php ar_responsive_image($id,'full','1600px'); ?>  alt="<?php echo $hero_image_alt; ?>" /> 
 
                                 <?php if ($slide_text) { ?>
                                 <div class="slider_overlay">

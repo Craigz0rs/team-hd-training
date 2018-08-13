@@ -16,6 +16,8 @@ if (function_exists('get_field')) {
             if(get_sub_field('hero_image')) { 
                 $hero_image = get_sub_field('hero_image'); 
                 $hero_image_url = $hero_image['url'];
+                $hero_image_id = $hero_image['id'];
+                $hero_image_alt = $hero_image['alt'];
             }     
         }
     }
@@ -32,7 +34,8 @@ if (function_exists('get_field')) {
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <section id="team_hero" class="hero_section">
-                <div class="page_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
+                <div class="page_hero_container">
+                    <img class="page_hero_image" <?php ar_responsive_image($hero_image_id,'large','1600px'); ?>  alt="<?php echo $hero_image_alt; ?>" /> 
                     <?php if($hero_title || $hero_caption) { ?>
                     <div class="hero_text_overlay">
                         <div class="hero_text_wrap">
@@ -94,6 +97,7 @@ if (function_exists('get_field')) {
                                 $image_url = $image['url'];
                                 $image_alt = $image['alt'];
                                 $image_title = $image['title'];
+                                $image_id = $image['id'];
                             }
                             if (get_sub_field('profile_name')) { $profile_name = get_sub_field('profile_name'); }
                             if (get_sub_field('profile_titles')) { $profile_titles = get_sub_field('profile_titles'); }
@@ -114,7 +118,8 @@ if (function_exists('get_field')) {
                     <div id="profile_<?php $counter = $count - 1; echo $counter; ?>" class="team_profile <?php echo $profile_class ?>">
 
                         <div class="profile_image">
-                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
+<!--                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />-->
+                            <img <?php ar_responsive_image($image_id,'full','1080px'); ?>  alt="<?php echo $image_alt; ?>" /> 
                         </div>
                         <div class="profile_wrap">
                             <div class="profile_content_wrapper">

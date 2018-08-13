@@ -170,6 +170,14 @@ p {
     background-position: center;
     background-repeat: no-repeat;
     
+    .page_hero_image {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
     .hero_text_overlay {
         position: relative;
         width: 100%;

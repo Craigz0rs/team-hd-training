@@ -934,6 +934,12 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
+  .page_hero_container .page_hero_image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center; }
   .page_hero_container .hero_text_overlay {
     position: relative;
     width: 100%;

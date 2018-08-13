@@ -281,7 +281,7 @@ add_action( 'wp_enqueue_scripts', 'team_hd_training_scripts' );
  * @param string $max_width the max width this image will be shown to build the sizes attribute 
  */
 
-function awesome_acf_responsive_image($image_id,$image_size,$max_width){
+function ar_responsive_image($image_id,$image_size,$max_width){
 
 	// check the image ID is not blank
 	if($image_id != '') {

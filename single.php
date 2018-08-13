@@ -13,12 +13,13 @@ get_header();
                 while ( have_posts() ) {
                     the_post();
                     if ( has_post_thumbnail() ) {
-                        $hero_image_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+                        $hero_image_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+                        $hero_image_id = get_post_thumbnail_id(get_post());
                     } else {
                         if (function_exists('get_field')) {
                             if (get_field('news_hero_image', 21)) { 
                                     $hero_image = get_field('news_hero_image', 21); 
-                                    $hero_image_url = $hero_image['url'];
+                                    $hero_image_id = $hero_image['id'];
                             }
                         }
                     }
@@ -31,7 +32,8 @@ get_header();
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <section id="packages_hero" class="hero_section">
-                <div class="page_hero_container news_hero_container" style="background-image: url('<?php echo $hero_image_url; ?>')">
+                <div class="page_hero_container news_hero_container" style="background-image: url('<?php  ?>')">
+                    <img class="page_hero_image" <?php ar_responsive_image($hero_image_id,'large','1600px'); ?>  alt="<?php echo $hero_image_alt; ?>" /> 
                     <?php if($hero_title || $hero_caption) { ?>}
                     <div class="hero_text_overlay">
                         <div class="hero_text_wrap">
