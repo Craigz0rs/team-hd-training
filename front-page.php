@@ -98,6 +98,51 @@ if (function_exists('get_field')) {
 
 
             <section id="team_section">
+                <div class="home_team_overlay"></div>
+                <div id="team_section_text">
+                    <div class="team_section_overlay">
+                        <div class="team_section_text_wrap text_overlay_wrap">
+                            <h1 class="home_section_title section_title">
+                                <?php echo $team_section_title; ?>
+                            </h1>
+                            <p>
+                                <?php echo $team_section_content; ?>
+                            </p>
+                            <div class="link_button">
+                                <a class="button1" href="<?php echo get_home_url(); ?>/team">MEET THE TEAM</a>
+                            </div>
+                        </div>
+                    </div>
+<!--
+                    <div class="team_section_overlay1">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 140"><defs><style>.cls-10{fill:#E7CD35;fill-opacity:1;}</style></defs><polygon class="cls-10" points="250 140 0 140 250 0 250 140"/></svg>
+                    </div>
+                    <div class="team_section_overlay2">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291 163.33"><defs><style>.cls-11{fill:#E7CD35;fill-opacity:1;}</style></defs><polygon class="cls-11" points="24.77 163.33 0 163.33 291 0 290.82 14 24.77 163.33"/></svg>
+                    </div>
+-->
+                </div>
+                <!-- #team_section_text -->
+                <?php if ( function_exists('get_field')) {
+                            if( have_rows('team_section')) {
+                                while (have_rows('team_section')) {
+                                    the_row(); 
+                                    if( have_rows('team_profiles')) {
+                                      $profile_count = 0;
+                                      while (have_rows('team_profiles')) {
+                                        the_row(); 
+                                        $profile_count ++;
+                                      }
+                                    }
+                                }
+                            }
+                        } 
+                if ($profile_count == 4 || $profile_count > 6 && $profile_count != 9) {
+                    $colums = '_four';
+                } else {
+                    $colums = '_three';
+                }
+                ?>
                 <div id="home_team_profiles">
                     <?php if ( function_exists('get_field')) {
                             if( have_rows('team_section')) {
@@ -114,16 +159,37 @@ if (function_exists('get_field')) {
                                         if(get_sub_field('profile_name')) { $profile_name = get_sub_field('profile_name'); }
                                         if(get_sub_field('profile_titles')) { $profile_titles = get_sub_field('profile_titles'); } ?>
 
-                    <div class="home_team_profile" id="profile_<?php echo $counter; ?>">
+                    <div class="home_team_profile profile_columns<?php echo $colums; ?>" id="profile_<?php echo $counter; ?>">
                         <a href="<?php echo get_home_url(); ?>/team#profile_<?php echo $counter; ?>" class="home_profile_anchor">
 
                             <img src="<?php echo $profile_image_url; ?>" alt="<?php echo $profile_image_alt; ?>" />
-                            <?php if ($counter == 0 || $counter == 1) {
-                                            $overlay_class = "_top";
-                                        } else if ($counter == 2 || $counter == 3 ) {
-                                            $overlay_class = "_bottom";
+                            
+                            <?php 
+                                if ($columns == '_three') {
+                                    if ($counter < 3) {
+                                        $overlay_class = "_top";
+                                    } else if ($counter >= 3) {
+                                        $overlay_class = "_bottom";
+                                        if ($counter == 5) {
+                                            $counter = -1;
                                         }
+                                    }                                       
+                                } else {
+                                    if ($counter < 4) {
+                                        $overlay_class = "_top";
+                                    } else if ($counter >= 4) {
+                                        $overlay_class = "_bottom";
+                                        if ($counter == 7) {
+                                            $counter = -1;
+                                        }
+                                    }
+                                }
                             ?>
+                                <div class="link_button">
+                                    <p class="button1">ABOUT 
+                                    <?php echo $profile_name ?>
+                                    </p>
+                                </div>
                             <div class="home_profile_text home_profile_text<?php echo $overlay_class; ?>">
                                 <div class="home_profile_text_overlay home_profile_text_overlay<?php echo $overlay_class; ?>">
                                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 125"><defs><style>.cls-5{fill-opacity:0.72;}</style></defs><polygon class="cls-5" points="480 125 0 125 0 0 480 56.4 480 125"/></svg>
@@ -150,28 +216,6 @@ if (function_exists('get_field')) {
                     <?php $counter ++;  endwhile; } endwhile; } } ?>
                 </div>
                 <!-- #home_team_profiles -->
-                <div id="team_section_text">
-                    <div class="team_section_overlay text_overlay">
-                        <div class="team_section_text_wrap text_overlay_wrap">
-                            <h1 class="home_section_title section_title">
-                                <?php echo $team_section_title; ?>
-                            </h1>
-                            <p>
-                                <?php echo $team_section_content; ?>
-                            </p>
-                            <div class="link_button">
-                                <a class="button1" href="<?php echo get_home_url(); ?>/team">MEET THE TEAM</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team_section_overlay1">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 140"><defs><style>.cls-10{fill:#E7CD35;fill-opacity:1;}</style></defs><polygon class="cls-10" points="250 140 0 140 250 0 250 140"/></svg>
-                    </div>
-                    <div class="team_section_overlay2">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291 163.33"><defs><style>.cls-11{fill:#E7CD35;fill-opacity:1;}</style></defs><polygon class="cls-11" points="24.77 163.33 0 163.33 291 0 290.82 14 24.77 163.33"/></svg>
-                    </div>
-                </div>
-                <!-- #team_section_text -->
             </section>
             <!-- #home_team_section -->
             <div class="shop_news_wrap">
@@ -266,7 +310,7 @@ if (function_exists('get_field')) {
                             }   
                         }
                 ?>
-
+                    <div id="featured_client_overlay"></div>
                     <div class="featured_client_text">
                         <div class="text_overlay text_overlay_left">
                             <div class="text_overlay_wrap">

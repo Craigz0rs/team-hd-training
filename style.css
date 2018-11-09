@@ -861,6 +861,28 @@ body {
   background-color: rgba(255, 255, 255, 0.89);
   color: black; }
 
+.button3 {
+  display: block;
+  border: 2px solid #F3DB43;
+  width: 200px;
+  min-height: 63px;
+  margin-top: 25px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.89);
+  text-decoration: none;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 63px;
+  text-align: center;
+  transition: 0.4s;
+  cursor: pointer; }
+
+.button3:hover,
+.button3:active {
+  background-color: transparent;
+  color: white; }
+
 .button_nav {
   position: absolute;
   right: 0;
@@ -939,12 +961,12 @@ p {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: center; }
+    object-position: top; }
   .page_hero_container .hero_text_overlay {
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: rgba(32, 32, 32, 0.5); }
+    background-color: rgba(32, 32, 32, 0.25); }
     .page_hero_container .hero_text_overlay .hero_text_wrap {
       position: absolute;
       top: 20%;
@@ -1112,15 +1134,21 @@ header {
 #scroll_R_Arrow {
   display: none; }
 
+.flex-control-nav {
+  display: none; }
+
 .slider_overlay {
-  width: 485px;
-  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
   position: absolute;
   left: 0;
   bottom: 50%;
   transform: translateY(50%);
   padding: 50px 0px; }
   .slider_overlay .slider_info_wrap {
+    position: absolute;
+    top: 25%;
     width: 335px;
     margin-left: 80px;
     padding: 31px;
@@ -1186,8 +1214,9 @@ header {
 @media screen and (max-width: 450px) {
   .slider_overlay .slider_info_wrap {
     margin-left: calc(56% - 335px / 2);
-    margin-top: 20px; } }
-@media screen and (max-width: 800px) and (max-height: 550px) {
+    margin-top: 20px;
+    top: 13%; } }
+@media screen and (max-width: 850px) and (max-height: 550px) {
   .slider_overlay .slider_info_wrap {
     margin: 0;
     width: 100%;
@@ -1200,7 +1229,9 @@ header {
   #about_section {
     padding-top: 25px; } }
 .flex-control-nav {
-  display: none; }
+  bottom: 7px;
+  z-index: 25;
+  right: 0px; }
 
 .header_overlay_1 {
   position: absolute;
@@ -1335,22 +1366,33 @@ header {
     border-top: none;
     padding-top: 0; } }
 #team_section {
-  display: flex;
-  background-color: #202020;
-  height: 800px;
-  overflow: hidden; }
-
-#home_team_profiles {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  width: 57%; }
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden; }
+  #team_section .home_team_overlay {
+    position: absolute;
+    background-color: #202020;
+    width: 200%;
+    height: 550px;
+    left: 50%;
+    transform: rotate(5deg) translateX(-50%); }
+
+#home_team_profiles {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 115px 100px; }
   #home_team_profiles .home_team_profile {
-    width: 50%;
-    height: 50%;
+    height: 400px;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    margin: 25px 25px; }
     #home_team_profiles .home_team_profile .home_profile_anchor {
-      display: block; }
+      display: block;
+      height: 100%; }
     #home_team_profiles .home_team_profile img {
       transform: scale(1);
       object-fit: cover;
@@ -1358,6 +1400,12 @@ header {
       height: 100%;
       width: 100%;
       transition: 3s ease; }
+  #home_team_profiles .profile_columns_three {
+    width: calc(33% - 50px); }
+    #home_team_profiles .profile_columns_three .home_profile_text_overlay {
+      height: 125px !important; }
+  #home_team_profiles .profile_columns_four {
+    width: calc(25% - 50px); }
   #home_team_profiles .home_profile_text {
     position: absolute;
     bottom: 0;
@@ -1367,7 +1415,7 @@ header {
       bottom: -2px;
       left: 0;
       width: 101%;
-      height: 125px;
+      height: 135px;
       background-color: rgba(0, 0, 0, 0.73);
       z-index: 2;
       transform: scale(1);
@@ -1401,7 +1449,8 @@ header {
       #home_team_profiles .home_profile_text .home_profile_text_overlay_bottom {
         height: 103px; } }
     #home_team_profiles .home_profile_text .home_profile_text_wrap {
-      position: relative;
+      position: absolute;
+      top: -85px;
       padding-bottom: 25px;
       z-index: 4; }
       #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
@@ -1411,11 +1460,6 @@ header {
         font-weight: 700;
         color: #F3DB43;
         font-size: 24px; }
-  #home_team_profiles .home_team_profile:hover img,
-  #home_team_profiles .home_team_profile:focus img,
-  #home_team_profiles .home_team_profile:active img {
-    transform: scale(1.05);
-    transition: 2s ease; }
   #home_team_profiles .home_team_profile:hover .home_profile_text .home_profile_text_overlay,
   #home_team_profiles .home_team_profile:focus .home_profile_text .home_profile_text_overlay,
   #home_team_profiles .home_team_profile:active .home_profile_text .home_profile_text_overlay {
@@ -1455,14 +1499,17 @@ header {
     padding-right: 25px; }
 
 #team_section_text {
-  width: 43%;
-  position: relative; }
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 75px 0 0; }
   #team_section_text .team_section_overlay {
-    left: 40px;
     z-index: 5; }
-    #team_section_text .team_section_overlay .team_section_text_wrap {
-      margin-left: 40px;
-      padding-right: 115px; }
+    #team_section_text .team_section_overlay .team_section_text_wrap .link_button {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0 50px; }
   #team_section_text .team_section_overlay1 {
     position: absolute;
     bottom: -7px;
@@ -1478,6 +1525,9 @@ header {
     #team_section_text .team_section_overlay2 {
       display: none; } }
 
+@media screen and (max-width: 1600px) {
+  #home_team_profiles {
+    padding: 0 45px 100px; } }
 @media screen and (max-width: 1470px) {
   #home_team_profiles .home_profile_text .home_profile_text_wrap {
     padding-bottom: 25px; }
@@ -1485,50 +1535,44 @@ header {
       font-size: 20px;
       line-height: 17px; } }
 @media screen and (max-width: 1220px) {
-  #team_section {
-    height: 700px; }
-
-  #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
-    font-size: 22px; }
+  #home_team_profiles {
+    padding: 0 115px 100px; }
+    #home_team_profiles .profile_columns_four,
+    #home_team_profiles .profile_columns_three {
+      width: calc(50% - 50px); }
+    #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
+      font-size: 22px; }
 
   #team_section_text .team_section_overlay .team_section_text_wrap {
-    padding-right: 45px; } }
+    padding: 0 45px; } }
 @media screen and (max-width: 1120px) {
-  #team_section {
-    height: 650px; }
-
   #home_team_profiles .home_profile_text .home_profile_text_wrap {
     padding-bottom: 15px;
     padding-right: 25px; }
 
   #team_section_text .team_section_overlay {
-    left: 0; }
-    #team_section_text .team_section_overlay .team_section_text_wrap {
-      padding-right: 25px; } }
+    left: 0; } }
+@media screen and (max-width: 959px) {
+  #home_team_profiles {
+    padding: 0 45px 100px; } }
 @media screen and (max-width: 865px) {
-  #team_section {
-    height: 535px; }
-    #team_section #team_section_text .text_overlay {
-      height: 100%; }
+  #team_section #team_section_text .text_overlay {
+    height: 100%; }
 
-  #home_team_profiles .home_profile_overlay1 {
-    z-index: 1; }
-  #home_team_profiles .home_profile_text .home_profile_text_wrap {
-    padding: 0 10px 15px; }
-    #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
-      font-size: 20px; }
-    #home_team_profiles .home_profile_text .home_profile_text_wrap p {
-      font-size: 18px; } }
+  #home_team_profiles {
+    padding: 0 20px 85px; }
+    #home_team_profiles .home_profile_overlay1 {
+      z-index: 1; }
+    #home_team_profiles .home_profile_text .home_profile_text_wrap {
+      padding: 0 10px 15px; }
+      #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
+        font-size: 20px; }
+      #home_team_profiles .home_profile_text .home_profile_text_wrap p {
+        font-size: 18px; } }
 @media screen and (max-width: 780px) {
   #team_section {
     flex-wrap: wrap;
     height: auto; }
-    #team_section #home_team_profiles {
-      width: 100vw;
-      max-height: 100vw; }
-      #team_section #home_team_profiles .home_team_profile {
-        height: 50%;
-        width: 50%; }
     #team_section #team_section_text {
       width: 100%;
       position: relative; }
@@ -1536,14 +1580,21 @@ header {
         position: relative;
         bottom: auto;
         transform: translateY(0); } }
+@media screen and (max-width: 599px) {
+  #home_team_profiles .home_team_profile {
+    width: 100%; } }
 @media screen and (max-width: 560px) {
   #team_section #home_team_profiles {
     max-height: none; } }
 @media screen and (max-width: 450px) {
-  #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
-    font-size: 18px; }
-  #home_team_profiles .home_profile_text .home_profile_text_wrap p {
-    font-size: 16px; }
+  #home_team_profiles .home_profile_text .home_profile_text_wrap {
+    top: -70px; }
+    #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
+      font-size: 18px; }
+    #home_team_profiles .home_profile_text .home_profile_text_wrap p {
+      font-size: 16px; }
+  #home_team_profiles .home_profile_text .home_profile_text_overlay {
+    height: 145px; }
   #home_team_profiles .home_profile_text_bottom .home_profile_text_wrap {
     text-align: right; }
   #home_team_profiles .home_profile_text_top .home_profile_text_wrap {
@@ -1553,19 +1604,14 @@ header {
   #home_team_profiles .home_profile_overlay2 {
     height: 130px; }
 
-  #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
-    font-size: 16px; }
-  #home_team_profiles .home_profile_text .home_profile_text_wrap p {
-    font-size: 14px; }
   #home_team_profiles .home_profile_text .home_profile_text_overlay_top {
     clip-path: polygon(100% 100%, 100% 49%, 0% 25%, 0% 100%); }
   #home_team_profiles .home_profile_text .home_profile_text_overlay_bottom {
     clip-path: polygon(100% 100%, 100% 25%, 0% 49%, 0% 100%); } }
+@media screen and (max-width: 399px) {
+  #home_team_profiles {
+    padding: 0 0 60px; } }
 @media screen and (max-width: 359px) {
-  #home_team_profiles .home_profile_text .home_profile_text_wrap h2 {
-    font-size: 16px; }
-  #home_team_profiles .home_profile_text .home_profile_text_wrap p {
-    font-size: 14px; }
   #home_team_profiles .home_profile_text .home_profile_text_overlay_top {
     clip-path: polygon(100% 100%, 100% 49%, 0% 25%, 0% 100%); }
   #home_team_profiles .home_profile_text .home_profile_text_overlay_bottom {
@@ -1575,7 +1621,7 @@ header {
   .shop_news_wrap .home_link_section {
     position: relative;
     width: 100%;
-    height: 460px;
+    height: 700px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1625,7 +1671,7 @@ header {
 
 @media screen and (max-width: 865px) {
   .shop_news_wrap .home_link_section {
-    height: calc(100vw * 0.5); }
+    height: calc(100vw * 0.7); }
     .shop_news_wrap .home_link_section h1 {
       padding: 0 10px;
       font-size: 30px; } }
@@ -1634,11 +1680,43 @@ header {
     flex-wrap: wrap; } }
 @media screen and (max-width: 520px) {
   .shop_news_wrap .home_link_section {
-    height: calc(100vw * 0.8); } }
+    height: calc(500px); } }
 @media screen and (max-width: 400px) {
   .shop_news_wrap .home_link_section h1 {
     padding: 0 20px;
     line-height: 28px; } }
+#home_client_spotlight {
+  position: relative;
+  overflow: hidden; }
+  #home_client_spotlight #featured_client_overlay {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 200%;
+    height: 65%;
+    left: 50%;
+    transform: rotate(5deg) translateX(-50%); }
+  @media screen and (max-width: 820px) {
+    #home_client_spotlight #featured_client_overlay {
+      display: block;
+      bottom: -20%; } }
+  @media screen and (max-width: 680px) {
+    #home_client_spotlight #featured_client_overlay {
+      height: 58%; } }
+  @media screen and (max-width: 500px) {
+    #home_client_spotlight #featured_client_overlay {
+      height: 53%; } }
+  @media screen and (max-width: 400px) {
+    #home_client_spotlight #featured_client_overlay {
+      height: 48%; } }
+  @media screen and (max-width: 350px) {
+    #home_client_spotlight #featured_client_overlay {
+      height: 45%; } }
+  #home_client_spotlight .text_overlay {
+    background-color: transparent; }
+  #home_client_spotlight .featured_client_images {
+    z-index: 2; }
+
 .package_wrap {
   margin: 0 25px;
   margin-bottom: 40px;
@@ -1822,8 +1900,7 @@ header {
     .team_profile .profile_wrap {
       position: relative;
       width: 40%;
-      padding: 25px 0;
-      background-color: rgba(0, 0, 0, 0.4); }
+      padding: 25px 0; }
     .team_profile .profile_content_wrapper {
       position: relative;
       top: 50%;

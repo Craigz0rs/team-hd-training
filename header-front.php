@@ -111,11 +111,7 @@
                                                     $id = $image['id'];
 
 
-                                                    $size = 'full';
-                                                    $myimage = $image['sizes'][ $size ];
-                                                    $width = $image['sizes'][ $size . '-width' ];
-                                                    $height = $image['sizes'][ $size . '-height' ];
-                                                    
+                                            
                                                     $slide_title = get_sub_field('slide_title');
                                                     $slide_text = get_sub_field('slide_text');
                                                     $slide_button_text = get_sub_field('slide_button_text');
@@ -141,7 +137,7 @@
                                         <?php }
                                         if ($slide_button_text) { ?>
                                         <div class="link_button">
-                                            <a href="<?php echo $slide_button_url; ?>" class="button1">
+                                            <a href="<?php echo $slide_button_url; ?>" class="button3">
                                                 <?php echo $slide_button_text; ?>
                                             </a>
                                         </div>
